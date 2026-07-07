@@ -51,13 +51,10 @@ export function Timeline() {
         <Reveal className="mb-16 text-center">
           <SectionEyebrow>Career Arc</SectionEyebrow>
           <h2 className="font-display text-3xl font-bold md:text-5xl">
-            From <span className="text-gradient">regulatory intelligence</span> to{" "}
-            <span className="text-gradient">ERP architecture</span>
+            Building Finance Systems Through Every Role
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
-            A consistent underlying capability across every role: designing structured
-            data systems, engineering automation workflows, and operationalising
-            governance frameworks.
+            My career has progressed through accounting, regulatory intelligence, ERP implementation, and automation, but the underlying capability has remained consistent: translating business, finance, and compliance requirements into structured systems that improve governance, efficiency, and scalability.
           </p>
         </Reveal>
 
