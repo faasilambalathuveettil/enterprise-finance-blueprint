@@ -76,17 +76,17 @@ export function ExecutiveSummary() {
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           <Reveal delay={0.05} className="md:col-span-2">
-            <div className="group relative h-full overflow-hidden rounded-2xl border border-border bg-card p-8 backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-border-strong hover:shadow-elegant md:p-10">
-              <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-primary/5 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
-              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary-glow">
-                <Layers className="h-5 w-5" strokeWidth={2} />
+            <div className="group relative h-full overflow-hidden rounded-2xl border border-border-strong bg-card p-10 backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-primary/40 hover:shadow-elegant md:p-14">
+              <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-primary/10 blur-3xl" />
+              <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-primary/15 text-primary-glow">
+                <Layers className="h-6 w-6" strokeWidth={2} />
               </div>
-              <h3 className="font-display text-xl font-semibold text-foreground">
+              <h3 className="font-display text-2xl font-semibold text-foreground md:text-[28px]">
                 {pillars[0].title}
               </h3>
-              <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-muted-foreground">
+              <div className="mt-4 space-y-4 text-[17px] leading-relaxed text-muted-foreground">
                 <p>{pillars[0].body[0]}</p>
-                <p className="rounded-lg border-l-2 border-primary/60 bg-primary/5 py-2 pl-4 text-[16px] font-semibold text-foreground">
+                <p className="rounded-lg border-l-2 border-primary/60 bg-primary/5 py-3 pl-5 text-[18px] font-semibold leading-relaxed text-foreground">
                   {pillars[0].body[1]}
                 </p>
               </div>
