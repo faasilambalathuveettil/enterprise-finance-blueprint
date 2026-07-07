@@ -421,14 +421,25 @@ function CaseCard({ c }: { c: Case }) {
             {c.transition && (
               <div className="px-6 pb-6 md:px-10">
                 <div className="rounded-2xl border border-border bg-surface/40 p-6">
-                  <p className="text-sm leading-relaxed text-muted-foreground">
-                    {c.transition}
-                  </p>
+                  <h4 className={`font-display text-sm font-bold uppercase tracking-wider ${accentText[c.accent]}`}>
+                    Why It Mattered
+                  </h4>
+                  <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
+                    {toParas(c.transition).map((p, i) => (
+                      <p key={i}>{p}</p>
+                    ))}
+                  </div>
                 </div>
               </div>
             )}
 
-            <div className="grid grid-cols-1 gap-6 px-6 pb-6 md:grid-cols-2 md:px-10 md:pb-10">
+            <div className="px-6 md:px-10">
+              <div className={`text-[11px] font-bold uppercase tracking-widest ${accentText[c.accent]}`}>
+                Solution Delivery
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6 px-6 pb-6 pt-4 md:grid-cols-2 md:px-10 md:pb-10">
               {c.sections.map((s) => (
                 <div
                   key={s.title}
@@ -437,9 +448,11 @@ function CaseCard({ c }: { c: Case }) {
                   <h4 className={`font-display text-sm font-bold uppercase tracking-wider ${accentText[c.accent]}`}>
                     {s.title}
                   </h4>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {s.body}
-                  </p>
+                  <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
+                    {toParas(s.body).map((p, i) => (
+                      <p key={i}>{p}</p>
+                    ))}
+                  </div>
                   {s.bullets && (
                     <ul className="mt-3 space-y-1.5">
                       {s.bullets.map((b) => (
@@ -465,9 +478,11 @@ function CaseCard({ c }: { c: Case }) {
                   <h4 className={`font-display text-sm font-bold uppercase tracking-wider ${accentText[c.accent]}`}>
                     Business Outcome
                   </h4>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {c.outcome}
-                  </p>
+                  <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
+                    {toParas(c.outcome).map((p, i) => (
+                      <p key={i}>{p}</p>
+                    ))}
+                  </div>
                 </div>
               </div>
             )}
@@ -478,12 +493,15 @@ function CaseCard({ c }: { c: Case }) {
                   <h4 className={`font-display text-sm font-bold uppercase tracking-wider ${accentText[c.accent]}`}>
                     Key Takeaway
                   </h4>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {c.takeaway}
-                  </p>
+                  <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
+                    {toParas(c.takeaway).map((p, i) => (
+                      <p key={i}>{p}</p>
+                    ))}
+                  </div>
                 </div>
               </div>
             )}
+
           </motion.div>
         )}
       </AnimatePresence>
