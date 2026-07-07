@@ -267,7 +267,7 @@ export function Deliverables() {
 
         <Reveal delay={0.2} className="mt-10 text-center">
           <p className="text-xs text-muted-foreground">
-            Artefacts are stylised representations — client-specific values, names, and identifiers are removed. Underlying structure, field logic, and workflow design are authentic to the delivered work.
+            Illustrations represent authentic solution structures and workflow designs. Client names, values, and confidential information have been anonymised while preserving the technical implementation approach.
           </p>
         </Reveal>
       </div>
