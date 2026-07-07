@@ -3,11 +3,11 @@ import { ArrowRight, Mail, Linkedin, Download } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg.asset.json";
 
 const badges = [
-  { label: "Ex-EY GDS", tone: "primary" },
   { label: "ZATCA Phase 2 LIVE", tone: "emerald" },
+  { label: "Ex-EY GDS", tone: "primary" },
   { label: "EY Spot Award", tone: "amber" },
+  { label: "ACCA — Professional Level", tone: "muted" },
   { label: "CertIFRS", tone: "muted" },
-  { label: "ACCA — P Level", tone: "muted" },
   { label: "SOCPA Eligible", tone: "muted" },
 ];
 
@@ -95,9 +95,12 @@ export function Hero() {
             into scalable, compliant ERP operating models.
           </p>
           <p>
-            By translating finance, operational, and regulatory requirements into
-            practical business systems, I help organisations strengthen governance,
-            improve decision-making, and build finance functions that scale with growth.
+            I translate finance, operational, and regulatory requirements into scalable
+            business systems that strengthen governance, improve decision-making, and
+            support long-term growth.
+          </p>
+          <p className="text-sm text-muted-foreground/60">
+            Based in Riyadh · Open to ERP Finance Systems & Transformation roles
           </p>
         </motion.div>
 
@@ -149,7 +152,7 @@ export function Hero() {
           {kpis.map((k, i) => (
             <div key={k.l} className="flex items-center gap-3">
               <div>
-                <div className="font-display text-lg font-bold text-primary-glow">{k.v}</div>
+                <div className="font-display text-xl font-bold text-primary-glow">{k.v}</div>
                 <div className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
                   {k.l}
                 </div>
