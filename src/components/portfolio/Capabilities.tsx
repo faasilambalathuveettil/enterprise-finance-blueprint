@@ -58,7 +58,7 @@ const certs = [
   },
   {
     icon: GraduationCap,
-    name: "ACCA · 8 Papers",
+    name: "ACCA — P Level",
     body: "Association of Chartered Certified Accountants — Professional Level pursuing",
     tint: "text-emerald",
   },
