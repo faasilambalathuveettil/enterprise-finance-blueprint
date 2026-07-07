@@ -33,7 +33,7 @@ const pillars = [
     icon: Globe2,
     tint: "amber",
     title: "I scale across entities and jurisdictions.",
-    body: "Systems supporting 7 legal entities, 1,500+ monthly transactions, 800+ employees. Ran EY Regulatory Radar across EU, UK, HK, and Singapore. Managed 20+ vendors at InCred and multi-aggregator reconciliation at Mann Hospitality.",
+    body: "Systems supporting 7 legal entities, 1,500+ monthly transactions, and 681 employees tracked. Ran EY Regulatory Radar across EU, UK, HK, and Singapore. Managed 20+ vendors at InCred and multi-aggregator reconciliation at Mann Hospitality.",
   },
 ];
 

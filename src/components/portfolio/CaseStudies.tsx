@@ -31,10 +31,10 @@ const cases: Case[] = [
     headline:
       "From Excel-only accounting and WhatsApp approvals to a live, controlled ERP across 7 legal entities — architecture, workflows, master data, and compliance built from the ground up while running live close cycles.",
     metrics: [
-      { k: "7", v: "Entities" },
+      { k: "7", v: "Legal Entities" },
       { k: "110+", v: "COA Accounts" },
-      { k: "900+", v: "Payments Processed" },
-      { k: "11", v: "Workflow Stages" },
+      { k: "1,500+", v: "Txn / Month" },
+      { k: "11", v: "ESS Stages" },
     ],
     tags: [
       "Orison ERP",
@@ -55,12 +55,12 @@ const cases: Case[] = [
       },
       {
         title: "02 · Payment Workflow (ESS) — Live Feb 2026",
-        body: "Engineered the 11-stage ESS Payment Request workflow replacing WhatsApp approvals — covering the full lifecycle from draft to closed with conditional risk-based routing, treasury separation, and complete audit trail.",
+        body: "Engineered the 11-stage ESS Payment Request workflow replacing WhatsApp-based informal approvals — covering the full lifecycle from draft to closed with conditional risk-based routing, treasury separation, and complete audit trail.",
         bullets: [
           "Draft → Submitted → PM Approval → Finance Review",
           "Finance Manager → Management Approval → Release Readiness",
           "Treasury → Executed → Finance Closing → Closed",
-          "900+ requests processed by April 2026",
+          "Defined user role and access logic across the workflow",
         ],
       },
       {
@@ -69,11 +69,11 @@ const cases: Case[] = [
       },
       {
         title: "04 · DPR Module — Live May 2026",
-        body: "Direct Payment Receipt — a 2-stage workflow for post-execution treasury payments bypassing the approval loop. 14 category options (MOL, GOSI, Traffic, MOFA, etc.), mandatory proof upload, distinct DP numbering. Closes the documentation gap so 100% of payments are ERP-recorded.",
+        body: "Direct Payment Receipt — a 2-stage workflow for post-execution treasury payments bypassing the approval loop. 25 category options (14 original + 11 added June 29, 2026), mandatory proof upload, distinct DP numbering. Closes the documentation gap so 100% of payments are ERP-recorded.",
       },
       {
-        title: "05 · HRMS Requirements — 58 Fields",
-        body: "Authored Employee Master Specification v2.0 — 58 fields across 10 categories (Basic, Passport, Visa/Iqama, Insurance, Driving, Sponsor, Employment, Deployment, Ajeer, Status). 11 calculated fields, 3-state expiry logic, employee code prefix system, 2 bulk upload templates, dashboard requirements, and UI wireframe. Submitted to Orison April 2026.",
+        title: "05 · HRMS Requirements — 58 Fields · In Active Testing",
+        body: "Authored Employee Master Specification v2.0 — 58 fields across 10 categories (Basic, Passport, Visa/Iqama, Insurance, Driving, Sponsor, Employment, Deployment, Ajeer, Status). 11 calculated fields, 3-state expiry logic, employee code prefix system, 2 bulk upload templates, dashboard requirements, and UI wireframe. Submitted to Orison April 2026 — module currently in active testing.",
       },
       {
         title: "06 · Bulk Upload Infrastructure",
@@ -95,16 +95,17 @@ const cases: Case[] = [
       "Business-side POC for ZATCA Phase 2 ERP integration. From CSID onboarding to live e-invoicing across three entities in under 7 weeks — including a real credit note issued from Al Imtiaz Corner on live connection.",
     metrics: [
       { k: "3", v: "Entities Live" },
-      { k: "< 7 wks", v: "Onboarding → Live" },
-      { k: "11", v: "Customer Master Fields" },
-      { k: "Jun 11", v: "Go-Live Date" },
+      { k: "~7 wks", v: "CSID → Live" },
+      { k: "11", v: "Master Data Fields" },
+      { k: "Jun 11", v: "Go-Live 2026" },
     ],
     tags: [
       "ZATCA Phase 2",
       "e-Invoicing",
-      "CSID",
-      "Sandbox Testing",
+      "CSID Coordination",
+      "Sandbox Simulation",
       "PDF/A-3 + XML",
+      "Functional Analysis",
       "Compliance Spec",
     ],
     accent: "emerald",
@@ -123,12 +124,12 @@ const cases: Case[] = [
       },
       {
         title: "04 · CSID Coordination & Go-Live",
-        body: "Coordinated CSID generation from April 24 onwards and drove the live cutover on June 11, 2026. First real credit note issued from Al Imtiaz Corner on the live connection.",
+        body: "Coordinated CSID generation and ERP configuration from April 24, drove simulation testing May 5 – June 6, and led the live cutover on June 11, 2026. First real credit note issued from Al Imtiaz Corner on the live connection.",
         bullets: [
-          "CSID onboarding: April 24",
-          "Sandbox validation: 3 entities",
-          "Live: June 11, 2026",
-          "Real credit note issued day-one",
+          "CSID onboarding & ERP config: April 24 – May 4, 2026",
+          "Simulation testing (invoices + credit notes): May 5 – June 6, 2026",
+          "All 3 entities LIVE: June 11, 2026",
+          "Real credit note issued from Al Imtiaz Corner on live connection",
         ],
       },
       {
