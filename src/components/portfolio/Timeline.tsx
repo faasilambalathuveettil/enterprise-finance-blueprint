@@ -6,7 +6,17 @@ const timeline = [
     when: "Nov 2025 — Present",
     role: "Accountant — ERP Implementation & Finance Operations",
     org: "Al Imtiaz Corner Logistics · Riyadh, KSA",
-    body: "Designed and implemented the finance operating model supporting the transition from Excel-based accounting to a multi-entity Orison ERP environment across 7 entities — 110+ COA, 11-stage ESS payment workflow (live Feb 2026), DPR module (live May 2026), Fixed Asset Register with auto-depreciation (live April 2026), ZATCA Phase 2 live across all 3 entities (June 11, 2026), HRMS 58-field specification (in active testing), and Google Opal AI automation delivering 50–70% manual entry reduction.",
+    summary:
+      "Designed and implemented the finance operating model supporting the transition from Excel-based accounting to a multi-entity Orison ERP environment across seven legal entities.",
+    achievements: [
+      "110+ Chart of Accounts",
+      "11-stage ESS workflow",
+      "Fixed Asset Register",
+      "DPR Module",
+      "HRMS Specification",
+      "ZATCA Phase 2",
+      "Google Opal Automation",
+    ],
     tags: ["Orison ERP", "ZATCA Phase 2 LIVE", "COA Design", "HRMS Spec", "Google Opal AI"],
     accent: "primary",
   },
@@ -14,7 +24,14 @@ const timeline = [
     when: "Nov 2022 — Apr 2025",
     role: "Associate Consultant — Business Transformation",
     org: "Ernst & Young GDS · Bengaluru, India",
-    body: "Operated EY Regulatory Radar — end-to-end regulatory intelligence across EU, UK, HK, and Singapore. Engineered AI classification workflows in EYQ, decision-tree prompt architecture, and structured output formats. Redesigned ingestion to parallel processing — 30–40% efficiency gain.",
+    summary:
+      "Operated EY Regulatory Radar — end-to-end regulatory intelligence across EU, UK, HK, and Singapore.",
+    achievements: [
+      "Regulatory Radar",
+      "EYQ Prompt Engineering",
+      "Structured Outputs",
+      "30–40% Efficiency",
+    ],
     tags: ["EYQ", "RegTech", "Prompt Engineering", "4 Jurisdictions"],
     accent: "amber",
     award: "EY Spot Award",
@@ -23,7 +40,13 @@ const timeline = [
     when: "May 2022 — Nov 2022",
     role: "PMO — Vendor Management Intern",
     org: "InCred Financial Services · Bengaluru, India",
-    body: "Sole SPOC for 20+ vendors and 15+ critical tech subscriptions at an NBFC fintech lender. Managed TRAI DLT compliance. Contributed monthly provisioning to finance for budget preparation and variance analysis.",
+    summary:
+      "Sole SPOC for 20+ vendors and 15+ critical tech subscriptions at an NBFC fintech lender.",
+    achievements: [
+      "Vendor Management",
+      "TRAI DLT",
+      "Provisioning",
+    ],
     tags: ["Vendor Management", "TRAI DLT", "Provisioning"],
     accent: "purple",
   },
@@ -31,7 +54,13 @@ const timeline = [
     when: "Dec 2021 — Mar 2022",
     role: "Account Executive Intern",
     org: "Mann Hospitality LLP · Bengaluru, India",
-    body: "Cloud kitchen environment. Built a semi-automated accounting workflow — QuickBooks-Razorpay integration (50% faster payments), VBA macros (25% less data entry), multi-aggregator reconciliation across Zomato, Swiggy, MagicPin, and DotPe.",
+    summary:
+      "Built a semi-automated accounting workflow in a cloud kitchen environment.",
+    achievements: [
+      "QuickBooks-Razorpay Integration",
+      "VBA Macros",
+      "Multi-Aggregator Reconciliation",
+    ],
     tags: ["QuickBooks", "VBA", "Reconciliation", "GST / TDS / TCS"],
     accent: "emerald",
   },
@@ -54,7 +83,11 @@ export function Timeline() {
             Building Finance Systems Through Every Role
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
-            Each role in my career has strengthened the same underlying capability: translating finance, operational, and regulatory requirements into structured systems that improve governance, efficiency, compliance, and long-term scalability. While the industries have changed, the objective has remained consistent—building better finance systems.
+            Every role has strengthened the same core capability: translating
+            finance, operational, and regulatory requirements into structured
+            systems that improve governance, efficiency, and scalability. While
+            industries have changed, the objective has remained constant—building
+            better finance systems.
           </p>
         </Reveal>
 
@@ -86,8 +119,24 @@ export function Timeline() {
                     </h3>
                     <p className="mt-1 text-sm font-medium text-primary-glow">{t.org}</p>
                     <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                      {t.body}
+                      {t.summary}
                     </p>
+                    <div className="mt-4">
+                      <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                        Key Deliverables
+                      </p>
+                      <ul className="mt-2 grid grid-cols-1 gap-1 sm:grid-cols-2">
+                        {t.achievements.map((a) => (
+                          <li
+                            key={a}
+                            className="flex items-center gap-2 text-sm text-muted-foreground"
+                          >
+                            <span className="h-1 w-1 rounded-full bg-primary-glow" />
+                            {a}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                     <div className="mt-4 flex flex-wrap gap-2">
                       {t.tags.map((tag) => (
                         <span

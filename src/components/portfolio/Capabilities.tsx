@@ -4,6 +4,7 @@ import { Award, GraduationCap, BadgeCheck } from "lucide-react";
 const groups = [
   {
     title: "Finance Systems Transformation",
+    desc: "Designing scalable finance operating models that combine ERP, governance, workflows, and reporting.",
     tint: "text-primary-glow",
     items: [
       "ERP Functional Design",
@@ -15,6 +16,7 @@ const groups = [
   },
   {
     title: "Regulatory & Governance",
+    desc: "Embedding compliance into finance operations through structured controls and business processes.",
     tint: "text-emerald",
     items: [
       "ZATCA Phase 2",
@@ -26,6 +28,7 @@ const groups = [
   },
   {
     title: "Automation & AI",
+    desc: "Applying practical automation to eliminate repetitive work while preserving finance-grade accuracy.",
     tint: "text-purple",
     items: [
       "Google Opal",
@@ -37,6 +40,7 @@ const groups = [
   },
   {
     title: "Finance Operations",
+    desc: "Strong accounting fundamentals supporting transformation initiatives and operational excellence.",
     tint: "text-amber",
     items: [
       "GL",
@@ -97,6 +101,9 @@ export function Capabilities() {
                 >
                   {g.title}
                 </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {g.desc}
+                </p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {g.items.map((it) => (
                     <span
