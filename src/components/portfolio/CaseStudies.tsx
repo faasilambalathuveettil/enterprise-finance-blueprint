@@ -145,7 +145,7 @@ const cases: Case[] = [
     org: "Ernst & Young GDS · 2.5 Years · Spot Award",
     image: eyImg.url,
     headline:
-      "Operated EY Regulatory Radar across four jurisdictions. Engineered an AI-assisted classification system in EYQ, redesigned ingestion to parallel processing, and standardised structured outputs across the team.",
+      "Financial institutions operating across multiple jurisdictions depend on timely regulatory intelligence to support governance and risk management. At EY, I contributed to improving this process by combining structured research methodologies with AI-assisted classification workflows, enabling faster analysis while maintaining consistency and quality.",
     metrics: [
       { k: "4", v: "Jurisdictions" },
       { k: "30–40%", v: "Efficiency Gain" },
