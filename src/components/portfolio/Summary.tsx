@@ -12,31 +12,46 @@ const pillars = [
     icon: Layers,
     tint: "primary",
     title: "Finance Systems Transformation",
-    body: "I help organisations replace fragmented, spreadsheet-driven finance operations with structured ERP operating models that improve governance, decision-making, and long-term scalability. The outcome isn't simply a new ERP system—it is a finance function designed to grow.",
+    body: [
+      "I help organisations replace fragmented, spreadsheet-driven finance operations with structured ERP operating models that improve governance, decision-making, and long-term scalability.",
+      "The outcome isn't simply a new ERP system—it is a finance function designed to grow.",
+    ] as [string, string],
   },
   {
     icon: Building2,
     tint: "emerald",
     title: "ERP Transformation",
-    body: "At Al Imtiaz, I supported the transition from Excel-based accounting across seven legal entities to a structured ERP operating model. I designed the underlying finance operating model—including Chart of Accounts, payment workflows, reporting structures, Fixed Asset Register, HRMS requirements, and master data—while ensuring uninterrupted live finance operations throughout implementation.",
+    body: [
+      "At Al Imtiaz, I supported the transition from Excel-based accounting across seven legal entities to a structured ERP operating model.",
+      "I designed the underlying finance operating model—including Chart of Accounts, payment workflows, reporting structures, Fixed Asset Register, HRMS requirements, and master data—while ensuring uninterrupted live finance operations throughout implementation.",
+    ] as [string, string],
   },
   {
     icon: ShieldCheck,
     tint: "amber",
     title: "Compliance by Design",
-    body: "Effective compliance should be embedded into daily operations—not treated as a separate project. I translated Saudi ZATCA Phase 2 requirements into ERP specifications, customer master standards, testing procedures, and production-ready workflows that enabled successful go-live across multiple entities.",
+    body: [
+      "Effective compliance should be embedded into daily operations—not treated as a separate project.",
+      "I translated Saudi ZATCA Phase 2 requirements into ERP specifications, customer master standards, testing procedures, and production-ready workflows that enabled successful go-live across multiple entities.",
+    ] as [string, string],
   },
   {
     icon: Zap,
     tint: "purple",
     title: "Practical AI",
-    body: "I use AI to strengthen finance operations—not replace financial judgement. From Google Opal document extraction to AI-assisted regulatory workflows at EY, my focus has been practical automation that improves consistency, reduces manual effort, and maintains audit-quality outputs.",
+    body: [
+      "I use AI to strengthen finance operations—not replace financial judgement.",
+      "From Google Opal document extraction to AI-assisted regulatory workflows at EY, my focus has been practical automation that improves consistency, reduces manual effort, and maintains audit-quality outputs.",
+    ] as [string, string],
   },
   {
     icon: Globe2,
     tint: "primary",
     title: "Building Systems That Scale",
-    body: "Across every role—from regulatory intelligence at EY to ERP implementation in Saudi Arabia—the same capability has remained consistent: translating finance, business, and regulatory requirements into structured systems that improve governance, operational efficiency, and long-term scalability.",
+    body: [
+      "Across every role—from regulatory intelligence at EY to ERP implementation in Saudi Arabia—the same capability has remained consistent:",
+      "translating finance, business, and regulatory requirements into structured systems that improve governance, operational efficiency, and long-term scalability.",
+    ] as [string, string],
   },
 ];
 
@@ -70,8 +85,8 @@ export function ExecutiveSummary() {
                 {pillars[0].title}
               </h3>
               <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-muted-foreground">
-                <p>I help organisations replace fragmented, spreadsheet-driven finance operations with structured ERP operating models that improve governance, decision-making, and long-term scalability.</p>
-                <p>The outcome isn't simply a new ERP system—it is a finance function designed to grow.</p>
+                <p>{pillars[0].body[0]}</p>
+                <p>{pillars[0].body[1]}</p>
               </div>
             </div>
           </Reveal>
@@ -91,9 +106,10 @@ export function ExecutiveSummary() {
                   <h3 className="font-display text-xl font-semibold text-foreground">
                     {p.title}
                   </h3>
-                  <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
-                    {p.body}
-                  </p>
+                  <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-muted-foreground">
+                    <p>{p.body[0]}</p>
+                    <p>{p.body[1]}</p>
+                  </div>
                 </div>
               </Reveal>
             );
