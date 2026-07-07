@@ -29,7 +29,9 @@ export function Approach() {
         <Reveal className="mb-12 text-center">
           <SectionEyebrow>My Approach</SectionEyebrow>
           <h2 className="font-display text-3xl font-bold md:text-5xl">
-            How I build <span className="text-gradient">finance systems.</span>
+            Every transformation follows a{" "}
+            <span className="text-gradient">structured approach</span>—understanding
+            business requirements before designing systems that can scale.
           </h2>
         </Reveal>
 

@@ -54,8 +54,8 @@ export function Architecture() {
             Eight connected modules.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
-            Every module posts to a single controlled ledger — with master data,
-            workflow approvals, and compliance validation baked in.
+            Every module connects to a unified finance operating model where master
+            data, workflows, controls, and compliance are embedded from the start.
           </p>
         </Reveal>
 
