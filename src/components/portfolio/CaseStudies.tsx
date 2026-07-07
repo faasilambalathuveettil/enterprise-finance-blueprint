@@ -39,40 +39,55 @@ const cases: Case[] = [
     title: "Multi-Entity ERP Finance System",
     org: "Al Imtiaz Corner Logistics · Nov 2025 → Present",
     image: erpImg.url,
-    headline:
-      "The organisation operated seven legal entities using Excel-based accounting, disconnected approval processes, and inconsistent financial structures that limited reporting consistency, governance, and scalability. The objective extended beyond implementing ERP software—it required designing a finance operating model capable of supporting growth while maintaining uninterrupted finance operations.",
+    headline: [
+      "The organisation operated seven legal entities using Excel-based accounting, disconnected approval processes, and inconsistent financial structures that limited governance, reporting consistency, and scalability.",
+      "The objective extended beyond implementing ERP software. It required designing a finance operating model capable of supporting growth while maintaining uninterrupted finance operations.",
+    ],
     metrics: [
       { k: "7", v: "Legal Entities" },
       { k: "110+", v: "COA Accounts" },
       { k: "1,500+", v: "Txn / Month" },
       { k: "11", v: "ESS Stages" },
     ],
+    tagsHeading: "Finance Operating Model Components",
     tags: [
       "Orison ERP",
       "COA Architecture",
-      "ESS Payment Workflow",
+      "ESS Workflow",
       "DPR Module",
       "Fixed Asset Register",
-      "Bulk Upload Framework",
+      "Bulk Upload",
       "HRMS Requirements",
       "Multi-Entity Accounting",
       "Intercompany",
     ],
     accent: "primary",
-    transition:
-      "Before ERP configuration could begin, the underlying finance operating model had to be designed—including master data, governance rules, approval workflows, reporting structures, and control mechanisms that would support long-term operations.",
-    outcome:
-      "The implementation established a structured finance operating model supporting seven legal entities through standardised master data, controlled workflows, improved reporting consistency, and regulatory readiness. Rather than simply replacing spreadsheets with ERP, the project created the operational foundation required for future automation, compliance, and scalable finance operations.",
-    takeaway:
-      "Successful ERP implementation depends less on software configuration and more on designing the finance operating model that governs how people, processes, controls, and data work together. This project demonstrates my approach to translating finance requirements into scalable business systems.",
+    transition: [
+      "Before ERP configuration could begin, the underlying finance operating model had to be defined.",
+      "This included master data, governance rules, approval workflows, reporting structures, and internal controls that would shape how finance operated long after the software was implemented.",
+    ],
+    outcome: [
+      "The implementation established a structured finance operating model supporting seven legal entities through standardised master data, controlled workflows, improved reporting consistency, and regulatory readiness.",
+      "Rather than replacing spreadsheets with ERP, the project created the operational foundation for automation, compliance, and scalable finance operations.",
+    ],
+    takeaway: [
+      "Successful ERP implementation depends less on software configuration and more on designing the finance operating model that connects people, processes, controls, and data.",
+      "This project reflects my approach to translating finance requirements into scalable business systems that support both operational efficiency and long-term governance.",
+    ],
     sections: [
       {
         title: "01 · Chart of Accounts Architecture",
-        body: "Designed a 110+ account COA from scratch across a 4-level hierarchy (Group → Sub-Group → Account Head → Detail Account). Sole responsibility for architecture, category structure, and account segregation. Structured for multi-company, project, phase, and cost-centre reporting. Full Balance Sheet restructuring with 1:1 asset / accumulated-depreciation / expense mapping.",
+        body: [
+          "Designed a 110+ account Chart of Accounts across a four-level hierarchy (Group → Sub-Group → Account Head → Detail Account).",
+          "Structured the model for multi-company, project, phase, and cost-centre reporting while redesigning the Balance Sheet with dedicated asset, accumulated depreciation, and expense mappings.",
+        ],
       },
       {
-        title: "02 · Payment Workflow (ESS) — Live Feb 2026",
-        body: "Engineered the 11-stage ESS Payment Request workflow replacing WhatsApp-based informal approvals — covering the full lifecycle from draft to closed with conditional risk-based routing, treasury separation, and complete audit trail.",
+        title: "02 · ESS Payment Workflow",
+        body: [
+          "Replaced informal WhatsApp approvals with an 11-stage ERP workflow covering the complete payment lifecycle from Draft to Closed.",
+          "Introduced role-based approvals, conditional routing, treasury separation, and a complete audit trail.",
+        ],
         bullets: [
           "Draft → Submitted → PM Approval → Finance Review",
           "Finance Manager → Management Approval → Release Readiness",
@@ -81,24 +96,40 @@ const cases: Case[] = [
         ],
       },
       {
-        title: "03 · Fixed Asset Register — Live April 2026",
-        body: "Structured FAR in Orison ERP: each asset recorded with cost, acquisition date, useful life, depreciation rate, and accumulated depreciation across 9 asset groups. Automated recurring monthly depreciation (straight-line) with policy aligned to KSA Zakat/Income Tax Article 17. Eliminated manual calculation and posting risk.",
+        title: "03 · Fixed Asset Register",
+        body: [
+          "Designed the Fixed Asset Register covering nine asset groups with structured asset master data, useful life, depreciation rates, and accumulated depreciation.",
+          "Automated monthly straight-line depreciation aligned with KSA Zakat/Income Tax Article 17, eliminating manual calculations and reducing posting risk.",
+        ],
       },
       {
-        title: "04 · DPR Module — Live May 2026",
-        body: "Direct Payment Receipt — a 2-stage workflow for post-execution treasury payments bypassing the approval loop. 25 category options (14 original + 11 added June 29, 2026), mandatory proof upload, distinct DP numbering. Closes the documentation gap so 100% of payments are ERP-recorded.",
+        title: "04 · DPR Module",
+        body: [
+          "Designed a dedicated Direct Payment Receipt workflow for post-execution treasury payments outside the standard approval cycle.",
+          "Added 25 payment categories, mandatory supporting documentation, unique numbering, and full ERP audit traceability.",
+        ],
       },
       {
-        title: "05 · HRMS Requirements — 58 Fields · In Active Testing",
-        body: "Authored Employee Master Specification v2.0 — 58 fields across 10 categories (Basic, Passport, Visa/Iqama, Insurance, Driving, Sponsor, Employment, Deployment, Ajeer, Status). 11 calculated fields, 3-state expiry logic, employee code prefix system, 2 bulk upload templates, dashboard requirements, and UI wireframe. Submitted to Orison April 2026 — module currently in active testing.",
+        title: "05 · HRMS Requirements",
+        body: [
+          "Authored Employee Master Specification v2.0 comprising 58 fields across ten business categories.",
+          "Defined calculated fields, expiry logic, dashboard requirements, bulk upload templates, and UI specifications to support future HRMS deployment.",
+          "Status: Currently in active testing with the ERP vendor.",
+        ],
       },
       {
         title: "06 · Bulk Upload Infrastructure",
-        body: "Custom Excel bulk upload workbook with VLOOKUP validation, 26-column layout, and multi-layer control framework (account mapping, dropdown restrictions, company-project-phase eligibility). Handles ~1,500 transactions/month across 7 entities with intercompany journal support.",
+        body: [
+          "Developed a controlled Excel-based bulk upload framework supporting approximately 1,500 monthly transactions across seven legal entities.",
+          "Embedded validation rules, account mapping, dropdown controls, and company-project-phase eligibility to improve data quality before ERP import.",
+        ],
       },
       {
         title: "07 · Vendor Coordination & Requirements Engineering",
-        body: "Point of contact with the ERP vendor across every module — writing formal specifications, running UAT, coordinating configuration changes, and closing gaps between finance intent and system behaviour.",
+        body: [
+          "Acted as the finance point of contact throughout implementation.",
+          "Authored functional specifications, coordinated user acceptance testing, validated configuration changes, and ensured ERP behaviour aligned with finance and business requirements.",
+        ],
       },
     ],
   },
@@ -108,6 +139,7 @@ const cases: Case[] = [
     title: "ZATCA Phase 2 e-Invoicing Integration",
     org: "Al Imtiaz · 3 entities live · June 2026",
     image: eyImg.url, // placeholder — using existing asset library
+
     headline:
       "The transition to ZATCA Phase 2 required organisations to redesign how invoices were generated, validated, and reported. Success depended not only on technical ERP integration but also on aligning finance processes, master data, compliance controls, and operational workflows with evolving regulatory requirements.",
     metrics: [
