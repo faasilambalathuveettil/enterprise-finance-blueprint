@@ -348,11 +348,20 @@ function CaseCard({ c }: { c: Case }) {
             {c.title}
           </h3>
           <p className="mt-1 text-sm font-medium text-muted-foreground">{c.org}</p>
-          <p className="mt-5 text-[15px] leading-relaxed text-muted-foreground">
-            {c.headline}
-          </p>
 
-          <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <div className={`mt-5 text-[11px] font-bold uppercase tracking-widest ${accentText[c.accent]}`}>
+            Business Context
+          </div>
+          <div className="mt-2 space-y-3 text-[15px] leading-relaxed text-muted-foreground">
+            {toParas(c.headline).map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
+
+          <div className={`mt-6 text-[11px] font-bold uppercase tracking-widest ${accentText[c.accent]}`}>
+            Transformation Overview
+          </div>
+          <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {c.metrics.map((m) => (
               <div key={m.v} className="rounded-xl border border-border bg-surface/60 p-3 text-center">
                 <div className={`font-display text-lg font-bold ${accentText[c.accent]}`}>
@@ -365,7 +374,12 @@ function CaseCard({ c }: { c: Case }) {
             ))}
           </div>
 
-          <div className="mt-5 flex flex-wrap gap-1.5">
+          {c.tagsHeading && (
+            <div className={`mt-6 text-[11px] font-bold uppercase tracking-widest ${accentText[c.accent]}`}>
+              {c.tagsHeading}
+            </div>
+          )}
+          <div className="mt-3 flex flex-wrap gap-1.5">
             {c.tags.map((t) => (
               <span
                 key={t}
@@ -381,12 +395,13 @@ function CaseCard({ c }: { c: Case }) {
             className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border-strong bg-surface/70 py-3 text-sm font-semibold text-foreground transition-all hover:bg-surface"
             aria-expanded={open}
           >
-            {open ? "Hide detail" : "Read case study"}
+            {open ? "Hide Solution Design" : "View Solution Design"}
             <ChevronDown
               className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`}
             />
           </button>
         </div>
+
       </div>
 
       <AnimatePresence initial={false}>
