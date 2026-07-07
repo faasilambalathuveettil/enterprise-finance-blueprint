@@ -449,14 +449,7 @@ function CaseCard({ c }: { c: Case }) {
           </div>
           <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {c.metrics.map((m) => (
-              <div key={m.v} className="rounded-xl border border-border bg-surface/60 p-3 text-center">
-                <div className={`font-display text-lg font-bold ${accentText[c.accent]}`}>
-                  {m.k}
-                </div>
-                <div className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-                  {m.v}
-                </div>
-              </div>
+              <MetricCard key={m.v} k={m.k} v={m.v} accent={c.accent} />
             ))}
           </div>
 
