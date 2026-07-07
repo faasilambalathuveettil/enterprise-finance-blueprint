@@ -95,9 +95,12 @@ export function Hero() {
             into scalable, compliant ERP operating models.
           </p>
           <p>
-            By translating finance, operational, and regulatory requirements into
-            practical business systems, I help organisations strengthen governance,
-            improve decision-making, and build finance functions that scale with growth.
+            I translate finance, operational, and regulatory requirements into scalable
+            business systems that strengthen governance, improve decision-making, and
+            support long-term growth.
+          </p>
+          <p className="text-sm text-muted-foreground/60">
+            Based in Riyadh · Open to ERP Finance Systems & Transformation roles
           </p>
         </motion.div>
 
