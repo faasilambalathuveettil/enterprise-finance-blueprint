@@ -193,11 +193,11 @@ function ZatcaVisual({ accent }: { accent: string }) {
 /* -------- EY: regulatory intelligence workflow -------- */
 const eyWorkflow = [
   { t: "Regulatory Publication", s: "Horizon Scanning", icon: FileText },
-  { t: "Research", s: "Review & Analysis", icon: Search },
+  { t: "Research & Review", s: "Review & Analysis", icon: Search },
   { t: "AI-assisted Classification", s: "EYQ / Prompt Engineering", icon: Cpu },
   { t: "Structured Summary", s: "Standardised Output", icon: Braces },
   { t: "Quality Review", s: "Human Validation", icon: CheckCircle2 },
-  { t: "Knowledge Delivery", s: "Team Distribution", icon: Database },
+  { t: "Knowledge Distribution", s: "Team Distribution", icon: Database },
 ];
 function EyVisual({ accent }: { accent: string }) {
   return (

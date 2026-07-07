@@ -222,12 +222,14 @@ const cases: Case[] = [
     title: "EY Regulatory Intelligence & AI Workflows",
     org: "Ernst & Young GDS · 2.5 Years · Spot Award",
     image: eyImg.url,
-    headline:
-      "Financial institutions operate in rapidly evolving regulatory environments where new guidance must be analysed, interpreted, and communicated quickly. The challenge was to transform large volumes of regulatory publications into structured, actionable intelligence while maintaining consistency, accuracy, and governance across multiple jurisdictions.",
+    headline: [
+      "Financial institutions operate in fast-changing regulatory environments where new guidance must be analysed, interpreted, and communicated quickly.",
+      "The challenge was to convert large volumes of regulatory publications into structured, actionable intelligence that business teams could understand and apply with confidence.",
+    ],
     metrics: [
       { k: "4", v: "Jurisdictions" },
       { k: "30–40%", v: "Efficiency Gain" },
-      { k: "3", v: "AI Failure Modes Mitigated" },
+      { k: "3", v: "AI Failure Modes" },
       { k: "1", v: "EY Spot Award" },
     ],
     tags: [
@@ -239,37 +241,57 @@ const cases: Case[] = [
       "Human-in-the-Loop",
     ],
     accent: "amber",
-    transition:
-      "The growing volume and complexity of regulatory publications made traditional manual review increasingly difficult to scale. The objective was not to replace human judgement, but to augment regulatory analysis with structured AI-assisted workflows that improved efficiency while preserving quality and consistency.",
-    outcome:
-      "The redesigned workflow improved processing efficiency by approximately 30–40% while maintaining review quality through structured validation and human oversight. Standardised outputs improved consistency across regulatory summaries and supported more efficient knowledge sharing within the team.",
-    takeaway:
-      "Effective regulatory intelligence depends on structured workflows that transform complex regulatory information into consistent, actionable insights. This experience strengthened my ability to combine finance knowledge, regulatory analysis, and AI-assisted processes to improve operational efficiency without compromising quality or governance.",
+    transition: [
+      "Traditional regulatory review is time-intensive and difficult to scale.",
+      "Rather than replacing human judgement, the objective was to augment regulatory analysis with AI-assisted workflows that improved speed, consistency, and knowledge quality while maintaining expert oversight.",
+    ],
+    outcome: [
+      "The redesigned workflow improved processing efficiency by approximately 30–40% while maintaining review quality through structured validation and human oversight.",
+      "Standardised outputs improved consistency, strengthened knowledge sharing, and enabled regulatory teams to process complex information more efficiently.",
+    ],
+    takeaway: [
+      "Effective regulatory intelligence is not about processing more documents—it is about transforming complex regulatory information into structured, consistent, and actionable knowledge.",
+      "This experience strengthened my ability to combine finance expertise, regulatory analysis, and AI-assisted workflows to improve both operational efficiency and decision-making.",
+    ],
     sections: [
       {
-        title: "01 · My Role",
-        body: "I contributed to improving the regulatory intelligence workflow by combining structured research methodologies, AI-assisted classification, prompt engineering, and standardised output formats that increased consistency while supporting faster regulatory analysis.",
-      },
-      {
-        title: "02 · EYQ Prompt Architecture",
-        body: "Engineered a decision-tree prompt architecture in EYQ (OpenAI-based EY internal tool) with a multi-stage classification pipeline and conditional logic for multi-sector and ambiguous publications.",
-        bullets: [
-          "Multi-stage classification with conditional logic for ambiguous publications",
-          "Machine-readable outputs directly matching the Radar data model",
-          "Standardised and institutionalised across the team",
+        title: "01 · Regulatory Intelligence",
+        body: [
+          "Monitored regulatory developments across the European Union, United Kingdom, Hong Kong, and Singapore.",
+          "Analysed regulatory publications, identified business relevance, and transformed complex regulatory updates into structured intelligence for internal stakeholders.",
         ],
       },
       {
-        title: "03 · AI Validation & Structured Output",
-        body: "Implemented human-in-the-loop validation targeting three AI failure modes: over-generalisation, misclassification, and incomplete extraction. Designed a standardised output framework (Theme / One-Liner / Impact Lines / EY Relevance Tagging).",
+        title: "02 · AI Workflow Design",
+        body: [
+          "Improved the regulatory intelligence workflow using EYQ, prompt engineering, and AI-assisted classification.",
+          "Designed structured prompts and standardised outputs that improved consistency while accelerating document analysis.",
+        ],
       },
       {
-        title: "04 · Process Engineering — 30–40% Faster",
-        body: "Redesigned document ingestion from sequential to parallel processing (bulk URL batching), delivering a 30–40% efficiency improvement in end-to-end throughput.",
+        title: "03 · Structured Knowledge Design",
+        body: [
+          "Developed standardised output formats covering regulatory themes, executive summaries, impact statements, and relevance tagging.",
+          "The structured approach improved information quality while making regulatory insights easier to consume and compare across jurisdictions.",
+        ],
       },
       {
-        title: "05 · Recognition — EY Spot Award",
-        body: "Recognised with the EY Spot Award for engineering the AI-assisted classification system and delivering measurable efficiency improvements across the regulatory intelligence workflow.",
+        title: "04 · Human Validation",
+        body: [
+          "Embedded human review throughout the workflow to address common AI limitations including over-generalisation, misclassification, and incomplete extraction.",
+          "This ensured AI supported regulatory analysts without replacing professional judgement.",
+        ],
+      },
+      {
+        title: "05 · Process Improvement",
+        body: [
+          "Redesigned document ingestion from sequential processing to parallel review, improving end-to-end throughput by approximately 30–40%.",
+          "The revised workflow increased efficiency while maintaining consistency and quality across regulatory outputs.",
+        ],
+      },
+      {
+        title: "06 · Recognition",
+        body: "Received the EY Spot Award in recognition of contributions to AI-assisted regulatory intelligence and measurable workflow improvements.",
       },
     ],
   },
