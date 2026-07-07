@@ -54,7 +54,7 @@ export function Timeline() {
             Building Finance Systems Through Every Role
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
-            My career has progressed through accounting, regulatory intelligence, ERP implementation, and automation, but the underlying capability has remained consistent: translating business, finance, and compliance requirements into structured systems that improve governance, efficiency, and scalability.
+            Each role in my career has strengthened the same underlying capability: translating finance, operational, and regulatory requirements into structured systems that improve governance, efficiency, compliance, and long-term scalability. While the industries have changed, the objective has remained consistent—building better finance systems.
           </p>
         </Reveal>
 
