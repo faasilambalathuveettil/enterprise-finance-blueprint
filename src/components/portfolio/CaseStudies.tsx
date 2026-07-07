@@ -3,6 +3,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Reveal, SectionEyebrow } from "./shared";
 import { ChevronDown, CheckCircle2 } from "lucide-react";
 import { CaseVisual } from "./CaseVisuals";
+import { AnimatedCounter } from "./AnimatedCounter";
+import { chipDescriptions } from "./chipDescriptions";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import erpImg from "@/assets/project-erp.jpg.asset.json";
 import aiImg from "@/assets/project-ai.jpg.asset.json";
 import eyImg from "@/assets/project-ey.jpg.asset.json";
