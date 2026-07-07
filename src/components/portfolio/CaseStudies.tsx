@@ -428,7 +428,6 @@ function CaseCard({ c }: { c: Case }) {
       {/* Subtle chapter glow — creates visual memory per flagship */}
       <div className={`pointer-events-none absolute -left-32 -top-32 h-64 w-64 rounded-full blur-3xl ${accentGlow[c.accent]}`} />
       <div className={`pointer-events-none absolute -right-32 bottom-0 h-64 w-64 rounded-full blur-3xl ${accentGlow[c.accent]} opacity-60`} />
-    >
       {/* Chapter accent bar — gives each flagship its own identity */}
       <div className={`h-[3px] w-full ${accentBar[c.accent]}`} />
 
