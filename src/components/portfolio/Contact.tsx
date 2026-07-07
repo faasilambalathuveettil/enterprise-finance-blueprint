@@ -42,10 +42,10 @@ export function Contact() {
         <Reveal className="mb-14 text-center">
           <SectionEyebrow>Get in Touch</SectionEyebrow>
           <h2 className="font-display text-3xl font-bold md:text-5xl">
-            Let's Build <span className="text-gradient">Better Finance Systems</span>
+            Open to <span className="text-gradient">Finance Systems & Transformation Opportunities</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
-            If you're building or modernising finance systems, I'd welcome the opportunity to discuss how my experience can contribute to your team. I focus on ERP Finance Systems, Finance Transformation, Business Systems Analysis, and Process Improvement across Riyadh.
+            I am open to opportunities across ERP Finance Systems, Business Systems Analysis, Finance Transformation, and Process Improvement. If your organisation is modernising finance operations or implementing enterprise systems, I would welcome the opportunity to discuss how I can contribute.
           </p>
         </Reveal>
 
