@@ -20,6 +20,9 @@ type Case = {
   tags: string[];
   sections: Section[];
   accent: string;
+  transition?: string;
+  outcome?: string;
+  takeaway?: string;
 };
 
 const cases: Case[] = [
@@ -30,7 +33,7 @@ const cases: Case[] = [
     org: "Al Imtiaz Corner Logistics · Nov 2025 → Present",
     image: erpImg.url,
     headline:
-      "The organisation operated seven legal entities using Excel-based accounting, manual approval processes, and fragmented financial controls. The implementation required designing the finance operating model before ERP configuration could begin — a structured foundation capable of supporting governance, scalability, regulatory compliance, and future automation while maintaining uninterrupted daily operations.",
+      "The organisation operated seven legal entities using Excel-based accounting, disconnected approval processes, and inconsistent financial structures that limited reporting consistency, governance, and scalability. The objective extended beyond implementing ERP software—it required designing a finance operating model capable of supporting growth while maintaining uninterrupted finance operations.",
     metrics: [
       { k: "7", v: "Legal Entities" },
       { k: "110+", v: "COA Accounts" },
@@ -49,6 +52,12 @@ const cases: Case[] = [
       "Intercompany",
     ],
     accent: "primary",
+    transition:
+      "Before ERP configuration could begin, the underlying finance operating model had to be designed—including master data, governance rules, approval workflows, reporting structures, and control mechanisms that would support long-term operations.",
+    outcome:
+      "The implementation established a structured finance operating model supporting seven legal entities through standardised master data, controlled workflows, improved reporting consistency, and regulatory readiness. Rather than simply replacing spreadsheets with ERP, the project created the operational foundation required for future automation, compliance, and scalable finance operations.",
+    takeaway:
+      "Successful ERP implementation depends less on software configuration and more on designing the finance operating model that governs how people, processes, controls, and data work together. This project demonstrates my approach to translating finance requirements into scalable business systems.",
     sections: [
       {
         title: "01 · Chart of Accounts Architecture",
@@ -342,6 +351,17 @@ function CaseCard({ c }: { c: Case }) {
             <div className="p-6 md:p-10">
               <CaseVisual id={c.id} accent={c.accent} />
             </div>
+
+            {c.transition && (
+              <div className="px-6 pb-6 md:px-10">
+                <div className="rounded-2xl border border-border bg-surface/40 p-6">
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {c.transition}
+                  </p>
+                </div>
+              </div>
+            )}
+
             <div className="grid grid-cols-1 gap-6 px-6 pb-6 md:grid-cols-2 md:px-10 md:pb-10">
               {c.sections.map((s) => (
                 <div
@@ -372,6 +392,32 @@ function CaseCard({ c }: { c: Case }) {
                 </div>
               ))}
             </div>
+
+            {c.outcome && (
+              <div className="px-6 pb-6 md:px-10">
+                <div className="rounded-2xl border border-border bg-surface/40 p-6">
+                  <h4 className={`font-display text-sm font-bold uppercase tracking-wider ${accentText[c.accent]}`}>
+                    Business Outcome
+                  </h4>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {c.outcome}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {c.takeaway && (
+              <div className="px-6 pb-6 md:px-10 md:pb-10">
+                <div className="rounded-2xl border border-border bg-surface/40 p-6">
+                  <h4 className={`font-display text-sm font-bold uppercase tracking-wider ${accentText[c.accent]}`}>
+                    Key Takeaway
+                  </h4>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {c.takeaway}
+                  </p>
+                </div>
+              </div>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
