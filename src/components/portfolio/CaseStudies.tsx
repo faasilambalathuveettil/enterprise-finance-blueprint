@@ -138,10 +138,12 @@ const cases: Case[] = [
     eyebrow: "Flagship 02 — KSA Regulatory Transformation",
     title: "ZATCA Phase 2 e-Invoicing Integration",
     org: "Al Imtiaz · 3 entities live · June 2026",
-    image: eyImg.url, // placeholder — using existing asset library
+    image: eyImg.url,
 
-    headline:
-      "The transition to ZATCA Phase 2 required organisations to redesign how invoices were generated, validated, and reported. Success depended not only on technical ERP integration but also on aligning finance processes, master data, compliance controls, and operational workflows with evolving regulatory requirements.",
+    headline: [
+      "Saudi Arabia's transition to ZATCA Phase 2 required organisations to redesign how invoices were created, validated, transmitted, and monitored.",
+      "Success depended on more than ERP integration. It required finance processes, master data, compliance controls, and operational workflows to work together within a single, production-ready framework.",
+    ],
     metrics: [
       { k: "3", v: "Entities Live" },
       { k: "~7 wks", v: "CSID → Live" },
@@ -158,28 +160,46 @@ const cases: Case[] = [
       "Compliance Spec",
     ],
     accent: "emerald",
-    transition:
-      "Rather than treating compliance as a standalone technical project, the implementation focused on embedding regulatory requirements directly into finance operations through structured master data, ERP configuration, validation procedures, and controlled business workflows.",
-    outcome:
-      "The implementation established a repeatable compliance framework supporting three legal entities through standardised customer master data, structured testing, controlled invoice validation, and production-ready ERP processes. The outcome was not simply successful ZATCA integration — it strengthened governance, reduced compliance risk, and created a sustainable foundation for future regulatory change.",
-    takeaway:
-      "Successful regulatory transformation depends on integrating compliance into everyday business processes rather than treating it as a separate implementation exercise. This project demonstrates my approach to translating regulatory requirements into scalable finance systems that support both operational efficiency and long-term governance.",
+    transition: [
+      "The implementation was not treated as a standalone compliance exercise.",
+      "Instead, regulatory requirements were embedded directly into finance operations through structured master data, ERP configuration, controlled testing, and production governance.",
+    ],
+    outcome: [
+      "The implementation established a repeatable compliance framework supporting three legal entities through standardised customer master data, structured testing, controlled invoice validation, and production-ready ERP processes.",
+      "Rather than completing a one-time regulatory project, the organisation gained a scalable compliance operating model capable of supporting future regulatory change.",
+    ],
+    takeaway: [
+      "Sustainable regulatory compliance is achieved when governance is embedded into everyday finance operations rather than added as a separate control layer.",
+      "This project demonstrates my approach to translating regulatory requirements into practical finance systems that improve both operational efficiency and long-term compliance.",
+    ],
     sections: [
       {
         title: "01 · Compliance Data Standards",
-        body: "Designed the business-side customer master specification defining mandatory compliance attributes required for successful ERP integration, invoice validation, and production deployment.",
+        body: [
+          "Designed the business-side Customer Master specification defining the mandatory compliance attributes required for ERP integration, invoice validation, and production deployment.",
+          "This established a consistent data foundation across all participating entities.",
+        ],
       },
       {
-        title: "02 · ERP Specification & Vendor Coordination",
-        body: "Translated the ZATCA technical requirements into ERP configuration specs — invoice numbering, buyer/seller data, VAT breakdown, PDF/A-3 rendering with embedded XML — and coordinated the change requests with Orison.",
+        title: "02 · ERP Functional Specification",
+        body: [
+          "Translated ZATCA Phase 2 requirements into functional ERP specifications covering invoice numbering, buyer and seller information, VAT treatment, PDF/A-3 generation, embedded XML, and validation requirements.",
+          "Coordinated implementation with the ERP vendor to ensure business requirements were accurately reflected in system behaviour.",
+        ],
       },
       {
-        title: "03 · Sandbox Testing (Invoices + Credit Notes)",
-        body: "Ran structured sandbox test cycles for both invoice and credit-note flows across all three entities — Mawared Mahara, Al Imtiaz Corner, Wahat Al Asnad — validating XML structure, hash, and QR code.",
+        title: "03 · Sandbox Testing",
+        body: [
+          "Planned and executed structured sandbox testing for invoice and credit-note scenarios across all three legal entities.",
+          "Verified XML generation, QR codes, document hashes, and regulatory compliance before production deployment.",
+        ],
       },
       {
-        title: "04 · CSID Coordination & Go-Live",
-        body: "Coordinated CSID generation and ERP configuration from April 24, drove simulation testing May 5 – June 6, and led the live cutover on June 11, 2026. First real credit note issued from Al Imtiaz Corner on the live connection.",
+        title: "04 · Production Go-Live",
+        body: [
+          "Coordinated CSID onboarding, ERP configuration, simulation testing, and production cutover across all three entities.",
+          "Successfully completed the transition from sandbox validation to live e-invoicing without disrupting business operations.",
+        ],
         bullets: [
           "CSID onboarding & ERP config: April 24 – May 4, 2026",
           "Simulation testing (invoices + credit notes): May 5 – June 6, 2026",
@@ -188,8 +208,11 @@ const cases: Case[] = [
         ],
       },
       {
-        title: "05 · Post-Go-Live Protocol & Business Impact",
-        body: "Established a 4-step post-go-live monitoring protocol covering submission status, clearance, exception handling, and reconciliation. Full ZATCA compliance achieved with zero disruption to live invoicing.",
+        title: "05 · Post-Go-Live Governance",
+        body: [
+          "Designed a structured post-go-live monitoring process covering submission status, clearance, exception handling, and reconciliation.",
+          "The framework ensured sustained compliance while supporting uninterrupted day-to-day invoicing.",
+        ],
       },
     ],
   },
