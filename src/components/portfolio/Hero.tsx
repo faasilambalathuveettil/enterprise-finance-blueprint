@@ -91,10 +91,11 @@ export function Hero() {
           className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg"
         >
           I design finance systems that transform fragmented finance operations
-          into scalable, compliant, and technology-enabled business platforms.
-          By translating finance, operational, and regulatory requirements into
-          ERP solutions, I help organisations build stronger governance, better
-          decision-making, and systems that grow with the business.
+          into scalable, compliant, and technology-enabled finance operating
+          models. By translating finance, operational, and regulatory
+          requirements into ERP solutions, I help organisations build stronger
+          governance, better decision-making, and systems that grow with the
+          business.
         </motion.p>
 
         <motion.div
