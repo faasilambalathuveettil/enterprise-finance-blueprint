@@ -17,8 +17,8 @@ const pillars = [
   {
     icon: Building2,
     tint: "emerald",
-    title: "Finance transformation through ERP",
-    body: "At Al Imtiaz, I enabled the organisation to replace fragmented Excel-based operations across seven legal entities with a scalable ERP operating model supporting governance, automation, and future growth. I designed the underlying finance architecture — Chart of Accounts, payment workflows, reporting structures, Fixed Asset Register, HRMS requirements, and master data — while keeping live accounting uninterrupted throughout implementation.",
+    title: "Finance Systems Transformation",
+    body: "At Al Imtiaz, I enabled the organisation to replace fragmented Excel-based operations across seven legal entities with a scalable ERP operating model supporting governance, automation, and future growth. I designed the underlying finance operating model — Chart of Accounts, payment workflows, reporting structures, Fixed Asset Register, HRMS requirements, and master data — while keeping live accounting uninterrupted throughout implementation.",
   },
   {
     icon: ShieldCheck,

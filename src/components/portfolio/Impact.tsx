@@ -23,12 +23,14 @@ function useCountUp(target: number, active: boolean, duration = 1600) {
 function Metric({
   value,
   suffix = "",
+  prefix = "",
   label,
   tint,
   active,
 }: {
   value: number;
   suffix?: string;
+  prefix?: string;
   label: string;
   tint: string;
   active: boolean;
@@ -37,6 +39,7 @@ function Metric({
   return (
     <div className="rounded-2xl border border-border bg-card p-6 text-center backdrop-blur-md md:p-8">
       <div className={`font-display text-4xl font-bold md:text-5xl ${tint}`}>
+        {prefix}
         {v.toLocaleString()}
         {suffix}
       </div>
@@ -50,7 +53,7 @@ function Metric({
 const metrics = [
   { value: 7, label: "Legal Entities Architected", tint: "text-primary-glow" },
   { value: 1500, suffix: "+", label: "Monthly Transactions", tint: "text-emerald" },
-  { value: 70, suffix: "%", label: "Manual Entry Reduced", tint: "text-purple" },
+  { value: 70, prefix: "50–", suffix: "%", label: "Manual Entry Reduced", tint: "text-purple" },
   { value: 3, label: "Entities ZATCA Live", tint: "text-amber" },
 ];
 

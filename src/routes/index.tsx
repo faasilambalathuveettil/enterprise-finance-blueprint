@@ -8,6 +8,7 @@ import { Architecture } from "@/components/portfolio/Architecture";
 import { Timeline } from "@/components/portfolio/Timeline";
 import { Capabilities } from "@/components/portfolio/Capabilities";
 import { Approach } from "@/components/portfolio/Approach";
+import { Deliverables } from "@/components/portfolio/Deliverables";
 import { Contact, Footer } from "@/components/portfolio/Contact";
 
 export const Route = createFileRoute("/")({
@@ -26,6 +27,7 @@ function PortfolioPage() {
       <Approach />
       <Timeline />
       <Capabilities />
+      <Deliverables />
       <Contact />
       <Footer />
     </main>

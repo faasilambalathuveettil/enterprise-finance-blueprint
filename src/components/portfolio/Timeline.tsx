@@ -6,7 +6,7 @@ const timeline = [
     when: "Nov 2025 — Present",
     role: "Accountant — ERP Implementation & Finance Operations",
     org: "Al Imtiaz Corner Logistics · Riyadh, KSA",
-    body: "Designed the complete finance architecture from Excel baseline to multi-entity Orison ERP across 7 entities — 110+ COA, 11-stage ESS payment workflow (live Feb 2026), DPR module (live May 2026), Fixed Asset Register with auto-depreciation (live April 2026), ZATCA Phase 2 live across all 3 entities (June 11, 2026), HRMS 58-field specification (in active testing), and Google Opal AI automation delivering 50–70% manual entry reduction.",
+    body: "Designed and implemented the finance operating model supporting the transition from Excel-based accounting to a multi-entity Orison ERP environment across 7 entities — 110+ COA, 11-stage ESS payment workflow (live Feb 2026), DPR module (live May 2026), Fixed Asset Register with auto-depreciation (live April 2026), ZATCA Phase 2 live across all 3 entities (June 11, 2026), HRMS 58-field specification (in active testing), and Google Opal AI automation delivering 50–70% manual entry reduction.",
     tags: ["Orison ERP", "ZATCA Phase 2 LIVE", "COA Design", "HRMS Spec", "Google Opal AI"],
     accent: "primary",
   },
