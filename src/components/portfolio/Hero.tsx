@@ -90,12 +90,11 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.25 }}
           className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg"
         >
-          I design finance systems that transform fragmented accounting processes
-          into scalable, compliant, and automated business operations. By translating
-          finance, operational, and regulatory requirements into ERP-enabled solutions,
-          I help organisations build stronger controls, better governance, and systems
-          that scale with growth. Based in Riyadh, I specialise in Finance Transformation,
-          ERP Systems, Process Design, AI-assisted Automation, and Regulatory Compliance.
+          I design finance systems that transform fragmented finance operations
+          into scalable, compliant, and technology-enabled business platforms.
+          By translating finance, operational, and regulatory requirements into
+          ERP solutions, I help organisations build stronger governance, better
+          decision-making, and systems that grow with the business.
         </motion.p>
 
         <motion.div
