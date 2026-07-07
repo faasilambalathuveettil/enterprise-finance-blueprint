@@ -351,6 +351,17 @@ function CaseCard({ c }: { c: Case }) {
             <div className="p-6 md:p-10">
               <CaseVisual id={c.id} accent={c.accent} />
             </div>
+
+            {c.transition && (
+              <div className="px-6 pb-6 md:px-10">
+                <div className="rounded-2xl border border-border bg-surface/40 p-6">
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {c.transition}
+                  </p>
+                </div>
+              </div>
+            )}
+
             <div className="grid grid-cols-1 gap-6 px-6 pb-6 md:grid-cols-2 md:px-10 md:pb-10">
               {c.sections.map((s) => (
                 <div
@@ -381,6 +392,32 @@ function CaseCard({ c }: { c: Case }) {
                 </div>
               ))}
             </div>
+
+            {c.outcome && (
+              <div className="px-6 pb-6 md:px-10">
+                <div className="rounded-2xl border border-border bg-surface/40 p-6">
+                  <h4 className={`font-display text-sm font-bold uppercase tracking-wider ${accentText[c.accent]}`}>
+                    Business Outcome
+                  </h4>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {c.outcome}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {c.takeaway && (
+              <div className="px-6 pb-6 md:px-10 md:pb-10">
+                <div className="rounded-2xl border border-border bg-surface/40 p-6">
+                  <h4 className={`font-display text-sm font-bold uppercase tracking-wider ${accentText[c.accent]}`}>
+                    Key Takeaway
+                  </h4>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {c.takeaway}
+                  </p>
+                </div>
+              </div>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
