@@ -48,16 +48,16 @@ function Metric({
 }
 
 const metrics = [
-  { value: 7, label: "Legal Entities Migrated", tint: "text-primary-glow" },
-  { value: 900, suffix: "+", label: "Payment Requests Processed", tint: "text-emerald" },
+  { value: 7, label: "Legal Entities Architected", tint: "text-primary-glow" },
+  { value: 1500, suffix: "+", label: "Monthly Transactions", tint: "text-emerald" },
   { value: 70, suffix: "%", label: "Manual Entry Reduced", tint: "text-purple" },
   { value: 3, label: "Entities ZATCA Live", tint: "text-amber" },
 ];
 
 const supporting = [
   { k: "110+", v: "COA Accounts" },
-  { k: "1,500+", v: "Monthly Transactions" },
-  { k: "800+", v: "Employees Tracked" },
+  { k: "11", v: "ESS Workflow Stages" },
+  { k: "681", v: "Employees Tracked" },
   { k: "4", v: "Jurisdictions at EY" },
   { k: "20+", v: "Vendors Managed" },
   { k: "58", v: "HRMS Fields Specified" },

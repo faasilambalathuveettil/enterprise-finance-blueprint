@@ -7,7 +7,7 @@ const badges = [
   { label: "ZATCA Phase 2 LIVE", tone: "emerald" },
   { label: "EY Spot Award", tone: "amber" },
   { label: "CertIFRS", tone: "muted" },
-  { label: "ACCA (P)", tone: "muted" },
+  { label: "ACCA · 8 Papers", tone: "muted" },
   { label: "SOCPA Eligible", tone: "muted" },
 ];
 
@@ -19,10 +19,10 @@ const toneClass: Record<string, string> = {
 };
 
 const kpis = [
-  { v: "7", l: "Entities" },
-  { v: "110+", l: "COA" },
+  { v: "7", l: "Legal Entities" },
+  { v: "110+", l: "COA Accounts" },
   { v: "1,500+", l: "Txn / Month" },
-  { v: "800+", l: "Employees" },
+  { v: "3", l: "ZATCA Live" },
   { v: "50–70%", l: "AI Reduction" },
 ];
 
@@ -90,9 +90,10 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.25 }}
           className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg"
         >
-          Finance Systems & ERP Transformation professional. Three years designing
-          multi-entity ERP, KSA regulatory compliance (VAT & ZATCA Phase 2), and
-          AI-assisted process automation from the ground up — currently in Riyadh.
+          Finance Systems & ERP Transformation professional operating at the
+          intersection of <span className="text-foreground">Finance · ERP · Process
+          Design · Automation · AI · Regulatory Compliance.</span> Currently in Riyadh
+          — building finance systems, not maintaining them.
         </motion.p>
 
         <motion.div
