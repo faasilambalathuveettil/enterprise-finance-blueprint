@@ -222,11 +222,10 @@ export function Deliverables() {
         <Reveal className="mb-14 text-center">
           <SectionEyebrow>Selected Deliverables</SectionEyebrow>
           <h2 className="font-display text-3xl font-bold md:text-5xl">
-            Evidence of the{" "}
-            <span className="text-gradient">work behind the systems.</span>
+            Selected <span className="text-gradient">Deliverables</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-sm text-muted-foreground md:text-base">
-            Representative artefacts from live implementations — structure, fields, and logic shown; client data redacted. Full documentation available on request under NDA.
+            Representative artefacts from live implementations. Client-specific information has been anonymised while preserving the underlying structure, business logic, and workflow design. Additional documentation can be shared under NDA where appropriate.
           </p>
         </Reveal>
 
