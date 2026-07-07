@@ -73,7 +73,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Finance Systems & ERP Transformation professional in Riyadh. Multi-entity ERP built from Excel baseline, ZATCA Phase 2 live across 3 entities, 110+ COA, AI-assisted automation. Ex-EY GDS. CertIFRS · ACCA (P) · SOCPA Eligible.",
       },
       { name: "author", content: "Faasil Ambalathuveettil" },
-      { property: "og:title", content: "Faasil Ambalathuveettil — ERP Finance Systems Professional" },
+      { property: "og:title", content: "Faasil Ambalathuveettil — ERP Finance Systems & Transformation Professional" },
       {
         property: "og:description",
         content:
@@ -106,7 +106,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "Person",
           name: "Faasil Ambalathuveettil",
-          jobTitle: "ERP Finance Systems Professional",
+          jobTitle: "ERP Finance Systems & Transformation Professional",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Riyadh",
