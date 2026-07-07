@@ -396,6 +396,12 @@ const accentText: Record<string, string> = {
   amber: "text-amber",
   purple: "text-purple",
 };
+const accentBar: Record<string, string> = {
+  primary: "bg-gradient-to-r from-primary via-primary-glow to-primary/40",
+  emerald: "bg-gradient-to-r from-emerald via-emerald/80 to-emerald/30",
+  amber: "bg-gradient-to-r from-amber via-amber/80 to-amber/30",
+  purple: "bg-gradient-to-r from-purple via-purple/80 to-purple/30",
+};
 
 function CaseCard({ c }: { c: Case }) {
   const [open, setOpen] = useState(false);
@@ -405,9 +411,12 @@ function CaseCard({ c }: { c: Case }) {
       transition={{ layout: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }}
       className="group relative overflow-hidden rounded-3xl border border-border bg-card backdrop-blur-md"
     >
-      <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
+      {/* Chapter accent bar — gives each flagship its own identity */}
+      <div className={`h-[3px] w-full ${accentBar[c.accent]}`} />
+
+      <div className="grid grid-cols-1 md:grid-cols-[minmax(0,0.78fr)_minmax(0,1.45fr)]">
         {/* Image */}
-        <div className="relative min-h-[240px] overflow-hidden md:min-h-full">
+        <div className="relative min-h-[220px] overflow-hidden md:min-h-full">
           <img
             src={c.image}
             alt={c.title}
@@ -423,12 +432,12 @@ function CaseCard({ c }: { c: Case }) {
 
         {/* Content */}
         <div className="flex flex-col p-6 md:p-10">
-          <h3 className="font-display text-2xl font-bold text-foreground md:text-3xl">
+          <h3 className="font-display text-2xl font-bold leading-tight text-foreground md:text-[32px]">
             {c.title}
           </h3>
-          <p className="mt-1 text-sm font-medium text-muted-foreground">{c.org}</p>
+          <p className="mt-1.5 text-sm font-medium text-muted-foreground">{c.org}</p>
 
-          <div className={`mt-5 text-[11px] font-bold uppercase tracking-widest ${accentText[c.accent]}`}>
+          <div className={`mt-6 text-[10px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]} opacity-80`}>
             Business Context
           </div>
           <div className="mt-2 space-y-3 text-[15px] leading-relaxed text-muted-foreground">
@@ -439,7 +448,7 @@ function CaseCard({ c }: { c: Case }) {
 
           {c.transition && (
             <div className="mt-6 rounded-xl border border-border bg-muted/30 p-5">
-              <h4 className={`font-display text-[11px] font-bold uppercase tracking-widest ${accentText[c.accent]}`}>
+              <h4 className={`font-display text-[10px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]} opacity-80`}>
                 Why It Mattered
               </h4>
               <div className="mt-2 space-y-2 text-sm leading-relaxed text-muted-foreground">
@@ -450,15 +459,16 @@ function CaseCard({ c }: { c: Case }) {
             </div>
           )}
 
-          <div className={`mt-6 text-[11px] font-bold uppercase tracking-widest ${accentText[c.accent]}`}>
+          <div className={`mt-6 text-[10px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]} opacity-80`}>
             Transformation Overview
           </div>
           <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {c.metrics.map((m) => (
-              <div key={m.v} className="rounded-xl border border-border bg-surface/60 p-3 text-center">
-                <div className={`font-display text-lg font-bold ${accentText[c.accent]}`}>
-                  {m.k}
-                </div>
+              <div key={m.v} className="rounded-xl border border-border bg-surface/60 p-3 text-center transition-colors hover:border-border-strong">
+                <AnimatedCounter
+                  value={m.k}
+                  className={`font-display text-lg font-bold ${accentText[c.accent]}`}
+                />
                 <div className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
                   {m.v}
                 </div>
@@ -467,20 +477,34 @@ function CaseCard({ c }: { c: Case }) {
           </div>
 
           {c.tagsHeading && (
-            <div className={`mt-6 text-[11px] font-bold uppercase tracking-widest ${accentText[c.accent]}`}>
+            <div className={`mt-6 text-[10px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]} opacity-80`}>
               {c.tagsHeading}
             </div>
           )}
-          <div className="mt-3 flex flex-wrap gap-1.5">
-            {c.tags.map((t) => (
-              <span
-                key={t}
-                className="rounded-md border border-border bg-surface/60 px-2 py-0.5 text-[11px] text-muted-foreground"
-              >
-                {t}
-              </span>
-            ))}
-          </div>
+          <TooltipProvider delayDuration={150}>
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {c.tags.map((t) => {
+                const desc = chipDescriptions[t];
+                const chip = (
+                  <span
+                    key={t}
+                    className={`rounded-md border border-border bg-surface/60 px-2 py-0.5 text-[11px] text-muted-foreground transition-colors ${desc ? "cursor-help hover:border-border-strong hover:text-foreground" : ""}`}
+                  >
+                    {t}
+                  </span>
+                );
+                if (!desc) return chip;
+                return (
+                  <Tooltip key={t}>
+                    <TooltipTrigger asChild>{chip}</TooltipTrigger>
+                    <TooltipContent side="top" className="max-w-[240px] text-xs leading-snug">
+                      {desc}
+                    </TooltipContent>
+                  </Tooltip>
+                );
+              })}
+            </div>
+          </TooltipProvider>
 
           <button
             onClick={() => setOpen((v) => !v)}
