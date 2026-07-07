@@ -8,22 +8,29 @@ import aiImg from "@/assets/project-ai.jpg.asset.json";
 import eyImg from "@/assets/project-ey.jpg.asset.json";
 import commercialImg from "@/assets/project-commercial.jpg.asset.json";
 
-type Section = { title: string; body: string; bullets?: string[] };
+type Paragraphs = string | string[];
+type Section = { title: string; body: Paragraphs; bullets?: string[] };
 type Case = {
   id: string;
   eyebrow: string;
   title: string;
   org: string;
   image: string;
-  headline: string;
+  headline: Paragraphs;
   metrics: { k: string; v: string }[];
+  tagsHeading?: string;
   tags: string[];
   sections: Section[];
   accent: string;
-  transition?: string;
-  outcome?: string;
-  takeaway?: string;
+  transition?: Paragraphs;
+  outcome?: Paragraphs;
+  takeaway?: Paragraphs;
 };
+
+function toParas(p: Paragraphs): string[] {
+  return Array.isArray(p) ? p : [p];
+}
+
 
 const cases: Case[] = [
   {
