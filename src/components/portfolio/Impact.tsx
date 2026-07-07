@@ -79,8 +79,8 @@ export function Impact() {
         <Reveal className="mb-14 text-center">
           <SectionEyebrow>Business Impact</SectionEyebrow>
           <h2 className="font-display text-3xl font-bold md:text-5xl">
-            Transformation delivered{" "}
-            <span className="text-gradient">without slowing operations.</span>
+            Business outcomes delivered{" "}
+            <span className="text-gradient">through finance systems transformation.</span>
           </h2>
         </Reveal>
 

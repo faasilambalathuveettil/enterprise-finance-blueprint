@@ -11,32 +11,32 @@ const pillars = [
   {
     icon: Layers,
     tint: "primary",
-    title: "Finance transformation begins with well-designed systems.",
-    body: "My work focuses on enabling organisations to replace fragmented, spreadsheet-based accounting with scalable ERP operating models — improving governance, decision-making, and readiness for future growth. The outcome is not a new system. It is a finance function built to scale.",
+    title: "Finance Systems Transformation",
+    body: "I help organisations replace fragmented, spreadsheet-driven finance operations with structured ERP operating models that improve governance, decision-making, and long-term scalability. The outcome isn't simply a new ERP system—it is a finance function designed to grow.",
   },
   {
     icon: Building2,
     tint: "emerald",
-    title: "Finance Systems Transformation",
-    body: "At Al Imtiaz, I enabled the organisation to replace fragmented Excel-based operations across seven legal entities with a scalable ERP operating model supporting governance, automation, and future growth. I designed the underlying finance operating model — Chart of Accounts, payment workflows, reporting structures, Fixed Asset Register, HRMS requirements, and master data — while keeping live accounting uninterrupted throughout implementation.",
+    title: "ERP Transformation",
+    body: "At Al Imtiaz, I supported the transition from Excel-based accounting across seven legal entities to a structured ERP operating model. I designed the underlying finance operating model—including Chart of Accounts, payment workflows, reporting structures, Fixed Asset Register, HRMS requirements, and master data—while ensuring uninterrupted live finance operations throughout implementation.",
   },
   {
     icon: ShieldCheck,
     tint: "amber",
-    title: "Compliance engineered into operations",
-    body: "Regulatory compliance is most effective when it becomes part of everyday business processes. I translated Saudi ZATCA Phase 2 requirements into ERP specifications, customer master standards, testing procedures, and production-ready workflows that enabled successful go-live across multiple entities without disrupting operations.",
+    title: "Compliance by Design",
+    body: "Effective compliance should be embedded into daily operations—not treated as a separate project. I translated Saudi ZATCA Phase 2 requirements into ERP specifications, customer master standards, testing procedures, and production-ready workflows that enabled successful go-live across multiple entities.",
   },
   {
     icon: Zap,
     tint: "purple",
-    title: "Practical AI for finance",
-    body: "Automation should reduce manual effort without reducing financial control. From AI-assisted document extraction using Google Opal to structured prompt engineering at EY, I build practical automation solutions that improve productivity, increase consistency, and support finance teams with reliable, auditable outputs.",
+    title: "Practical AI",
+    body: "I use AI to strengthen finance operations—not replace financial judgement. From Google Opal document extraction to AI-assisted regulatory workflows at EY, my focus has been practical automation that improves consistency, reduces manual effort, and maintains audit-quality outputs.",
   },
   {
     icon: Globe2,
     tint: "primary",
-    title: "Building systems that scale",
-    body: "Across every role—from regulatory intelligence at EY to ERP implementation in Saudi Arabia—the underlying objective has remained consistent: design structured systems that enable finance teams to operate with stronger governance, better visibility, and greater operational efficiency.",
+    title: "Building Systems That Scale",
+    body: "Across every role—from regulatory intelligence at EY to ERP implementation in Saudi Arabia—the same capability has remained consistent: translating finance, business, and regulatory requirements into structured systems that improve governance, operational efficiency, and long-term scalability.",
   },
 ];
 

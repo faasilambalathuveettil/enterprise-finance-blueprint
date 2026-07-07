@@ -84,19 +84,22 @@ export function Hero() {
           <span className="text-gradient">I build them.</span>
         </motion.h1>
 
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.25 }}
-          className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg"
+          className="mx-auto mt-8 max-w-2xl space-y-4 text-base leading-relaxed text-muted-foreground md:text-lg"
         >
-          I design finance systems that transform fragmented finance operations
-          into scalable, compliant, and technology-enabled finance operating
-          models. By translating finance, operational, and regulatory
-          requirements into ERP solutions, I help organisations build stronger
-          governance, better decision-making, and systems that grow with the
-          business.
-        </motion.p>
+          <p>
+            I design finance systems that transform fragmented finance operations
+            into scalable, compliant ERP operating models.
+          </p>
+          <p>
+            By translating finance, operational, and regulatory requirements into
+            practical business systems, I help organisations strengthen governance,
+            improve decision-making, and build finance functions that scale with growth.
+          </p>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
