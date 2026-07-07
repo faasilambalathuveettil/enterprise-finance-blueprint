@@ -54,8 +54,8 @@ export function Architecture() {
             Eight connected modules.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
-            Every module posts to a single controlled ledger — with master data,
-            workflow approvals, and compliance validation baked in.
+            Every module connects to a unified finance operating model where master
+            data, workflows, controls, and compliance are embedded from the start.
           </p>
         </Reveal>
 
@@ -142,15 +142,18 @@ export function Architecture() {
           {[
             {
               t: "Structured Master Data",
-              b: "110+ COA · 58-field HRMS · 11-field Customer Master · multi-entity, project, and cost-centre dimensions.",
+              b: "A structured master data foundation supporting consistent reporting, automation, and compliance across multiple legal entities.",
+              chips: "110+ COA accounts · 58-field HRMS · 11-field Customer Master · Multi-Entity · Projects · Cost Centres",
             },
             {
               t: "Workflow & Controls",
-              b: "11-stage ESS · DPR · treasury separation · conditional routing · full audit trail.",
+              b: "Standardised approval workflows with embedded governance, treasury controls, conditional routing, and complete auditability.",
+              chips: "11-stage ESS · DPR Workflow · Treasury Separation · Audit Trail",
             },
             {
               t: "Compliance by Design",
-              b: "ZATCA Phase 2 · KSA VAT · Zakat/Income Tax Article 17 depreciation · IFRS-aligned reporting.",
+              b: "Compliance is designed into the operating model rather than added afterwards.",
+              chips: "ZATCA Phase 2 · KSA VAT · Article 17 Depreciation · IFRS-aligned Reporting",
             },
           ].map((x) => (
             <div
@@ -162,6 +165,9 @@ export function Architecture() {
               </div>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {x.b}
+              </p>
+              <p className="mt-3 text-xs leading-relaxed text-muted-foreground/70">
+                {x.chips}
               </p>
             </div>
           ))}
