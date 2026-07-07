@@ -429,6 +429,19 @@ function CaseCard({ c }: { c: Case }) {
             ))}
           </div>
 
+          {c.transition && (
+            <div className="mt-6 rounded-xl border border-border bg-muted/30 p-5">
+              <h4 className={`font-display text-[11px] font-bold uppercase tracking-widest ${accentText[c.accent]}`}>
+                Why It Mattered
+              </h4>
+              <div className="mt-2 space-y-2 text-sm leading-relaxed text-muted-foreground">
+                {toParas(c.transition).map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
+            </div>
+          )}
+
           <div className={`mt-6 text-[11px] font-bold uppercase tracking-widest ${accentText[c.accent]}`}>
             Transformation Overview
           </div>
