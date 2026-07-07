@@ -547,8 +547,8 @@ function CaseCard({ c }: { c: Case }) {
 
             {c.outcome && (
               <div className="px-6 pb-6 md:px-10">
-                <div className="rounded-2xl border border-border bg-surface/40 p-6">
-                  <h4 className={`font-display text-sm font-bold uppercase tracking-wider ${accentText[c.accent]}`}>
+                <div className="rounded-2xl border border-border border-l-4 border-l-emerald bg-emerald/5 p-6">
+                  <h4 className="font-display text-sm font-bold uppercase tracking-wider text-emerald">
                     Business Outcome
                   </h4>
                   <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
@@ -562,8 +562,8 @@ function CaseCard({ c }: { c: Case }) {
 
             {c.takeaway && (
               <div className="px-6 pb-6 md:px-10 md:pb-10">
-                <div className="rounded-2xl border border-border bg-surface/40 p-6">
-                  <h4 className={`font-display text-sm font-bold uppercase tracking-wider ${accentText[c.accent]}`}>
+                <div className="rounded-2xl border border-border border-l-4 border-l-primary bg-primary/5 p-6">
+                  <h4 className="font-display text-sm font-bold uppercase tracking-wider text-primary-glow">
                     Key Takeaway
                   </h4>
                   <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
