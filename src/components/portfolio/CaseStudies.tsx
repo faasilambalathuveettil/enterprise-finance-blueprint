@@ -119,10 +119,16 @@ const cases: Case[] = [
       "Compliance Spec",
     ],
     accent: "emerald",
+    transition:
+      "Rather than treating compliance as a standalone technical project, the implementation focused on embedding regulatory requirements directly into finance operations through structured master data, ERP configuration, validation procedures, and controlled business workflows.",
+    outcome:
+      "The implementation established a repeatable compliance framework supporting three legal entities through standardised customer master data, structured testing, controlled invoice validation, and production-ready ERP processes. The outcome was not simply successful ZATCA integration — it strengthened governance, reduced compliance risk, and created a sustainable foundation for future regulatory change.",
+    takeaway:
+      "Successful regulatory transformation depends on integrating compliance into everyday business processes rather than treating it as a separate implementation exercise. This project demonstrates my approach to translating regulatory requirements into scalable finance systems that support both operational efficiency and long-term governance.",
     sections: [
       {
-        title: "01 · Business Requirements & Customer Master Spec",
-        body: "Authored the formal 11-field ZATCA Customer Master compliance specification — the single source of truth aligning finance, sales, and IT on data required for compliant invoices and credit notes.",
+        title: "01 · Compliance Data Standards",
+        body: "Designed the business-side customer master specification defining mandatory compliance attributes required for successful ERP integration, invoice validation, and production deployment.",
       },
       {
         title: "02 · ERP Specification & Vendor Coordination",
