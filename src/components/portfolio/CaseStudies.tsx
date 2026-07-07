@@ -52,6 +52,12 @@ const cases: Case[] = [
       "Intercompany",
     ],
     accent: "primary",
+    transition:
+      "Before ERP configuration could begin, the underlying finance operating model had to be designed—including master data, governance rules, approval workflows, reporting structures, and control mechanisms that would support long-term operations.",
+    outcome:
+      "The implementation established a structured finance operating model supporting seven legal entities through standardised master data, controlled workflows, improved reporting consistency, and regulatory readiness. Rather than simply replacing spreadsheets with ERP, the project created the operational foundation required for future automation, compliance, and scalable finance operations.",
+    takeaway:
+      "Successful ERP implementation depends less on software configuration and more on designing the finance operating model that governs how people, processes, controls, and data work together. This project demonstrates my approach to translating finance requirements into scalable business systems.",
     sections: [
       {
         title: "01 · Chart of Accounts Architecture",
