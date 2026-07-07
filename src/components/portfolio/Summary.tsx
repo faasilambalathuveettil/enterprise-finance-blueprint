@@ -69,9 +69,10 @@ export function ExecutiveSummary() {
               <h3 className="font-display text-xl font-semibold text-foreground">
                 {pillars[0].title}
               </h3>
-              <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
-                {pillars[0].body}
-              </p>
+              <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-muted-foreground">
+                <p>I help organisations replace fragmented, spreadsheet-driven finance operations with structured ERP operating models that improve governance, decision-making, and long-term scalability.</p>
+                <p>The outcome isn't simply a new ERP system—it is a finance function designed to grow.</p>
+              </div>
             </div>
           </Reveal>
 
