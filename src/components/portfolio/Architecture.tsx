@@ -10,7 +10,23 @@ import {
   ShieldCheck,
   BarChart3,
   Sparkles,
+  Database,
+  Workflow,
+  Boxes,
+  Lock,
+  FileBarChart,
+  Scale,
+  ChevronRight,
 } from "lucide-react";
+
+const flow = [
+  { icon: Database, label: "Master Data", tint: "text-primary-glow" },
+  { icon: Workflow, label: "Business Processes", tint: "text-emerald" },
+  { icon: Boxes, label: "ERP Modules", tint: "text-purple" },
+  { icon: Lock, label: "Controls", tint: "text-amber" },
+  { icon: FileBarChart, label: "Reporting", tint: "text-primary-glow" },
+  { icon: Scale, label: "Compliance", tint: "text-emerald" },
+];
 
 const modules = [
   { icon: Landmark, label: "Finance / GL", tint: "text-primary-glow" },
