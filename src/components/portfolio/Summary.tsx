@@ -106,9 +106,10 @@ export function ExecutiveSummary() {
                   <h3 className="font-display text-xl font-semibold text-foreground">
                     {p.title}
                   </h3>
-                  <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
-                    {p.body}
-                  </p>
+                  <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-muted-foreground">
+                    <p>{p.body[0]}</p>
+                    <p>{p.body[1]}</p>
+                  </div>
                 </div>
               </Reveal>
             );
