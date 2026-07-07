@@ -17,7 +17,8 @@ import eyImg from "@/assets/project-ey.jpg.asset.json";
 import commercialImg from "@/assets/project-commercial.jpg.asset.json";
 
 type Paragraphs = string | string[];
-type Section = { title: string; body: Paragraphs; bullets?: string[] };
+type Priority = "primary" | "secondary" | "supporting";
+type Section = { title: string; body: Paragraphs; bullets?: string[]; priority?: Priority };
 type Case = {
   id: string;
   eyebrow: string;
