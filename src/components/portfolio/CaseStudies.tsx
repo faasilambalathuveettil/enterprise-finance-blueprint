@@ -502,9 +502,6 @@ function CaseCard({ c }: { c: Case }) {
               <CaseVisual id={c.id} accent={c.accent} />
             </div>
 
-            {c.transition && (
-              <div className="sr-only" aria-hidden="true" />
-            )}
 
             <div className="px-6 md:px-10">
               <div className={`text-[11px] font-bold uppercase tracking-widest ${accentText[c.accent]}`}>
