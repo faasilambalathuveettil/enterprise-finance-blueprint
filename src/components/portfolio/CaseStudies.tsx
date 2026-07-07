@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Reveal, SectionEyebrow } from "./shared";
 import { ChevronDown, CheckCircle2 } from "lucide-react";
+import { CaseVisual } from "./CaseVisuals";
 import erpImg from "@/assets/project-erp.jpg.asset.json";
 import aiImg from "@/assets/project-ai.jpg.asset.json";
 import eyImg from "@/assets/project-ey.jpg.asset.json";
