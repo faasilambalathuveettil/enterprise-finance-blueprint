@@ -253,7 +253,7 @@ const flow = [
 ];
 function AutomationVisual({ accent }: { accent: string }) {
   return (
-    <VisualFrame label="Google Opal · Bank SOA Automation Flow" accent={accent}>
+    <VisualFrame label="Automation Workflow" accent={accent}>
       <div className="grid grid-cols-2 gap-3 md:grid-cols-5">
         {flow.map((f, i) => {
           const Icon = f.icon;
