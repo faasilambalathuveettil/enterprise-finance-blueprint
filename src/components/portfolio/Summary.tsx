@@ -4,36 +4,39 @@ import {
   ShieldCheck,
   Zap,
   Globe2,
-  Sparkles,
   Layers,
-  Workflow,
-  Cpu,
 } from "lucide-react";
 
 const pillars = [
   {
-    icon: Building2,
+    icon: Layers,
     tint: "primary",
-    title: "I fix finance chaos.",
-    body: "Joined Al Imtiaz with zero ERP and Excel-only accounting across 7 entities. Designed and deployed the complete finance architecture — 110+ account COA, 11-stage payment workflow, DPR module, Fixed Asset Register, ZATCA Phase 2, and AI automation — all while running live accounting.",
+    title: "Designing finance systems, not just operating them",
+    body: "Modern finance depends on systems that combine governance, automation, and operational efficiency. My work focuses on translating business requirements into structured finance solutions that improve control, scalability, and decision-making.",
+  },
+  {
+    icon: Building2,
+    tint: "emerald",
+    title: "Finance transformation through ERP",
+    body: "At Al Imtiaz, I joined an organisation operating across seven legal entities using Excel-based accounting and disconnected approval processes. I designed the finance architecture required for ERP adoption—including Chart of Accounts, payment workflows, reporting structures, Fixed Asset Register, HRMS requirements, and master data—while supporting live accounting throughout implementation.",
   },
   {
     icon: ShieldCheck,
-    tint: "emerald",
-    title: "I translate compliance into systems.",
-    body: "Authored the formal 11-field ZATCA Customer Master specification, coordinated CSID generation and sandbox testing across three entities, and led go-live on June 11, 2026 — from CSID onboarding to live e-invoicing in under 7 weeks.",
+    tint: "amber",
+    title: "Compliance engineered into operations",
+    body: "Regulatory compliance is most effective when it becomes part of everyday business processes. I translated Saudi ZATCA Phase 2 requirements into ERP specifications, customer master standards, testing procedures, and production-ready workflows that enabled successful go-live across multiple entities without disrupting operations.",
   },
   {
     icon: Zap,
     tint: "purple",
-    title: "I deploy practical automation fast.",
-    body: "Built no-code AI apps (Google Opal) extracting structured JSON from HR and compliance PDFs — 50–70% reduction in manual data entry. Designed a 15-path Apps Script scope for bank categorization. Delivered 30–40% throughput gains at EY through AI-assisted workflows.",
+    title: "Practical AI for finance",
+    body: "Automation should reduce manual effort without reducing financial control. From AI-assisted document extraction using Google Opal to structured prompt engineering at EY, I build practical automation solutions that improve productivity, increase consistency, and support finance teams with reliable, auditable outputs.",
   },
   {
     icon: Globe2,
-    tint: "amber",
-    title: "I scale across entities and jurisdictions.",
-    body: "Systems supporting 7 legal entities, 1,500+ monthly transactions, and 681 employees tracked. Ran EY Regulatory Radar across EU, UK, HK, and Singapore. Managed 20+ vendors at InCred and multi-aggregator reconciliation at Mann Hospitality.",
+    tint: "primary",
+    title: "Building systems that scale",
+    body: "Across every role—from regulatory intelligence at EY to ERP implementation in Saudi Arabia—the underlying objective has remained consistent: design structured systems that enable finance teams to operate with stronger governance, better visibility, and greater operational efficiency.",
   },
 ];
 
@@ -43,14 +46,6 @@ const tintClass: Record<string, { bg: string; text: string }> = {
   purple: { bg: "bg-purple/15", text: "text-purple" },
   amber: { bg: "bg-amber/15", text: "text-amber" },
 };
-
-const capabilities = [
-  { icon: Layers, label: "ERP Architecture" },
-  { icon: Workflow, label: "Process Design" },
-  { icon: ShieldCheck, label: "Regulatory Compliance" },
-  { icon: Cpu, label: "AI-Assisted Automation" },
-  { icon: Sparkles, label: "Requirements Engineering" },
-];
 
 export function ExecutiveSummary() {
   return (
@@ -62,19 +57,29 @@ export function ExecutiveSummary() {
             Beyond accounting.{" "}
             <span className="text-gradient">Built for finance transformation.</span>
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
-            I don't just close books. I design and deploy the systems, workflows, and
-            compliance architecture that make accurate close cycles faster, cleaner, and
-            audit-ready.
-          </p>
         </Reveal>
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-          {pillars.map((p, i) => {
+          <Reveal delay={0.05} className="md:col-span-2">
+            <div className="group relative h-full overflow-hidden rounded-2xl border border-border bg-card p-8 backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-border-strong hover:shadow-elegant md:p-10">
+              <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-primary/5 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary-glow">
+                <Layers className="h-5 w-5" strokeWidth={2} />
+              </div>
+              <h3 className="font-display text-xl font-semibold text-foreground">
+                {pillars[0].title}
+              </h3>
+              <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
+                {pillars[0].body}
+              </p>
+            </div>
+          </Reveal>
+
+          {pillars.slice(1).map((p, i) => {
             const Icon = p.icon;
             const t = tintClass[p.tint];
             return (
-              <Reveal key={p.title} delay={i * 0.08}>
+              <Reveal key={p.title} delay={(i + 1) * 0.08}>
                 <div className="group relative h-full overflow-hidden rounded-2xl border border-border bg-card p-8 backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-border-strong hover:shadow-elegant">
                   <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-primary/5 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
                   <div
@@ -93,20 +98,6 @@ export function ExecutiveSummary() {
             );
           })}
         </div>
-
-        <Reveal delay={0.2} className="mt-14">
-          <div className="flex flex-wrap items-center justify-center gap-3 text-xs">
-            {capabilities.map(({ icon: I, label }) => (
-              <div
-                key={label}
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/40 px-4 py-2 text-muted-foreground"
-              >
-                <I className="h-3.5 w-3.5 text-primary-glow" />
-                {label}
-              </div>
-            ))}
-          </div>
-        </Reveal>
       </div>
     </section>
   );
