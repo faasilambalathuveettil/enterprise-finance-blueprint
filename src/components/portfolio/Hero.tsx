@@ -28,7 +28,7 @@ const kpis = [
 
 export function Hero() {
   return (
-    <section id="top" className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-4 pb-24 pt-32 md:px-8">
+    <section id="top" className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-4 pb-16 pt-28 md:px-8">
       {/* Layered background */}
       <div className="absolute inset-0 -z-10">
         <img
@@ -61,7 +61,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-8 flex flex-wrap justify-center gap-2"
+          className="mb-8 flex flex-wrap justify-center gap-1"
         >
           {badges.map((b) => (
             <span
@@ -108,7 +108,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-3"
+          className="mt-12 flex flex-wrap items-center justify-center gap-3"
         >
           <a
             href="#case-studies"
@@ -152,7 +152,7 @@ export function Hero() {
           {kpis.map((k, i) => (
             <div key={k.l} className="flex items-center gap-3">
               <div>
-                <div className="font-display text-xl font-bold text-primary-glow">{k.v}</div>
+                <div className="font-display text-2xl font-bold text-primary-glow">{k.v}</div>
                 <div className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
                   {k.l}
                 </div>
