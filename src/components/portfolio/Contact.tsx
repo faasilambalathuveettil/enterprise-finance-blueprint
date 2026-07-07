@@ -129,7 +129,7 @@ export function Footer() {
           </span>
         </p>
         <p className="mt-6 text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
-          Riyadh, Saudi Arabia · CertIFRS · ACCA · 8 Papers · SOCPA Eligible
+          Riyadh, Saudi Arabia · CertIFRS · ACCA — P Level · SOCPA Eligible
         </p>
         <p className="mt-3 text-xs text-muted-foreground">
           © {new Date().getFullYear()} Faasil Ambalathuveettil. Available for ERP &

@@ -7,7 +7,7 @@ const badges = [
   { label: "ZATCA Phase 2 LIVE", tone: "emerald" },
   { label: "EY Spot Award", tone: "amber" },
   { label: "CertIFRS", tone: "muted" },
-  { label: "ACCA · 8 Papers", tone: "muted" },
+  { label: "ACCA — P Level", tone: "muted" },
   { label: "SOCPA Eligible", tone: "muted" },
 ];
 
