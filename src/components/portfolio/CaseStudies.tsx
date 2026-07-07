@@ -156,12 +156,12 @@ const cases: Case[] = [
   },
   {
     id: "ey",
-    eyebrow: "Flagship 03 — Enterprise Consulting",
+    eyebrow: "Flagship 03 — Regulatory Intelligence & AI Workflows",
     title: "EY Regulatory Intelligence & AI Workflows",
     org: "Ernst & Young GDS · 2.5 Years · Spot Award",
     image: eyImg.url,
     headline:
-      "Financial institutions operating across multiple jurisdictions depend on timely regulatory intelligence to support governance and risk management. At EY, I helped redesign the regulatory intelligence workflow by combining structured research methods with AI-assisted classification, improving speed while maintaining quality and governance.",
+      "Financial institutions operate in rapidly evolving regulatory environments where new guidance must be analysed, interpreted, and communicated quickly. The challenge was to transform large volumes of regulatory publications into structured, actionable intelligence while maintaining consistency, accuracy, and governance across multiple jurisdictions.",
     metrics: [
       { k: "4", v: "Jurisdictions" },
       { k: "30–40%", v: "Efficiency Gain" },
@@ -173,20 +173,26 @@ const cases: Case[] = [
       "EYQ / OpenAI",
       "Prompt Engineering",
       "Structured Output",
-      "3-Layer Taxonomy",
+      "AI-Assisted Classification",
       "Human-in-the-Loop",
     ],
     accent: "amber",
+    transition:
+      "The growing volume and complexity of regulatory publications made traditional manual review increasingly difficult to scale. The objective was not to replace human judgement, but to augment regulatory analysis with structured AI-assisted workflows that improved efficiency while preserving quality and consistency.",
+    outcome:
+      "The redesigned workflow improved processing efficiency by approximately 30–40% while maintaining review quality through structured validation and human oversight. Standardised outputs improved consistency across regulatory summaries and supported more efficient knowledge sharing within the team.",
+    takeaway:
+      "Effective regulatory intelligence depends on structured workflows that transform complex regulatory information into consistent, actionable insights. This experience strengthened my ability to combine finance knowledge, regulatory analysis, and AI-assisted processes to improve operational efficiency without compromising quality or governance.",
     sections: [
       {
-        title: "01 · Regulatory Intelligence Pipeline",
-        body: "End-to-end regulatory intelligence across EU, UK, HK, and Singapore — horizon scanning → extraction → classification → validation → structured output. Sources included AFME, EBA, ESMA, OJEU, European Parliament, and other global authorities.",
+        title: "01 · My Role",
+        body: "I contributed to improving the regulatory intelligence workflow by combining structured research methodologies, AI-assisted classification, prompt engineering, and standardised output formats that increased consistency while supporting faster regulatory analysis.",
       },
       {
         title: "02 · EYQ Prompt Architecture",
         body: "Engineered a decision-tree prompt architecture in EYQ (OpenAI-based EY internal tool) with a multi-stage classification pipeline and conditional logic for multi-sector and ambiguous publications.",
         bullets: [
-          "Cluster → Category → Sector/Sub-sector → Binding/Advisory → One-liner",
+          "Multi-stage classification with conditional logic for ambiguous publications",
           "Machine-readable outputs directly matching the Radar data model",
           "Standardised and institutionalised across the team",
         ],

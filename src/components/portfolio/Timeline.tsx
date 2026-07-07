@@ -14,7 +14,7 @@ const timeline = [
     when: "Nov 2022 — Apr 2025",
     role: "Associate Consultant — Business Transformation",
     org: "Ernst & Young GDS · Bengaluru, India",
-    body: "Operated EY Regulatory Radar — end-to-end regulatory intelligence across EU, UK, HK, and Singapore. Engineered AI classification workflows in EYQ, decision-tree prompt architecture, 3-layer taxonomy mapping. Redesigned ingestion to parallel processing — 30–40% efficiency gain.",
+    body: "Operated EY Regulatory Radar — end-to-end regulatory intelligence across EU, UK, HK, and Singapore. Engineered AI classification workflows in EYQ, decision-tree prompt architecture, and structured output formats. Redesigned ingestion to parallel processing — 30–40% efficiency gain.",
     tags: ["EYQ", "RegTech", "Prompt Engineering", "4 Jurisdictions"],
     accent: "amber",
     award: "EY Spot Award",
