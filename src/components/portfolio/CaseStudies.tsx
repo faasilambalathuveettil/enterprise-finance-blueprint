@@ -3,8 +3,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Reveal, SectionEyebrow } from "./shared";
 import { ChevronDown, CheckCircle2 } from "lucide-react";
 import { CaseVisual } from "./CaseVisuals";
-import { useCountUp, splitMetric } from "@/hooks/useCountUp";
-import { tagTooltip } from "@/lib/tagTooltips";
 import erpImg from "@/assets/project-erp.jpg.asset.json";
 import aiImg from "@/assets/project-ai.jpg.asset.json";
 import eyImg from "@/assets/project-ey.jpg.asset.json";
@@ -449,7 +447,14 @@ function CaseCard({ c }: { c: Case }) {
           </div>
           <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {c.metrics.map((m) => (
-              <MetricCard key={m.v} k={m.k} v={m.v} accent={c.accent} />
+              <div key={m.v} className="rounded-xl border border-border bg-surface/60 p-3 text-center">
+                <div className={`font-display text-lg font-bold ${accentText[c.accent]}`}>
+                  {m.k}
+                </div>
+                <div className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                  {m.v}
+                </div>
+              </div>
             ))}
           </div>
 
