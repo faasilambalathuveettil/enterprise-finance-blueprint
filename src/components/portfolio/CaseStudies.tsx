@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Reveal, SectionEyebrow } from "./shared";
 import { ChevronDown, CheckCircle2 } from "lucide-react";
+import { CaseVisual } from "./CaseVisuals";
 import erpImg from "@/assets/project-erp.jpg.asset.json";
 import aiImg from "@/assets/project-ai.jpg.asset.json";
 import eyImg from "@/assets/project-ey.jpg.asset.json";
@@ -29,7 +30,7 @@ const cases: Case[] = [
     org: "Al Imtiaz Corner Logistics · Nov 2025 → Present",
     image: erpImg.url,
     headline:
-      "The organisation operated seven legal entities using Excel-based accounting, manual approval processes, and fragmented financial controls. The objective extended beyond implementing ERP software—it required designing a finance operating model capable of supporting governance, scalability, regulatory compliance, and future automation while maintaining uninterrupted daily operations.",
+      "The organisation operated seven legal entities using Excel-based accounting, manual approval processes, and fragmented financial controls. The implementation required designing the finance operating model before ERP configuration could begin — a structured foundation capable of supporting governance, scalability, regulatory compliance, and future automation while maintaining uninterrupted daily operations.",
     metrics: [
       { k: "7", v: "Legal Entities" },
       { k: "110+", v: "COA Accounts" },
@@ -92,7 +93,7 @@ const cases: Case[] = [
     org: "Al Imtiaz · 3 entities live · June 2026",
     image: eyImg.url, // placeholder — using existing asset library
     headline:
-      "Saudi Arabia's ZATCA Phase 2 introduced mandatory real-time e-invoicing requirements that demanded coordinated changes across finance, ERP configuration, master data, and compliance processes. My role was to translate these regulatory requirements into practical business specifications and support a controlled transition from implementation through successful production go-live.",
+      "Saudi Arabia's ZATCA Phase 2 introduced mandatory real-time e-invoicing requirements that demanded coordinated changes across finance, ERP configuration, master data, and compliance processes. Success depended on translating regulatory guidance into practical ERP configuration, master data standards, testing procedures, and production-ready business workflows.",
     metrics: [
       { k: "3", v: "Entities Live" },
       { k: "~7 wks", v: "CSID → Live" },
@@ -145,7 +146,7 @@ const cases: Case[] = [
     org: "Ernst & Young GDS · 2.5 Years · Spot Award",
     image: eyImg.url,
     headline:
-      "Financial institutions operating across multiple jurisdictions depend on timely regulatory intelligence to support governance and risk management. At EY, I contributed to improving this process by combining structured research methodologies with AI-assisted classification workflows, enabling faster analysis while maintaining consistency and quality.",
+      "Financial institutions operating across multiple jurisdictions depend on timely regulatory intelligence to support governance and risk management. At EY, I helped redesign the regulatory intelligence workflow by combining structured research methods with AI-assisted classification, improving speed while maintaining quality and governance.",
     metrics: [
       { k: "4", v: "Jurisdictions" },
       { k: "30–40%", v: "Efficiency Gain" },
@@ -338,7 +339,10 @@ function CaseCard({ c }: { c: Case }) {
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden border-t border-border"
           >
-            <div className="grid grid-cols-1 gap-6 p-6 md:grid-cols-2 md:p-10">
+            <div className="p-6 md:p-10">
+              <CaseVisual id={c.id} accent={c.accent} />
+            </div>
+            <div className="grid grid-cols-1 gap-6 px-6 pb-6 md:grid-cols-2 md:px-10 md:pb-10">
               {c.sections.map((s) => (
                 <div
                   key={s.title}

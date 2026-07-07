@@ -45,7 +45,7 @@ export function Contact() {
             Let's Build <span className="text-gradient">Better Finance Systems</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
-            I am open to opportunities in ERP Finance Systems, Finance Transformation, Business Systems Analysis, and Process Improvement across Riyadh. If your organisation is looking for someone who can bridge finance, ERP, compliance, and automation, I'd be pleased to connect.
+            If you're building or modernising finance systems, I'd welcome the opportunity to discuss how my experience can contribute to your team. I focus on ERP Finance Systems, Finance Transformation, Business Systems Analysis, and Process Improvement across Riyadh.
           </p>
         </Reveal>
 

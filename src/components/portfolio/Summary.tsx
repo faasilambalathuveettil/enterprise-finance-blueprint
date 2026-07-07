@@ -11,14 +11,14 @@ const pillars = [
   {
     icon: Layers,
     tint: "primary",
-    title: "Designing finance systems, not just operating them",
-    body: "Modern finance depends on systems that combine governance, automation, and operational efficiency. My work focuses on translating business requirements into structured finance solutions that improve control, scalability, and decision-making.",
+    title: "Finance transformation begins with well-designed systems.",
+    body: "My work focuses on enabling organisations to replace fragmented, spreadsheet-based accounting with scalable ERP operating models — improving governance, decision-making, and readiness for future growth. The outcome is not a new system. It is a finance function built to scale.",
   },
   {
     icon: Building2,
     tint: "emerald",
     title: "Finance transformation through ERP",
-    body: "At Al Imtiaz, I joined an organisation operating across seven legal entities using Excel-based accounting and disconnected approval processes. I designed the finance architecture required for ERP adoption—including Chart of Accounts, payment workflows, reporting structures, Fixed Asset Register, HRMS requirements, and master data—while supporting live accounting throughout implementation.",
+    body: "At Al Imtiaz, I enabled the organisation to replace fragmented Excel-based operations across seven legal entities with a scalable ERP operating model supporting governance, automation, and future growth. I designed the underlying finance architecture — Chart of Accounts, payment workflows, reporting structures, Fixed Asset Register, HRMS requirements, and master data — while keeping live accounting uninterrupted throughout implementation.",
   },
   {
     icon: ShieldCheck,
