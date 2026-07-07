@@ -1,24 +1,31 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/portfolio/shared";
+import { Hero } from "@/components/portfolio/Hero";
+import { ExecutiveSummary } from "@/components/portfolio/Summary";
+import { Impact } from "@/components/portfolio/Impact";
+import { CaseStudies } from "@/components/portfolio/CaseStudies";
+import { Architecture } from "@/components/portfolio/Architecture";
+import { Timeline } from "@/components/portfolio/Timeline";
+import { Capabilities } from "@/components/portfolio/Capabilities";
+import { Contact, Footer } from "@/components/portfolio/Contact";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  component: PortfolioPage,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function PortfolioPage() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="relative min-h-screen bg-background text-foreground">
+      <Nav />
+      <Hero />
+      <ExecutiveSummary />
+      <Impact />
+      <CaseStudies />
+      <Architecture />
+      <Timeline />
+      <Capabilities />
+      <Contact />
+      <Footer />
+    </main>
   );
 }
