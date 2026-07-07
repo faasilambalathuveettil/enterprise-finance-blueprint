@@ -45,7 +45,10 @@ export function Contact() {
             Open to <span className="text-gradient">Finance Systems & Transformation Opportunities</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
-            I am open to opportunities across ERP Finance Systems, Business Systems Analysis, Finance Transformation, and Process Improvement. If your organisation is modernising finance operations or implementing enterprise systems, I would welcome the opportunity to discuss how I can contribute.
+            I am open to opportunities across ERP Finance Systems, Finance Transformation, Business Systems Analysis, and Process Improvement.
+          </p>
+          <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
+            If your organisation is modernising finance operations or implementing enterprise systems, I'd welcome the opportunity to discuss how I can contribute.
           </p>
         </Reveal>
 
@@ -123,9 +126,9 @@ export function Footer() {
     <footer className="relative border-t border-border px-4 py-16 md:px-8">
       <div className="mx-auto max-w-5xl text-center">
         <p className="font-display text-2xl font-bold md:text-3xl">
-          Stronger systems, tighter controls, and{" "}
+          Designing finance systems that enable better governance, stronger controls, and{" "}
           <span className="text-gradient">
-            finance operations built to scale.
+            sustainable business growth.
           </span>
         </p>
         <p className="mt-6 text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">

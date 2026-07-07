@@ -26,7 +26,7 @@ const items: Deliverable[] = [
     type: "COA · 110+ Accounts · 4-Level",
     icon: Network,
     tint: "primary",
-    body: "Group → Sub-Group → Account Head → Detail Account. Structured for multi-company, project, phase, and cost-centre reporting.",
+    body: "Four-level Chart of Accounts designed for multi-entity finance, project accounting, cost centres, and future ERP reporting requirements.",
     preview: "coa",
   },
   {
@@ -34,7 +34,7 @@ const items: Deliverable[] = [
     type: "58 Fields · 10 Categories · v2.0",
     icon: FileSpreadsheet,
     tint: "emerald",
-    body: "Basic, Passport, Visa/Iqama, Insurance, Driving, Sponsor, Employment, Deployment, Ajeer, Status. 11 calculated fields, 3-state expiry logic.",
+    body: "Employee Master Specification defining 58 structured fields across ten business categories, supporting dashboard reporting, bulk upload, validation rules, and future HRMS deployment.",
     preview: "hrms",
   },
   {
@@ -42,7 +42,7 @@ const items: Deliverable[] = [
     type: "11 Mandatory Fields · Phase 2",
     icon: Users,
     tint: "emerald",
-    body: "Business-side compliance data standard defining mandatory attributes required for successful ERP integration and invoice validation.",
+    body: "Business-side Customer Master specification defining mandatory compliance attributes supporting ZATCA Phase 2 integration, invoice validation, and production deployment.",
     preview: "customer",
   },
   {
@@ -50,7 +50,7 @@ const items: Deliverable[] = [
     type: "2-Stage Workflow · 25 Categories",
     icon: Receipt,
     tint: "primary",
-    body: "Direct Payment Receipt spec for post-execution treasury payments. Mandatory proof upload, distinct DP numbering, ERP-recorded audit trail.",
+    body: "Workflow specification supporting post-execution treasury payments through structured documentation, mandatory evidence, and ERP audit traceability.",
     preview: "dpr",
   },
   {
@@ -58,7 +58,7 @@ const items: Deliverable[] = [
     type: "11 Stages · Draft → Closed",
     icon: GitBranch,
     tint: "primary",
-    body: "Conditional risk-based routing, treasury separation, and complete audit trail replacing informal WhatsApp-based approvals.",
+    body: "Eleven-stage approval workflow introducing structured governance, treasury separation, conditional routing, and complete auditability.",
     preview: "ess",
   },
   {
@@ -66,7 +66,7 @@ const items: Deliverable[] = [
     type: "FAR · 9 Asset Groups · Auto-Depreciation",
     icon: Landmark,
     tint: "amber",
-    body: "Cost, acquisition date, useful life, depreciation rate, accumulated depreciation. Automated monthly straight-line aligned to KSA Article 17.",
+    body: "Structured asset register supporting automated depreciation, policy compliance, and standardised fixed asset management across multiple asset classes.",
     preview: "far",
   },
   {
@@ -74,7 +74,7 @@ const items: Deliverable[] = [
     type: "3 Production Apps · JSON Output",
     icon: Sparkles,
     tint: "purple",
-    body: "QIWA Extractor, SheetSnap, ResidencyScan — structured data from HR and compliance PDFs feeding finance workflows.",
+    body: "Production Google Opal applications transforming HR and compliance documents into structured JSON outputs supporting finance and payroll workflows.",
     preview: "opal",
   },
   {
@@ -82,7 +82,7 @@ const items: Deliverable[] = [
     type: "3-Tier Logic · 15 REGEX Paths",
     icon: Code2,
     tint: "purple",
-    body: "Tier 1 ESS Match (Entity + Target + Date), Tier 2 Keyword Router (MOL/Iqama/GOSI/SEC), Tier 3 Manual Review flag.",
+    body: "Three-tier categorisation framework combining ESS matching, keyword routing, and manual review logic to improve bank statement classification.",
     preview: "appsscript",
   },
 ];
@@ -222,11 +222,10 @@ export function Deliverables() {
         <Reveal className="mb-14 text-center">
           <SectionEyebrow>Selected Deliverables</SectionEyebrow>
           <h2 className="font-display text-3xl font-bold md:text-5xl">
-            Evidence of the{" "}
-            <span className="text-gradient">work behind the systems.</span>
+            Selected <span className="text-gradient">Deliverables</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-sm text-muted-foreground md:text-base">
-            Representative artefacts from live implementations — structure, fields, and logic shown; client data redacted. Full documentation available on request under NDA.
+            Representative artefacts from live implementations. Client-specific information has been anonymised while preserving the underlying structure, business logic, and workflow design. Additional documentation can be shared under NDA where appropriate.
           </p>
         </Reveal>
 
@@ -268,7 +267,7 @@ export function Deliverables() {
 
         <Reveal delay={0.2} className="mt-10 text-center">
           <p className="text-xs text-muted-foreground">
-            Artefacts are stylised representations — client-specific values, names, and identifiers are removed. Underlying structure, field logic, and workflow design are authentic to the delivered work.
+            Illustrations represent authentic solution structures and workflow designs. Client names, values, and confidential information have been anonymised while preserving the technical implementation approach.
           </p>
         </Reveal>
       </div>
