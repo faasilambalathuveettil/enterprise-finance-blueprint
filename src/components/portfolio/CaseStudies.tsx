@@ -301,8 +301,10 @@ const cases: Case[] = [
     title: "Finance Process Automation",
     org: "Google Opal · Apps Script · Spreadsheet Engineering",
     image: aiImg.url,
-    headline:
-      "Many finance processes continue to rely on repetitive document handling, spreadsheet manipulation, and manual data extraction. I focused on applying practical automation using no-code AI tools, Apps Script, and spreadsheet engineering to reduce manual effort while preserving finance-grade accuracy, traceability, and operational control.",
+    headline: [
+      "Many finance teams continue to rely on repetitive document handling, spreadsheet manipulation, and manual data extraction for routine processes.",
+      "My objective has been to apply practical automation that reduces manual effort while preserving finance-grade accuracy, traceability, and operational control.",
+    ],
     metrics: [
       { k: "50–70%", v: "Entry Reduction" },
       { k: "3", v: "Opal Apps in Production" },
@@ -319,10 +321,25 @@ const cases: Case[] = [
       "AI Workflow Design",
     ],
     accent: "purple",
+    transition: [
+      "Automation should improve finance operations—not remove financial judgement.",
+      "Every solution was designed to eliminate repetitive work while ensuring finance teams retained visibility, auditability, and control over critical business processes.",
+    ],
+    outcome: [
+      "Practical automation reduced manual processing effort by approximately 50–70% while improving data consistency, traceability, and operational efficiency.",
+      "Rather than replacing finance professionals, these solutions enabled teams to focus more time on analysis, control, and decision-making.",
+    ],
+    takeaway: [
+      "The most valuable automation is rarely the most complex.",
+      "It is the automation that removes repetitive work while strengthening governance, preserving auditability, and enabling finance teams to make better decisions.",
+    ],
     sections: [
       {
-        title: "01 · Google Opal — No-Code AI Extraction",
-        body: "Deployed three production Opal apps extracting structured data from HR and compliance PDFs — feeding directly into finance and payroll workflows.",
+        title: "01 · AI Document Extraction",
+        body: [
+          "Developed three production Google Opal applications that transformed HR and compliance documents into structured JSON outputs ready for finance and payroll processing.",
+          "The solutions significantly reduced manual data entry while improving consistency across downstream workflows.",
+        ],
         bullets: [
           "QIWA Extractor — invoice no., date, employee, Iqama/border no., amounts → JSON",
           "SheetSnap — image of Excel → structured CSV",
@@ -330,12 +347,18 @@ const cases: Case[] = [
         ],
       },
       {
-        title: "02 · Bank SOA Integration",
-        body: "Opal-extracted invoice numbers matched against bank transaction narratives via VLOOKUP — a systematic linkage between bank payment and originating HR/compliance document. 50–70% reduction in manual entry.",
+        title: "02 · Finance Document Matching",
+        body: [
+          "Linked AI-extracted invoice information with bank transaction narratives through structured spreadsheet validation.",
+          "This created a reliable connection between source documentation and payment records while reducing manual reconciliation effort.",
+        ],
       },
       {
-        title: "03 · Apps Script — 3-Tier Bank Categorisation",
-        body: "Scope-complete Apps Script framework for bank statement categorisation using tiered logic.",
+        title: "03 · Intelligent Bank Categorisation",
+        body: [
+          "Designed a three-tier Google Apps Script framework combining ESS matching, keyword routing, and manual review logic to categorise bank transactions systematically.",
+          "The approach automated routine classification while ensuring exceptional transactions received appropriate finance review.",
+        ],
         bullets: [
           "Tier 1 — ESS Match: triple-condition (Entity + Target + Date)",
           "Tier 2 — Keyword Router: 15 REGEX paths (MOL 050, Iqama 090, GOSI 060, Traffic 093/040, SEC 002, etc.)",
@@ -343,8 +366,11 @@ const cases: Case[] = [
         ],
       },
       {
-        title: "04 · Spreadsheet Engineering & Historical Wins",
-        body: "Foundational automation practice: VBA macro pack for QuickBooks bulk uploads at Mann Hospitality (25% less data entry), QuickBooks-Razorpay integration (50% faster payments), multi-aggregator reconciliation (Zomato / Swiggy / MagicPin / DotPe).",
+        title: "04 · Spreadsheet Engineering",
+        body: [
+          "Applied spreadsheet engineering techniques to improve finance workflows, including VBA automation, QuickBooks integrations, structured reconciliation processes, and historical workflow optimisation.",
+          "These initiatives established the foundation for a broader automation-first approach to finance operations.",
+        ],
       },
     ],
   },
