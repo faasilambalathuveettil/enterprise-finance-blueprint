@@ -29,7 +29,7 @@ const cases: Case[] = [
     org: "Al Imtiaz Corner Logistics · Nov 2025 → Present",
     image: erpImg.url,
     headline:
-      "From Excel-only accounting and WhatsApp approvals to a live, controlled ERP across 7 legal entities — architecture, workflows, master data, and compliance built from the ground up while running live close cycles.",
+      "The organisation operated seven legal entities using Excel-based accounting, manual approval processes, and fragmented financial controls. The objective extended beyond implementing ERP software—it required designing a finance operating model capable of supporting governance, scalability, regulatory compliance, and future automation while maintaining uninterrupted daily operations.",
     metrics: [
       { k: "7", v: "Legal Entities" },
       { k: "110+", v: "COA Accounts" },
