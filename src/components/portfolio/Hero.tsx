@@ -3,11 +3,11 @@ import { ArrowRight, Mail, Linkedin, Download } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg.asset.json";
 
 const badges = [
-  { label: "Ex-EY GDS", tone: "primary" },
   { label: "ZATCA Phase 2 LIVE", tone: "emerald" },
+  { label: "Ex-EY GDS", tone: "primary" },
   { label: "EY Spot Award", tone: "amber" },
+  { label: "ACCA — Professional Level", tone: "muted" },
   { label: "CertIFRS", tone: "muted" },
-  { label: "ACCA — P Level", tone: "muted" },
   { label: "SOCPA Eligible", tone: "muted" },
 ];
 
