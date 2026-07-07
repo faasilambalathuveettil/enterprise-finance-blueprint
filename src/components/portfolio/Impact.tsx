@@ -50,7 +50,7 @@ function Metric({
 const metrics = [
   { value: 7, label: "Legal Entities Architected", tint: "text-primary-glow" },
   { value: 1500, suffix: "+", label: "Monthly Transactions", tint: "text-emerald" },
-  { value: 70, suffix: "%", label: "Manual Entry Reduced", tint: "text-purple" },
+  { value: 70, suffix: "%", label: "Manual Entry Reduced (50–70%)", tint: "text-purple" },
   { value: 3, label: "Entities ZATCA Live", tint: "text-amber" },
 ];
 
