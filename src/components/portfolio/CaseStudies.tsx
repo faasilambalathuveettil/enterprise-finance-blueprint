@@ -17,7 +17,8 @@ import eyImg from "@/assets/project-ey.jpg.asset.json";
 import commercialImg from "@/assets/project-commercial.jpg.asset.json";
 
 type Paragraphs = string | string[];
-type Section = { title: string; body: Paragraphs; bullets?: string[] };
+type Priority = "primary" | "secondary" | "supporting";
+type Section = { title: string; body: Paragraphs; bullets?: string[]; priority?: Priority };
 type Case = {
   id: string;
   eyebrow: string;
@@ -85,6 +86,7 @@ const cases: Case[] = [
     sections: [
       {
         title: "01 · Chart of Accounts Architecture",
+        priority: "primary",
         body: [
           "Designed a 110+ account Chart of Accounts across a four-level hierarchy (Group → Sub-Group → Account Head → Detail Account).",
           "Structured the model for multi-company, project, phase, and cost-centre reporting while redesigning the Balance Sheet with dedicated asset, accumulated depreciation, and expense mappings.",
@@ -92,6 +94,7 @@ const cases: Case[] = [
       },
       {
         title: "02 · ESS Payment Workflow",
+        priority: "primary",
         body: [
           "Replaced informal WhatsApp approvals with an 11-stage ERP workflow covering the complete payment lifecycle from Draft to Closed.",
           "Introduced role-based approvals, conditional routing, treasury separation, and a complete audit trail.",
@@ -105,6 +108,7 @@ const cases: Case[] = [
       },
       {
         title: "03 · Fixed Asset Register",
+        priority: "secondary",
         body: [
           "Designed the Fixed Asset Register covering nine asset groups with structured asset master data, useful life, depreciation rates, and accumulated depreciation.",
           "Automated monthly straight-line depreciation aligned with KSA Zakat/Income Tax Article 17, eliminating manual calculations and reducing posting risk.",
@@ -112,6 +116,7 @@ const cases: Case[] = [
       },
       {
         title: "04 · DPR Module",
+        priority: "secondary",
         body: [
           "Designed a dedicated Direct Payment Receipt workflow for post-execution treasury payments outside the standard approval cycle.",
           "Added 25 payment categories, mandatory supporting documentation, unique numbering, and full ERP audit traceability.",
@@ -119,6 +124,7 @@ const cases: Case[] = [
       },
       {
         title: "05 · HRMS Requirements",
+        priority: "secondary",
         body: [
           "Authored Employee Master Specification v2.0 comprising 58 fields across ten business categories.",
           "Defined calculated fields, expiry logic, dashboard requirements, bulk upload templates, and UI specifications to support future HRMS deployment.",
@@ -127,6 +133,7 @@ const cases: Case[] = [
       },
       {
         title: "06 · Bulk Upload Infrastructure",
+        priority: "supporting",
         body: [
           "Developed a controlled Excel-based bulk upload framework supporting approximately 1,500 monthly transactions across seven legal entities.",
           "Embedded validation rules, account mapping, dropdown controls, and company-project-phase eligibility to improve data quality before ERP import.",
@@ -134,6 +141,7 @@ const cases: Case[] = [
       },
       {
         title: "07 · Vendor Coordination & Requirements Engineering",
+        priority: "supporting",
         body: [
           "Acted as the finance point of contact throughout implementation.",
           "Authored functional specifications, coordinated user acceptance testing, validated configuration changes, and ensured ERP behaviour aligned with finance and business requirements.",
@@ -402,6 +410,12 @@ const accentBar: Record<string, string> = {
   amber: "bg-gradient-to-r from-amber via-amber/80 to-amber/30",
   purple: "bg-gradient-to-r from-purple via-purple/80 to-purple/30",
 };
+const accentGlow: Record<string, string> = {
+  primary: "bg-primary/10",
+  emerald: "bg-emerald/10",
+  amber: "bg-amber/10",
+  purple: "bg-purple/10",
+};
 
 function CaseCard({ c }: { c: Case }) {
   const [open, setOpen] = useState(false);
@@ -411,6 +425,9 @@ function CaseCard({ c }: { c: Case }) {
       transition={{ layout: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }}
       className="group relative overflow-hidden rounded-3xl border border-border bg-card backdrop-blur-md"
     >
+      {/* Subtle chapter glow — creates visual memory per flagship */}
+      <div className={`pointer-events-none absolute -left-32 -top-32 h-64 w-64 rounded-full blur-3xl ${accentGlow[c.accent]}`} />
+      <div className={`pointer-events-none absolute -right-32 bottom-0 h-64 w-64 rounded-full blur-3xl ${accentGlow[c.accent]} opacity-60`} />
       {/* Chapter accent bar — gives each flagship its own identity */}
       <div className={`h-[3px] w-full ${accentBar[c.accent]}`} />
 
@@ -541,37 +558,52 @@ function CaseCard({ c }: { c: Case }) {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-6 px-6 pb-6 pt-4 md:grid-cols-2 md:px-10 md:pb-10">
-              {c.sections.map((s) => (
-                <div
-                  key={s.title}
-                  className="rounded-2xl border border-border bg-surface/40 p-6"
-                >
-                  <h4 className={`font-display text-sm font-bold uppercase tracking-wider ${accentText[c.accent]}`}>
-                    {s.title}
-                  </h4>
-                  <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
-                    {toParas(s.body).map((p, i) => (
-                      <p key={i}>{p}</p>
-                    ))}
-                  </div>
-                  {s.bullets && (
-                    <ul className="mt-3 space-y-1.5">
-                      {s.bullets.map((b) => (
-                        <li
-                          key={b}
-                          className="flex items-start gap-2 text-[13px] text-muted-foreground"
-                        >
-                          <CheckCircle2
-                            className={`mt-0.5 h-3.5 w-3.5 shrink-0 ${accentText[c.accent]}`}
-                          />
-                          <span>{b}</span>
-                        </li>
+            <div className="grid grid-cols-1 gap-5 px-6 pb-6 pt-4 md:grid-cols-2 md:px-10 md:pb-10">
+              {c.sections.map((s) => {
+                const p = s.priority ?? "secondary";
+                const isPrimary = p === "primary";
+                const isSupporting = p === "supporting";
+                const containerCls = isPrimary
+                  ? `md:col-span-2 rounded-2xl border border-border-strong border-l-4 bg-surface/60 p-7 shadow-elegant ${
+                      { primary: "border-l-primary", emerald: "border-l-emerald", amber: "border-l-amber", purple: "border-l-purple" }[c.accent]
+                    }`
+                  : isSupporting
+                    ? "rounded-xl bg-surface/20 p-5"
+                    : "rounded-2xl border border-border bg-surface/40 p-6";
+                const titleCls = isPrimary
+                  ? `font-display text-base font-bold uppercase tracking-wider ${accentText[c.accent]}`
+                  : isSupporting
+                    ? "font-display text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground"
+                    : `font-display text-sm font-bold uppercase tracking-wider ${accentText[c.accent]}`;
+                const bodyCls = isSupporting
+                  ? "mt-2 space-y-2 text-[13px] leading-relaxed text-muted-foreground/90"
+                  : "mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground";
+                return (
+                  <div key={s.title} className={containerCls}>
+                    <h4 className={titleCls}>{s.title}</h4>
+                    <div className={bodyCls}>
+                      {toParas(s.body).map((para, i) => (
+                        <p key={i}>{para}</p>
                       ))}
-                    </ul>
-                  )}
-                </div>
-              ))}
+                    </div>
+                    {s.bullets && (
+                      <ul className="mt-3 space-y-1.5">
+                        {s.bullets.map((b) => (
+                          <li
+                            key={b}
+                            className="flex items-start gap-2 text-[13px] text-muted-foreground"
+                          >
+                            <CheckCircle2
+                              className={`mt-0.5 h-3.5 w-3.5 shrink-0 ${accentText[c.accent]}`}
+                            />
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                );
+              })}
             </div>
 
             {c.outcome && (
