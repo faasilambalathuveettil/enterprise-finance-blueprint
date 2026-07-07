@@ -410,6 +410,12 @@ const accentBar: Record<string, string> = {
   amber: "bg-gradient-to-r from-amber via-amber/80 to-amber/30",
   purple: "bg-gradient-to-r from-purple via-purple/80 to-purple/30",
 };
+const accentGlow: Record<string, string> = {
+  primary: "bg-primary/10",
+  emerald: "bg-emerald/10",
+  amber: "bg-amber/10",
+  purple: "bg-purple/10",
+};
 
 function CaseCard({ c }: { c: Case }) {
   const [open, setOpen] = useState(false);
@@ -418,6 +424,10 @@ function CaseCard({ c }: { c: Case }) {
       layout
       transition={{ layout: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }}
       className="group relative overflow-hidden rounded-3xl border border-border bg-card backdrop-blur-md"
+    >
+      {/* Subtle chapter glow — creates visual memory per flagship */}
+      <div className={`pointer-events-none absolute -left-32 -top-32 h-64 w-64 rounded-full blur-3xl ${accentGlow[c.accent]}`} />
+      <div className={`pointer-events-none absolute -right-32 bottom-0 h-64 w-64 rounded-full blur-3xl ${accentGlow[c.accent]} opacity-60`} />
     >
       {/* Chapter accent bar — gives each flagship its own identity */}
       <div className={`h-[3px] w-full ${accentBar[c.accent]}`} />
