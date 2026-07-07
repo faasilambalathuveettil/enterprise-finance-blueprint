@@ -42,12 +42,10 @@ export function Contact() {
         <Reveal className="mb-14 text-center">
           <SectionEyebrow>Get in Touch</SectionEyebrow>
           <h2 className="font-display text-3xl font-bold md:text-5xl">
-            Let's build <span className="text-gradient">something durable.</span>
+            Let's Build <span className="text-gradient">Better Finance Systems</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
-            Open to ERP Finance Systems, Finance Transformation, PMO, and Business
-            Systems roles in Riyadh — Big Four, PIF portfolio companies, and enterprise
-            finance functions.
+            I am open to opportunities in ERP Finance Systems, Finance Transformation, Business Systems Analysis, and Process Improvement across Riyadh. If your organisation is looking for someone who can bridge finance, ERP, compliance, and automation, I'd be pleased to connect.
           </p>
         </Reveal>
 

@@ -29,7 +29,7 @@ const cases: Case[] = [
     org: "Al Imtiaz Corner Logistics · Nov 2025 → Present",
     image: erpImg.url,
     headline:
-      "From Excel-only accounting and WhatsApp approvals to a live, controlled ERP across 7 legal entities — architecture, workflows, master data, and compliance built from the ground up while running live close cycles.",
+      "The organisation operated seven legal entities using Excel-based accounting, manual approval processes, and fragmented financial controls. The objective extended beyond implementing ERP software—it required designing a finance operating model capable of supporting governance, scalability, regulatory compliance, and future automation while maintaining uninterrupted daily operations.",
     metrics: [
       { k: "7", v: "Legal Entities" },
       { k: "110+", v: "COA Accounts" },
@@ -92,7 +92,7 @@ const cases: Case[] = [
     org: "Al Imtiaz · 3 entities live · June 2026",
     image: eyImg.url, // placeholder — using existing asset library
     headline:
-      "Business-side POC for ZATCA Phase 2 ERP integration. From CSID onboarding to live e-invoicing across three entities in under 7 weeks — including a real credit note issued from Al Imtiaz Corner on live connection.",
+      "Saudi Arabia's ZATCA Phase 2 introduced mandatory real-time e-invoicing requirements that demanded coordinated changes across finance, ERP configuration, master data, and compliance processes. My role was to translate these regulatory requirements into practical business specifications and support a controlled transition from implementation through successful production go-live.",
     metrics: [
       { k: "3", v: "Entities Live" },
       { k: "~7 wks", v: "CSID → Live" },
@@ -145,7 +145,7 @@ const cases: Case[] = [
     org: "Ernst & Young GDS · 2.5 Years · Spot Award",
     image: eyImg.url,
     headline:
-      "Operated EY Regulatory Radar across four jurisdictions. Engineered an AI-assisted classification system in EYQ, redesigned ingestion to parallel processing, and standardised structured outputs across the team.",
+      "Financial institutions operating across multiple jurisdictions depend on timely regulatory intelligence to support governance and risk management. At EY, I contributed to improving this process by combining structured research methodologies with AI-assisted classification workflows, enabling faster analysis while maintaining consistency and quality.",
     metrics: [
       { k: "4", v: "Jurisdictions" },
       { k: "30–40%", v: "Efficiency Gain" },
@@ -196,7 +196,7 @@ const cases: Case[] = [
     org: "Google Opal · Apps Script · Spreadsheet Engineering",
     image: aiImg.url,
     headline:
-      "No-code AI apps and workflow automation delivering 50–70% reduction in manual data entry across HR and compliance — plus a 15-path Apps Script framework for bank statement categorisation.",
+      "Many finance processes continue to rely on repetitive document handling, spreadsheet manipulation, and manual data extraction. I focused on applying practical automation using no-code AI tools, Apps Script, and spreadsheet engineering to reduce manual effort while preserving finance-grade accuracy, traceability, and operational control.",
     metrics: [
       { k: "50–70%", v: "Entry Reduction" },
       { k: "3", v: "Opal Apps in Production" },
