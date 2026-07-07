@@ -196,7 +196,7 @@ const cases: Case[] = [
     org: "Google Opal · Apps Script · Spreadsheet Engineering",
     image: aiImg.url,
     headline:
-      "No-code AI apps and workflow automation delivering 50–70% reduction in manual data entry across HR and compliance — plus a 15-path Apps Script framework for bank statement categorisation.",
+      "Many finance processes continue to rely on repetitive document handling, spreadsheet manipulation, and manual data extraction. I focused on applying practical automation using no-code AI tools, Apps Script, and spreadsheet engineering to reduce manual effort while preserving finance-grade accuracy, traceability, and operational control.",
     metrics: [
       { k: "50–70%", v: "Entry Reduction" },
       { k: "3", v: "Opal Apps in Production" },
