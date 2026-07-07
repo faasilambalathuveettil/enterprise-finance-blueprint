@@ -92,7 +92,7 @@ const cases: Case[] = [
     org: "Al Imtiaz · 3 entities live · June 2026",
     image: eyImg.url, // placeholder — using existing asset library
     headline:
-      "Saudi Arabia's ZATCA Phase 2 introduced mandatory real-time e-invoicing requirements that demanded coordinated changes across finance, ERP configuration, master data, and compliance processes. My role was to translate these regulatory requirements into practical business specifications and support a controlled transition from implementation through successful production go-live.",
+      "Saudi Arabia's ZATCA Phase 2 introduced mandatory real-time e-invoicing requirements that demanded coordinated changes across finance, ERP configuration, master data, and compliance processes. Success depended on translating regulatory guidance into practical ERP configuration, master data standards, testing procedures, and production-ready business workflows.",
     metrics: [
       { k: "3", v: "Entities Live" },
       { k: "~7 wks", v: "CSID → Live" },
