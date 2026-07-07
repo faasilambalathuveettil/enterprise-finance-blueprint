@@ -339,7 +339,10 @@ function CaseCard({ c }: { c: Case }) {
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden border-t border-border"
           >
-            <div className="grid grid-cols-1 gap-6 p-6 md:grid-cols-2 md:p-10">
+            <div className="p-6 md:p-10">
+              <CaseVisual id={c.id} accent={c.accent} />
+            </div>
+            <div className="grid grid-cols-1 gap-6 px-6 pb-6 md:grid-cols-2 md:px-10 md:pb-10">
               {c.sections.map((s) => (
                 <div
                   key={s.title}
