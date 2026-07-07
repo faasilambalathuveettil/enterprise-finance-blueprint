@@ -190,55 +190,54 @@ function ZatcaVisual({ accent }: { accent: string }) {
   );
 }
 
-/* -------- EY: 3-layer taxonomy -------- */
-const taxonomy = [
-  {
-    layer: "Cluster",
-    items: ["Prudential", "Conduct", "Market", "Reporting"],
-  },
-  {
-    layer: "Category",
-    items: ["Capital", "Liquidity", "AML/CFT", "MiFID", "ESG"],
-  },
-  {
-    layer: "Sector",
-    items: ["Banking", "Asset Mgmt", "Insurance", "Payments"],
-  },
+/* -------- EY: regulatory intelligence workflow -------- */
+const eyWorkflow = [
+  { t: "Regulatory Publication", s: "Horizon Scanning", icon: FileText },
+  { t: "Research", s: "Review & Analysis", icon: Search },
+  { t: "AI-assisted Classification", s: "EYQ / Prompt Engineering", icon: Cpu },
+  { t: "Structured Summary", s: "Standardised Output", icon: Braces },
+  { t: "Quality Review", s: "Human Validation", icon: CheckCircle2 },
+  { t: "Knowledge Delivery", s: "Team Distribution", icon: Database },
 ];
 function EyVisual({ accent }: { accent: string }) {
   return (
-    <VisualFrame label="Regulatory Radar · 3-Layer Classification" accent={accent}>
-      <div className="space-y-3">
-        {taxonomy.map((row, i) => (
-          <motion.div
-            key={row.layer}
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: i * 0.08 }}
-            className="flex flex-wrap items-center gap-2"
-          >
-            <div
-              className={`w-24 shrink-0 text-[11px] font-bold uppercase tracking-widest ${accentText[accent]}`}
+    <VisualFrame label="Regulatory Intelligence Workflow" accent={accent}>
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-6">
+        {eyWorkflow.map((f, i) => {
+          const Icon = f.icon;
+          return (
+            <motion.div
+              key={f.t}
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
+              className="relative"
             >
-              {row.layer}
-            </div>
-            <div className="flex flex-wrap gap-1.5">
-              {row.items.map((it) => (
-                <span
-                  key={it}
-                  className={`rounded-md border ${accentBorder[accent]} bg-card px-2 py-1 text-[11px] text-foreground`}
+              <div
+                className={`flex flex-col items-center rounded-xl border ${accentBorder[accent]} bg-card p-3 text-center`}
+              >
+                <Icon className={`h-5 w-5 ${accentText[accent]}`} />
+                <div className="mt-2 text-[11px] font-semibold text-foreground">
+                  {f.t}
+                </div>
+                <div className="mt-0.5 text-[10px] text-muted-foreground">
+                  {f.s}
+                </div>
+              </div>
+              {i < eyWorkflow.length - 1 && (
+                <div
+                  className={`absolute right-[-10px] top-1/2 hidden -translate-y-1/2 md:block ${accentText[accent]}`}
                 >
-                  {it}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        ))}
-        <div className="mt-2 flex items-center gap-2 rounded-lg border border-border bg-surface/60 p-3 text-[11px] text-muted-foreground">
-          <CheckCircle2 className={`h-3.5 w-3.5 ${accentText[accent]}`} />
-          Machine-readable output · Theme · One-Liner · Impact · EY Relevance
-        </div>
+                  ›
+                </div>
+              )}
+            </motion.div>
+          );
+        })}
+      </div>
+      <div className="mt-3 text-[11px] text-muted-foreground">
+        End-to-end regulatory intelligence · structured research · AI-assisted classification · human validation · standardised output
       </div>
     </VisualFrame>
   );
