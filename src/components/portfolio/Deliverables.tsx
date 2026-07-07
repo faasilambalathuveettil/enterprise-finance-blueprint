@@ -220,7 +220,7 @@ export function Deliverables() {
     <section id="deliverables" className="relative px-4 py-24 md:px-8 md:py-32">
       <div className="mx-auto max-w-6xl">
         <Reveal className="mb-14 text-center">
-          <SectionEyebrow>Selected Deliverables</SectionEyebrow>
+          <SectionEyebrow>Documentation</SectionEyebrow>
           <h2 className="font-display text-3xl font-bold md:text-5xl">
             Selected <span className="text-gradient">Deliverables</span>
           </h2>

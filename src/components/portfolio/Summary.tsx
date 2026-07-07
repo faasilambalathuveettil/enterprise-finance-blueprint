@@ -86,7 +86,9 @@ export function ExecutiveSummary() {
               </h3>
               <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-muted-foreground">
                 <p>{pillars[0].body[0]}</p>
-                <p>{pillars[0].body[1]}</p>
+                <p className="rounded-lg border-l-2 border-primary/60 bg-primary/5 py-2 pl-4 text-[16px] font-semibold text-foreground">
+                  {pillars[0].body[1]}
+                </p>
               </div>
             </div>
           </Reveal>

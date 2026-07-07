@@ -429,6 +429,19 @@ function CaseCard({ c }: { c: Case }) {
             ))}
           </div>
 
+          {c.transition && (
+            <div className="mt-6 rounded-xl border border-border bg-muted/30 p-5">
+              <h4 className={`font-display text-[11px] font-bold uppercase tracking-widest ${accentText[c.accent]}`}>
+                Why It Mattered
+              </h4>
+              <div className="mt-2 space-y-2 text-sm leading-relaxed text-muted-foreground">
+                {toParas(c.transition).map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
+            </div>
+          )}
+
           <div className={`mt-6 text-[11px] font-bold uppercase tracking-widest ${accentText[c.accent]}`}>
             Transformation Overview
           </div>
@@ -489,20 +502,6 @@ function CaseCard({ c }: { c: Case }) {
               <CaseVisual id={c.id} accent={c.accent} />
             </div>
 
-            {c.transition && (
-              <div className="px-6 pb-6 md:px-10">
-                <div className="rounded-2xl border border-border bg-surface/40 p-6">
-                  <h4 className={`font-display text-sm font-bold uppercase tracking-wider ${accentText[c.accent]}`}>
-                    Why It Mattered
-                  </h4>
-                  <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
-                    {toParas(c.transition).map((p, i) => (
-                      <p key={i}>{p}</p>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
 
             <div className="px-6 md:px-10">
               <div className={`text-[11px] font-bold uppercase tracking-widest ${accentText[c.accent]}`}>
@@ -545,8 +544,8 @@ function CaseCard({ c }: { c: Case }) {
 
             {c.outcome && (
               <div className="px-6 pb-6 md:px-10">
-                <div className="rounded-2xl border border-border bg-surface/40 p-6">
-                  <h4 className={`font-display text-sm font-bold uppercase tracking-wider ${accentText[c.accent]}`}>
+                <div className="rounded-2xl border border-border border-l-4 border-l-emerald bg-emerald/5 p-6">
+                  <h4 className="font-display text-sm font-bold uppercase tracking-wider text-emerald">
                     Business Outcome
                   </h4>
                   <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
@@ -560,8 +559,8 @@ function CaseCard({ c }: { c: Case }) {
 
             {c.takeaway && (
               <div className="px-6 pb-6 md:px-10 md:pb-10">
-                <div className="rounded-2xl border border-border bg-surface/40 p-6">
-                  <h4 className={`font-display text-sm font-bold uppercase tracking-wider ${accentText[c.accent]}`}>
+                <div className="rounded-2xl border border-border border-l-4 border-l-primary bg-primary/5 p-6">
+                  <h4 className="font-display text-sm font-bold uppercase tracking-wider text-primary-glow">
                     Key Takeaway
                   </h4>
                   <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">

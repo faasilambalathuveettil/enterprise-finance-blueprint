@@ -123,7 +123,7 @@ export function Timeline() {
                     </p>
                     <div className="mt-4">
                       <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-                        Key Deliverables
+                        Highlights
                       </p>
                       <ul className="mt-2 grid grid-cols-1 gap-1 sm:grid-cols-2">
                         {t.achievements.map((a) => (
