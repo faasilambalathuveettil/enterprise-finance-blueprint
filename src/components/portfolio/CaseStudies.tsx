@@ -86,6 +86,7 @@ const cases: Case[] = [
     sections: [
       {
         title: "01 · Chart of Accounts Architecture",
+        priority: "primary",
         body: [
           "Designed a 110+ account Chart of Accounts across a four-level hierarchy (Group → Sub-Group → Account Head → Detail Account).",
           "Structured the model for multi-company, project, phase, and cost-centre reporting while redesigning the Balance Sheet with dedicated asset, accumulated depreciation, and expense mappings.",
@@ -93,6 +94,7 @@ const cases: Case[] = [
       },
       {
         title: "02 · ESS Payment Workflow",
+        priority: "primary",
         body: [
           "Replaced informal WhatsApp approvals with an 11-stage ERP workflow covering the complete payment lifecycle from Draft to Closed.",
           "Introduced role-based approvals, conditional routing, treasury separation, and a complete audit trail.",
@@ -106,6 +108,7 @@ const cases: Case[] = [
       },
       {
         title: "03 · Fixed Asset Register",
+        priority: "secondary",
         body: [
           "Designed the Fixed Asset Register covering nine asset groups with structured asset master data, useful life, depreciation rates, and accumulated depreciation.",
           "Automated monthly straight-line depreciation aligned with KSA Zakat/Income Tax Article 17, eliminating manual calculations and reducing posting risk.",
@@ -113,6 +116,7 @@ const cases: Case[] = [
       },
       {
         title: "04 · DPR Module",
+        priority: "secondary",
         body: [
           "Designed a dedicated Direct Payment Receipt workflow for post-execution treasury payments outside the standard approval cycle.",
           "Added 25 payment categories, mandatory supporting documentation, unique numbering, and full ERP audit traceability.",
@@ -120,6 +124,7 @@ const cases: Case[] = [
       },
       {
         title: "05 · HRMS Requirements",
+        priority: "secondary",
         body: [
           "Authored Employee Master Specification v2.0 comprising 58 fields across ten business categories.",
           "Defined calculated fields, expiry logic, dashboard requirements, bulk upload templates, and UI specifications to support future HRMS deployment.",
@@ -128,6 +133,7 @@ const cases: Case[] = [
       },
       {
         title: "06 · Bulk Upload Infrastructure",
+        priority: "supporting",
         body: [
           "Developed a controlled Excel-based bulk upload framework supporting approximately 1,500 monthly transactions across seven legal entities.",
           "Embedded validation rules, account mapping, dropdown controls, and company-project-phase eligibility to improve data quality before ERP import.",
@@ -135,6 +141,7 @@ const cases: Case[] = [
       },
       {
         title: "07 · Vendor Coordination & Requirements Engineering",
+        priority: "supporting",
         body: [
           "Acted as the finance point of contact throughout implementation.",
           "Authored functional specifications, coordinated user acceptance testing, validated configuration changes, and ensured ERP behaviour aligned with finance and business requirements.",
