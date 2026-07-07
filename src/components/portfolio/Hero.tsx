@@ -152,7 +152,7 @@ export function Hero() {
           {kpis.map((k, i) => (
             <div key={k.l} className="flex items-center gap-3">
               <div>
-                <div className="font-display text-lg font-bold text-primary-glow">{k.v}</div>
+                <div className="font-display text-xl font-bold text-primary-glow">{k.v}</div>
                 <div className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
                   {k.l}
                 </div>
