@@ -70,7 +70,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Finance Systems & ERP Transformation professional in Riyadh. Multi-entity ERP built from Excel baseline, ZATCA Phase 2 live across 3 entities, 110+ COA, AI-assisted automation. Ex-EY GDS. CertIFRS · ACCA (P) · SOCPA Eligible.",
+          "Finance Systems & ERP Transformation professional in Riyadh. Multi-entity ERP built from Excel baseline, ZATCA Phase 2 live across 3 entities, 110+ COA, AI-assisted automation. Ex-EY GDS. CertIFRS · ACCA — P Level · SOCPA Eligible.",
       },
       { name: "author", content: "Faasil Ambalathuveettil" },
       { property: "og:title", content: "Faasil Ambalathuveettil — ERP Finance Systems & Transformation Professional" },
