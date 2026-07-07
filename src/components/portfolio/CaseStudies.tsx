@@ -102,7 +102,7 @@ const cases: Case[] = [
     org: "Al Imtiaz · 3 entities live · June 2026",
     image: eyImg.url, // placeholder — using existing asset library
     headline:
-      "Saudi Arabia's ZATCA Phase 2 introduced mandatory real-time e-invoicing requirements that demanded coordinated changes across finance, ERP configuration, master data, and compliance processes. Success depended on translating regulatory guidance into practical ERP configuration, master data standards, testing procedures, and production-ready business workflows.",
+      "The transition to ZATCA Phase 2 required organisations to redesign how invoices were generated, validated, and reported. Success depended not only on technical ERP integration but also on aligning finance processes, master data, compliance controls, and operational workflows with evolving regulatory requirements.",
     metrics: [
       { k: "3", v: "Entities Live" },
       { k: "~7 wks", v: "CSID → Live" },
@@ -119,10 +119,16 @@ const cases: Case[] = [
       "Compliance Spec",
     ],
     accent: "emerald",
+    transition:
+      "Rather than treating compliance as a standalone technical project, the implementation focused on embedding regulatory requirements directly into finance operations through structured master data, ERP configuration, validation procedures, and controlled business workflows.",
+    outcome:
+      "The implementation established a repeatable compliance framework supporting three legal entities through standardised customer master data, structured testing, controlled invoice validation, and production-ready ERP processes. The outcome was not simply successful ZATCA integration — it strengthened governance, reduced compliance risk, and created a sustainable foundation for future regulatory change.",
+    takeaway:
+      "Successful regulatory transformation depends on integrating compliance into everyday business processes rather than treating it as a separate implementation exercise. This project demonstrates my approach to translating regulatory requirements into scalable finance systems that support both operational efficiency and long-term governance.",
     sections: [
       {
-        title: "01 · Business Requirements & Customer Master Spec",
-        body: "Authored the formal 11-field ZATCA Customer Master compliance specification — the single source of truth aligning finance, sales, and IT on data required for compliant invoices and credit notes.",
+        title: "01 · Compliance Data Standards",
+        body: "Designed the business-side customer master specification defining mandatory compliance attributes required for successful ERP integration, invoice validation, and production deployment.",
       },
       {
         title: "02 · ERP Specification & Vendor Coordination",

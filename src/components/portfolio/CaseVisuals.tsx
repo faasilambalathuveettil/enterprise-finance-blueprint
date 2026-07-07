@@ -142,7 +142,7 @@ const zatcaSteps = [
 ];
 function ZatcaVisual({ accent }: { accent: string }) {
   return (
-    <VisualFrame label="ZATCA Phase 2 · Go-Live Timeline" accent={accent}>
+    <VisualFrame label="Regulatory Implementation Journey" accent={accent}>
       <div className="relative">
         <div className="absolute left-2 top-1 h-full w-px bg-border md:left-1/2" />
         <ol className="space-y-4">
