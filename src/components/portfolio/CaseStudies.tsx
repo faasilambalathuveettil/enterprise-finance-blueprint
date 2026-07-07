@@ -20,6 +20,9 @@ type Case = {
   tags: string[];
   sections: Section[];
   accent: string;
+  transition?: string;
+  outcome?: string;
+  takeaway?: string;
 };
 
 const cases: Case[] = [
