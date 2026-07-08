@@ -193,3 +193,114 @@
 @utility shadow-glow {
   box-shadow: var(--shadow-glow);
 }
+
+/* --------------------------------------------------------------
+   Premium ambient motion — restrained, GPU-friendly.
+   -------------------------------------------------------------- */
+
+/* Ambient card sheen — oversized soft radial light drifting across
+   premium surfaces (Hero, flagship case cards, Business Outcome). */
+.ambient-sheen {
+  position: relative;
+}
+.ambient-sheen::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(40% 40% at 30% 30%, oklch(0.72 0.19 305 / 0.05), transparent 60%),
+    radial-gradient(40% 40% at 70% 70%, oklch(0.66 0.19 275 / 0.05), transparent 60%);
+  filter: blur(40px);
+  opacity: 0.7;
+  animation: ambient-sheen-drift 32s ease-in-out infinite;
+  will-change: transform;
+}
+
+
+@keyframes ambient-sheen-drift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(3%, -2%, 0); }
+}
+
+/* Flagship top-border animation — only shifts gradient position. */
+.flagship-border {
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  animation: flagship-border-drift 22s ease-in-out infinite;
+  will-change: background-position;
+}
+@keyframes flagship-border-drift {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+/* Premium card hover — soft lift + shadow, no scale, no bounce. */
+.card-hover {
+  transition:
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 48px -28px oklch(0 0 0 / 0.55);
+}
+
+/* Hero aurora — very soft blurred purple/blue drift. */
+.hero-aurora {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.hero-aurora::before,
+.hero-aurora::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  will-change: transform, opacity;
+}
+.hero-aurora::before {
+  width: 620px;
+  height: 620px;
+  top: -160px;
+  left: 20%;
+  background: oklch(0.66 0.19 275 / 0.10);
+  animation: hero-aurora-a 52s ease-in-out infinite;
+}
+.hero-aurora::after {
+  width: 520px;
+  height: 520px;
+  bottom: -160px;
+  right: 8%;
+  background: oklch(0.72 0.19 305 / 0.10);
+  animation: hero-aurora-b 60s ease-in-out infinite;
+}
+@keyframes hero-aurora-a {
+  0%, 100% { transform: translate3d(0, 0, 0); opacity: 0.9; }
+  50%      { transform: translate3d(-24px, 20px, 0); opacity: 1; }
+}
+@keyframes hero-aurora-b {
+  0%, 100% { transform: translate3d(0, 0, 0); opacity: 0.85; }
+  50%      { transform: translate3d(28px, -18px, 0); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-sheen::before,
+  .flagship-border,
+  .hero-aurora::before,
+  .hero-aurora::after {
+    animation: none;
+  }
+  .card-hover {
+    transition: none;
+  }
+  .card-hover:hover {
+    transform: none;
+  }
+}
+

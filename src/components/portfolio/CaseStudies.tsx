@@ -422,13 +422,13 @@ function CaseCard({ c }: { c: Case }) {
     <motion.article
       layout
       transition={{ layout: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }}
-      className="group relative overflow-hidden rounded-3xl border border-border bg-card backdrop-blur-md"
+      className="ambient-sheen card-hover group relative overflow-hidden rounded-3xl border border-border bg-card backdrop-blur-md"
     >
       {/* Subtle chapter glow — creates visual memory per flagship */}
       <div className={`pointer-events-none absolute -left-32 -top-32 h-64 w-64 rounded-full blur-3xl ${accentGlow[c.accent]}`} />
       <div className={`pointer-events-none absolute -right-32 bottom-0 h-64 w-64 rounded-full blur-3xl ${accentGlow[c.accent]} opacity-60`} />
       {/* Chapter accent bar — gives each flagship its own identity */}
-      <div className={`h-[3px] w-full ${accentBar[c.accent]}`} />
+      <div className={`flagship-border h-[3px] w-full ${accentBar[c.accent]}`} />
 
       <div className="grid grid-cols-1 md:grid-cols-[minmax(0,0.78fr)_minmax(0,1.45fr)]">
         {/* Image */}
@@ -436,10 +436,11 @@ function CaseCard({ c }: { c: Case }) {
           <img
             src={c.image}
             alt={c.title}
-            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            className="h-full w-full object-cover"
             loading="lazy"
           />
           <div className={`absolute inset-0 bg-gradient-to-br ${accentBg[c.accent]} mix-blend-overlay`} />
+
           <div className="absolute inset-0 bg-gradient-to-tr from-background/80 via-transparent to-transparent md:bg-gradient-to-r" />
           <span className={`absolute left-5 top-5 rounded-full border border-white/15 bg-black/40 px-3 py-1 text-[10px] font-bold uppercase tracking-widest backdrop-blur ${accentText[c.accent]}`}>
             {c.eyebrow}
@@ -629,7 +630,8 @@ function CaseCard({ c }: { c: Case }) {
 
             {c.outcome && (
               <div className="px-6 pb-6 md:px-10">
-                <div className="rounded-2xl border border-border border-l-4 border-l-emerald bg-emerald/5 p-6">
+                <div className="ambient-sheen relative overflow-hidden rounded-2xl border border-border border-l-4 border-l-emerald bg-emerald/5 p-6">
+
                   <h4 className="font-display text-sm font-bold uppercase tracking-wider text-emerald">
                     Business Outcome
                   </h4>
