@@ -133,44 +133,92 @@ export function Architecture() {
               </div>
             );
           })}
-        </div>
+          </div>
+        </Reveal>
 
-
-        <div className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-4 md:grid-cols-3">
-          {[
-            {
-              t: "Structured Master Data",
-              b: "A structured master data foundation supporting consistent reporting, automation, and compliance across multiple legal entities.",
-              chips: "110+ COA accounts · 58-field HRMS · 11-field Customer Master · Multi-Entity · Projects · Cost Centres",
-            },
-            {
-              t: "Workflow & Controls",
-              b: "Standardised approval workflows with embedded governance, treasury controls, conditional routing, and complete auditability.",
-              chips: "11-stage ESS · DPR Workflow · Treasury Separation · Audit Trail",
-            },
-            {
-              t: "Compliance by Design",
-              b: "Compliance is designed into the operating model rather than added afterwards.",
-              chips: "ZATCA Phase 2 · KSA VAT · Article 17 Depreciation · IFRS-aligned Reporting",
-            },
-          ].map((x) => (
-            <div
-              key={x.t}
-              className="rounded-2xl border border-border bg-surface/40 p-6"
-            >
-              <div className="font-display text-sm font-bold uppercase tracking-wider text-primary-glow">
-                {x.t}
+        <Reveal>
+          <div className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-4 md:grid-cols-3">
+            {[
+              {
+                t: "Structured Master Data",
+                b: "A structured master data foundation supporting consistent reporting, automation, and compliance across multiple legal entities.",
+                chips: "110+ COA accounts · 58-field HRMS · 11-field Customer Master · Multi-Entity · Projects · Cost Centres",
+              },
+              {
+                t: "Workflow & Controls",
+                b: "Standardised approval workflows with embedded governance, treasury controls, conditional routing, and complete auditability.",
+                chips: "11-stage ESS · DPR Workflow · Treasury Separation · Audit Trail",
+              },
+              {
+                t: "Compliance by Design",
+                b: "Compliance is designed into the operating model rather than added afterwards.",
+                chips: "ZATCA Phase 2 · KSA VAT · Article 17 Depreciation · IFRS-aligned Reporting",
+              },
+            ].map((x) => (
+              <div
+                key={x.t}
+                className="rounded-2xl border border-border bg-surface/40 p-6"
+              >
+                <div className="font-display text-sm font-bold uppercase tracking-wider text-primary-glow">
+                  {x.t}
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {x.b}
+                </p>
+                <p className="mt-3 text-xs leading-relaxed text-muted-foreground/70">
+                  {x.chips}
+                </p>
               </div>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {x.b}
-              </p>
-              <p className="mt-3 text-xs leading-relaxed text-muted-foreground/70">
-                {x.chips}
-              </p>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );
 }
+
+const EASE_OUT: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const FLOW_STAGGER = 0.13;
+
+function ArchitectureFlow() {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+  return (
+    <div ref={ref} className="mx-auto mb-16 max-w-5xl rounded-2xl border border-border bg-card/60 p-5 backdrop-blur-md md:p-7">
+      <div className="mb-4 text-center text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+        End-to-End Finance Architecture
+      </div>
+      <div className="flex flex-wrap items-stretch justify-center gap-2 md:gap-1">
+        {flow.map((s, i) => {
+          const Icon = s.icon;
+          const delay = 0.15 + i * FLOW_STAGGER;
+          return (
+            <div key={s.label} className="flex items-center gap-2 md:gap-1">
+              <motion.div
+                initial={{ opacity: 0, y: 14 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.32, ease: EASE_OUT, delay }}
+                className="flex min-w-[120px] flex-col items-center gap-2 rounded-xl border border-border bg-surface/60 px-3 py-3 md:min-w-[130px] md:px-4"
+              >
+                <Icon className={`h-5 w-5 ${s.tint}`} />
+                <div className="text-center font-display text-[12px] font-bold text-foreground md:text-[13px]">
+                  {s.label}
+                </div>
+              </motion.div>
+              {i < flow.length - 1 && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={inView ? { opacity: 1 } : {}}
+                  transition={{ duration: 0.28, ease: EASE_OUT, delay: delay + FLOW_STAGGER * 0.6 }}
+                >
+                  <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
+                </motion.div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
