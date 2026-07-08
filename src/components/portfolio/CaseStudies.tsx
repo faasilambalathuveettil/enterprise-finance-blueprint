@@ -108,7 +108,7 @@ const cases: Case[] = [
       },
       {
         title: "03 · Fixed Asset Register",
-        priority: "secondary",
+        priority: "primary",
         body: [
           "Designed the Fixed Asset Register covering nine asset groups with structured asset master data, useful life, depreciation rates, and accumulated depreciation.",
           "Automated monthly straight-line depreciation aligned with KSA Zakat/Income Tax Article 17, eliminating manual calculations and reducing posting risk.",
@@ -116,7 +116,7 @@ const cases: Case[] = [
       },
       {
         title: "04 · DPR Module",
-        priority: "secondary",
+        priority: "supporting",
         body: [
           "Designed a dedicated Direct Payment Receipt workflow for post-execution treasury payments outside the standard approval cycle.",
           "Added 25 payment categories, mandatory supporting documentation, unique numbering, and full ERP audit traceability.",
@@ -124,7 +124,7 @@ const cases: Case[] = [
       },
       {
         title: "05 · HRMS Requirements",
-        priority: "secondary",
+        priority: "supporting",
         body: [
           "Authored Employee Master Specification v2.0 comprising 58 fields across ten business categories.",
           "Defined calculated fields, expiry logic, dashboard requirements, bulk upload templates, and UI specifications to support future HRMS deployment.",
@@ -557,53 +557,75 @@ function CaseCard({ c }: { c: Case }) {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-5 px-6 pb-6 pt-4 md:grid-cols-2 md:px-10 md:pb-10">
-              {c.sections.map((s) => {
-                const p = s.priority ?? "secondary";
-                const isPrimary = p === "primary";
-                const isSupporting = p === "supporting";
-                const containerCls = isPrimary
-                  ? `md:col-span-2 rounded-2xl border border-border-strong border-l-4 bg-surface/60 p-7 shadow-elegant ${
+            {(() => {
+              const primarySections = c.sections.filter((s) => (s.priority ?? "secondary") === "primary");
+              const supportingSections = c.sections.filter((s) => (s.priority ?? "secondary") === "supporting");
+              const secondarySections = c.sections.filter((s) => (s.priority ?? "secondary") === "secondary");
+              const useSplit = primarySections.length > 0 && supportingSections.length > 0;
+
+              const renderCard = (s: Section, mode: "primary" | "supporting" | "secondary") => (
+                <div key={s.title} className={mode === "primary"
+                  ? `rounded-2xl border border-border-strong border-l-4 bg-surface/60 p-7 shadow-elegant ${
                       { primary: "border-l-primary", emerald: "border-l-emerald", amber: "border-l-amber", purple: "border-l-purple" }[c.accent]
                     }`
-                  : isSupporting
-                    ? "rounded-xl bg-surface/20 p-5"
-                    : "rounded-2xl border border-border bg-surface/40 p-6";
-                const titleCls = isPrimary
-                  ? `font-display text-base font-bold uppercase tracking-wider ${accentText[c.accent]}`
-                  : isSupporting
-                    ? "font-display text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground"
-                    : `font-display text-sm font-bold uppercase tracking-wider ${accentText[c.accent]}`;
-                const bodyCls = isSupporting
-                  ? "mt-2 space-y-2 text-[13px] leading-relaxed text-muted-foreground/90"
-                  : "mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground";
-                return (
-                  <div key={s.title} className={containerCls}>
-                    <h4 className={titleCls}>{s.title}</h4>
-                    <div className={bodyCls}>
-                      {toParas(s.body).map((para, i) => (
-                        <p key={i}>{para}</p>
-                      ))}
-                    </div>
-                    {s.bullets && (
-                      <ul className="mt-3 space-y-1.5">
-                        {s.bullets.map((b) => (
-                          <li
-                            key={b}
-                            className="flex items-start gap-2 text-[13px] text-muted-foreground"
-                          >
-                            <CheckCircle2
-                              className={`mt-0.5 h-3.5 w-3.5 shrink-0 ${accentText[c.accent]}`}
-                            />
-                            <span>{b}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+                  : mode === "supporting"
+                    ? "rounded-xl border border-border bg-surface/40 p-5"
+                    : "rounded-2xl border border-border bg-surface/40 p-6"
+                }>
+                  <h4 className={mode === "primary"
+                    ? `font-display text-base font-bold uppercase tracking-wider ${accentText[c.accent]}`
+                    : mode === "supporting"
+                      ? `font-display text-sm font-bold uppercase tracking-wider ${accentText[c.accent]}`
+                      : `font-display text-sm font-bold uppercase tracking-wider ${accentText[c.accent]}`
+                  }>{s.title}</h4>
+                  <div className={mode === "supporting"
+                    ? "mt-2 space-y-2 text-[13px] leading-relaxed text-muted-foreground/90"
+                    : "mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground"
+                  }>
+                    {toParas(s.body).map((para, i) => (
+                      <p key={i}>{para}</p>
+                    ))}
                   </div>
+                  {s.bullets && (
+                    <ul className={mode === "supporting" ? "mt-2 space-y-1" : "mt-3 space-y-1.5"}>
+                      {s.bullets.map((b) => (
+                        <li key={b} className={`flex items-start gap-2 text-muted-foreground ${mode === "supporting" ? "text-[12px]" : "text-[13px]"}`}>
+                          <CheckCircle2 className={`shrink-0 ${accentText[c.accent]} ${mode === "supporting" ? "mt-0.5 h-3 w-3" : "mt-0.5 h-3.5 w-3.5"}`} />
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              );
+
+              if (useSplit) {
+                return (
+                  <>
+                    <div className="space-y-5 px-6 pb-6 pt-4 md:px-10">
+                      {primarySections.map((s) => renderCard(s, "primary"))}
+                    </div>
+                    <div className="px-6 md:px-10">
+                      <div className={`text-[11px] font-bold uppercase tracking-widest ${accentText[c.accent]}`}>
+                        Supporting Solution Components
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-1 gap-4 px-6 pb-6 pt-4 md:grid-cols-2 md:px-10">
+                      {supportingSections.map((s) => renderCard(s, "supporting"))}
+                    </div>
+                  </>
                 );
-              })}
-            </div>
+              }
+
+              return (
+                <div className="grid grid-cols-1 gap-5 px-6 pb-6 pt-4 md:grid-cols-2 md:px-10 md:pb-10">
+                  {c.sections.map((s) => {
+                    const p = s.priority ?? "secondary";
+                    return renderCard(s, p as "primary" | "supporting" | "secondary");
+                  })}
+                </div>
+              );
+            })()}
 
             {c.outcome && (
               <div className="px-6 pb-6 md:px-10">
