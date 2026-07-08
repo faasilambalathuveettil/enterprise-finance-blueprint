@@ -152,12 +152,12 @@ const cases: Case[] = [
     id: "zatca",
     eyebrow: "Flagship 02 — KSA Regulatory Transformation",
     title: "ZATCA Phase 2 e-Invoicing Integration",
-    org: "Al Imtiaz · 3 entities live · June 2026",
+    org: "Business-side ERP implementation for Saudi Phase 2 compliance across three legal entities.",
     image: eyImg.url,
 
     headline: [
-      "Saudi Arabia's transition to ZATCA Phase 2 required organisations to redesign how invoices were created, validated, transmitted, and monitored.",
-      "Success depended on more than ERP integration. It required finance processes, master data, compliance controls, and operational workflows to work together within a single, production-ready framework.",
+      "Saudi Arabia's transition to ZATCA Phase 2 required more than connecting an ERP to a government platform.",
+      "Finance master data, invoice validation, document numbering, compliance controls, and operational workflows all had to be redesigned before invoices could be issued in production.",
     ],
     metrics: [
       { k: "3", v: "Entities Live" },
