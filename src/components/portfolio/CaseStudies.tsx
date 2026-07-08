@@ -11,10 +11,10 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import erpImg from "@/assets/project-erp.jpg.asset.json";
-import aiImg from "@/assets/project-ai.jpg.asset.json";
-import eyImg from "@/assets/project-ey.jpg.asset.json";
-import commercialImg from "@/assets/project-commercial.jpg.asset.json";
+import erpImg from "@/assets/project-erp.jpg";
+import aiImg from "@/assets/project-ai.jpg";
+import eyImg from "@/assets/project-ey.jpg";
+import commercialImg from "@/assets/project-commercial.jpg";
 
 type Paragraphs = string | string[];
 type Priority = "primary" | "secondary" | "supporting";
@@ -47,7 +47,7 @@ const cases: Case[] = [
     eyebrow: "Flagship 01 — End-to-End Build",
     title: "Multi-Entity ERP Finance System",
     org: "Al Imtiaz Corner Logistics · 5 Legal Entities",
-    image: erpImg.url,
+    image: erpImg,
     headline: [
       "The organisation operated seven legal entities using spreadsheet-based accounting, fragmented approval workflows, and inconsistent financial structures that limited visibility, governance, and scalability.",
       "The objective extended beyond implementing ERP software. It required designing a finance operating model capable of supporting growth while maintaining uninterrupted finance operations.",
@@ -153,7 +153,7 @@ const cases: Case[] = [
     eyebrow: "Flagship 02 — KSA Regulatory Transformation",
     title: "ZATCA Phase 2 e-Invoicing Integration",
     org: "Business-side ERP Implementation · 3 Legal Entities",
-    image: eyImg.url,
+    image: eyImg,
 
     headline: [
       "Saudi Arabia's transition to ZATCA Phase 2 required more than connecting an ERP to a government platform.",
@@ -236,7 +236,7 @@ const cases: Case[] = [
     eyebrow: "Flagship 03 — Regulatory Intelligence & AI Workflows",
     title: "EY Regulatory Intelligence & AI Workflows",
     org: "Ernst & Young GDS · 3 Awards",
-    image: eyImg.url,
+    image: eyImg,
     headline: [
       "Financial institutions operate in fast-changing regulatory environments where new guidance must be analysed, interpreted, and communicated quickly.",
       "The challenge was to convert large volumes of regulatory publications into structured, actionable intelligence that business teams could understand and apply with confidence.",
@@ -315,7 +315,7 @@ const cases: Case[] = [
     eyebrow: "Flagship 04 — Practical AI at Work",
     title: "Finance Process Automation",
     org: "Google Opal · Apps Script · AI Workflow Automation",
-    image: aiImg.url,
+    image: aiImg,
     headline: [
       "Many finance teams continue to rely on repetitive document handling, spreadsheet manipulation, and manual data extraction for routine processes.",
       "My objective has been to apply practical automation that reduces manual effort while preserving finance-grade accuracy, traceability, and operational control.",
@@ -672,7 +672,7 @@ function CaseCard({ c }: { c: Case }) {
 }
 
 // Override ZATCA image with commercial (better fit) — small assignment before render
-cases[1].image = commercialImg.url;
+cases[1].image = commercialImg;
 
 export function CaseStudies() {
   return (
