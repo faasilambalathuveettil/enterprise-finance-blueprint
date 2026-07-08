@@ -42,7 +42,7 @@ export function Approach() {
                 const Icon = s.icon;
                 return (
                   <div key={s.label} className="flex items-center gap-2 md:gap-1">
-                    <div className="flex min-w-[110px] flex-col items-center gap-2 rounded-xl border border-border bg-surface/60 px-3 py-4 md:min-w-[130px]">
+                    <div className="flex min-w-[120px] flex-col items-center gap-1.5 rounded-xl border border-border bg-surface/60 px-3 py-4 md:min-w-[150px]">
                       <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-background/60">
                         <Icon className={`h-4 w-4 ${s.tint}`} />
                       </div>
@@ -51,6 +51,9 @@ export function Approach() {
                       </div>
                       <div className="text-center font-display text-[13px] font-bold text-foreground">
                         {s.label}
+                      </div>
+                      <div className="text-center text-[11px] leading-tight text-muted-foreground">
+                        {s.descriptor}
                       </div>
                     </div>
                     {i < steps.length - 1 && (
