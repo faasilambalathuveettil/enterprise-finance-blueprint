@@ -60,7 +60,7 @@ export function Nav() {
             ))}
             <a
               href={resumeAsset}
-              download
+              download="Faasil_Ambalathuveettil_Resume.pdf"
               className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-[12px] font-semibold text-primary-foreground shadow-glow transition-all hover:brightness-110"
             >
               <Download className="h-3.5 w-3.5" />
@@ -97,7 +97,7 @@ export function Nav() {
             ))}
             <a
               href={resumeAsset}
-              download
+              download="Faasil_Ambalathuveettil_Resume.pdf"
               onClick={() => setOpen(false)}
               className="mt-4 inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
             >
