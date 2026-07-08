@@ -29,9 +29,9 @@ export function Approach() {
         <Reveal className="mb-12 text-center">
           <SectionEyebrow>My Approach</SectionEyebrow>
           <h2 className="font-display text-3xl font-bold md:text-5xl">
-            Every transformation follows a{" "}
-            <span className="text-gradient">structured approach</span>—understanding
-            business requirements before designing systems that can scale.
+            Every transformation starts with understanding the{" "}
+            <span className="text-gradient">business</span>—then designing systems
+            that can scale.
           </h2>
         </Reveal>
 
