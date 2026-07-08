@@ -630,7 +630,8 @@ function CaseCard({ c }: { c: Case }) {
 
             {c.outcome && (
               <div className="px-6 pb-6 md:px-10">
-                <div className="rounded-2xl border border-border border-l-4 border-l-emerald bg-emerald/5 p-6">
+                <div className="ambient-sheen relative overflow-hidden rounded-2xl border border-border border-l-4 border-l-emerald bg-emerald/5 p-6">
+
                   <h4 className="font-display text-sm font-bold uppercase tracking-wider text-emerald">
                     Business Outcome
                   </h4>
