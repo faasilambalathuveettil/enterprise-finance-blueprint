@@ -261,12 +261,12 @@ const cases: Case[] = [
       "Rather than replacing human judgement, the objective was to augment regulatory analysis with AI-assisted workflows that improved speed, consistency, and knowledge quality while maintaining expert oversight.",
     ],
     outcome: [
-      "The redesigned workflow improved processing efficiency by approximately 30–40% while maintaining review quality through structured validation and human oversight.",
-      "Standardised outputs improved consistency, strengthened knowledge sharing, and enabled regulatory teams to process complex information more efficiently.",
+      "Improved regulatory intelligence throughput by approximately 30–40% through workflow redesign, AI-assisted classification, and structured human validation while maintaining output quality.",
+      "Created a repeatable knowledge delivery framework that improved consistency, accelerated regulatory analysis, and supported more effective decision-making.",
     ],
     takeaway: [
-      "Effective regulatory intelligence is not about processing more documents—it is about transforming complex regulatory information into structured, consistent, and actionable knowledge.",
-      "This experience strengthened my ability to combine finance expertise, regulatory analysis, and AI-assisted workflows to improve both operational efficiency and decision-making.",
+      "This project demonstrated that combining finance expertise with structured AI workflows can transform complex regulatory information into scalable business intelligence.",
+      "The same systems-thinking approach now underpins my work in ERP architecture, finance transformation, process automation, and compliance implementation.",
     ],
     sections: [
       {
