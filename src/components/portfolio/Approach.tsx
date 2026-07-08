@@ -1,4 +1,6 @@
 import { Reveal, SectionEyebrow } from "./shared";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import {
   Search,
   Map as MapIcon,
@@ -18,7 +20,14 @@ const steps = [
   { icon: TrendingUp, label: "Improve", tint: "text-emerald" },
 ];
 
+const EASE_OUT: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const STEP_STAGGER = 0.13;
+const STEP_DURATION = 0.32;
+
 export function Approach() {
+  const flowRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(flowRef, { once: true, margin: "-80px" });
+
   return (
     <section
       id="approach"
@@ -35,14 +44,20 @@ export function Approach() {
           </h2>
         </Reveal>
 
-        <Reveal delay={0.05}>
+        <div ref={flowRef}>
           <div className="rounded-2xl border border-border bg-card/60 p-5 backdrop-blur-md md:p-8">
             <div className="flex flex-wrap items-stretch justify-center gap-2 md:gap-1">
               {steps.map((s, i) => {
                 const Icon = s.icon;
+                const delay = 0.15 + i * STEP_STAGGER;
                 return (
                   <div key={s.label} className="flex items-center gap-2 md:gap-1">
-                    <div className="flex min-w-[110px] flex-col items-center gap-2 rounded-xl border border-border bg-surface/60 px-3 py-4 md:min-w-[130px]">
+                    <motion.div
+                      initial={{ opacity: 0, y: 14 }}
+                      animate={inView ? { opacity: 1, y: 0 } : {}}
+                      transition={{ duration: STEP_DURATION, ease: EASE_OUT, delay }}
+                      className="flex min-w-[110px] flex-col items-center gap-2 rounded-xl border border-border bg-surface/60 px-3 py-4 md:min-w-[130px]"
+                    >
                       <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-background/60">
                         <Icon className={`h-4 w-4 ${s.tint}`} />
                       </div>
@@ -52,17 +67,28 @@ export function Approach() {
                       <div className="text-center font-display text-[13px] font-bold text-foreground">
                         {s.label}
                       </div>
-                    </div>
+                    </motion.div>
                     {i < steps.length - 1 && (
-                      <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={inView ? { opacity: 1 } : {}}
+                        transition={{
+                          duration: 0.28,
+                          ease: EASE_OUT,
+                          delay: delay + STEP_STAGGER * 0.6,
+                        }}
+                      >
+                        <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
+                      </motion.div>
                     )}
                   </div>
                 );
               })}
             </div>
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );
 }
+
