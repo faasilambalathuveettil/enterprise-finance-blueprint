@@ -46,7 +46,7 @@ const cases: Case[] = [
     id: "erp",
     eyebrow: "Flagship 01 — End-to-End Build",
     title: "Multi-Entity ERP Finance System",
-    org: "Al Imtiaz Corner Logistics · Nov 2025 → Present",
+    org: "Al Imtiaz Corner Logistics · 5 Legal Entities",
     image: erpImg.url,
     headline: [
       "The organisation operated seven legal entities using spreadsheet-based accounting, fragmented approval workflows, and inconsistent financial structures that limited visibility, governance, and scalability.",
@@ -152,7 +152,7 @@ const cases: Case[] = [
     id: "zatca",
     eyebrow: "Flagship 02 — KSA Regulatory Transformation",
     title: "ZATCA Phase 2 e-Invoicing Integration",
-    org: "Business-side ERP implementation for Saudi Phase 2 compliance across three legal entities.",
+    org: "Business-side ERP Implementation · 3 Legal Entities",
     image: eyImg.url,
 
     headline: [
@@ -235,7 +235,7 @@ const cases: Case[] = [
     id: "ey",
     eyebrow: "Flagship 03 — Regulatory Intelligence & AI Workflows",
     title: "EY Regulatory Intelligence & AI Workflows",
-    org: "Ernst & Young GDS · 2.5 Years · 3 Awards",
+    org: "Ernst & Young GDS · 3 Awards",
     image: eyImg.url,
     headline: [
       "Financial institutions operate in fast-changing regulatory environments where new guidance must be analysed, interpreted, and communicated quickly.",
@@ -314,7 +314,7 @@ const cases: Case[] = [
     id: "automation",
     eyebrow: "Flagship 04 — Practical AI at Work",
     title: "Finance Process Automation",
-    org: "Google Opal · Apps Script · Spreadsheet Engineering",
+    org: "Google Opal · Apps Script · AI Workflow Automation",
     image: aiImg.url,
     headline: [
       "Many finance teams continue to rely on repetitive document handling, spreadsheet manipulation, and manual data extraction for routine processes.",
