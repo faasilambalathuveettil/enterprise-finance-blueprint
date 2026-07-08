@@ -7,62 +7,72 @@ import {
   Layers,
 } from "lucide-react";
 
-const pillars = [
+type Pillar = {
+  icon: typeof Layers;
+  tint: string;
+  title: string;
+  lead: string;
+  highlight?: string;
+  bullets?: string[];
+  closer?: string;
+};
+
+const pillars: Pillar[] = [
   {
     icon: Layers,
     tint: "primary",
     title: "Finance Systems Transformation",
-    body: [
-      "I help organisations replace fragmented, spreadsheet-driven finance operations with structured ERP operating models that improve governance, decision-making, and long-term scalability.",
-      "The outcome isn't simply a new ERP system—it is a finance function designed to grow.",
-    ] as [string, string],
+    lead: "I help organisations replace fragmented, spreadsheet-driven finance operations with structured ERP operating models that improve governance, decision-making, and long-term scalability.",
+    highlight: "The outcome isn't simply a new ERP system—it is a finance function designed to grow.",
   },
   {
     icon: Building2,
     tint: "emerald",
     title: "ERP Transformation",
-    body: [
-      "At Al Imtiaz, I supported the transition from Excel-based accounting across seven legal entities to a structured ERP operating model.",
-      "I designed the underlying finance operating model—including Chart of Accounts, payment workflows, reporting structures, Fixed Asset Register, HRMS requirements, and master data—while ensuring uninterrupted live finance operations throughout implementation.",
-    ] as [string, string],
+    lead: "Transitioned seven legal entities from spreadsheet-based accounting to a structured ERP operating model.",
+    bullets: [
+      "Chart of Accounts",
+      "Payment workflows",
+      "Reporting structure",
+      "Fixed Asset Register",
+      "HRMS requirements",
+      "Master data",
+    ],
+    closer: "Delivered while maintaining uninterrupted finance operations.",
   },
   {
     icon: ShieldCheck,
     tint: "amber",
     title: "Compliance by Design",
-    body: [
-      "Effective compliance should be embedded into daily operations—not treated as a separate project.",
-      "I translated Saudi ZATCA Phase 2 requirements into ERP specifications, customer master standards, testing procedures, and production-ready workflows that enabled successful go-live across multiple entities.",
-    ] as [string, string],
+    lead: "Compliance should be embedded into finance operations—not added afterwards.",
+    closer:
+      "Translated Saudi ZATCA Phase 2 requirements into ERP specifications, customer master standards, testing procedures, and production-ready workflows supporting successful go-live across multiple entities.",
   },
   {
     icon: Zap,
     tint: "purple",
     title: "Practical AI",
-    body: [
-      "I use AI to strengthen finance operations—not replace financial judgement.",
-      "From Google Opal document extraction to AI-assisted regulatory workflows at EY, my focus has been practical automation that improves consistency, reduces manual effort, and maintains audit-quality outputs.",
-    ] as [string, string],
+    lead: "I use AI to strengthen finance operations—not replace financial judgement.",
+    closer:
+      "Built practical AI workflows using Google Opal and EY AI tools to automate document processing while maintaining audit-quality outputs.",
   },
   {
     icon: Globe2,
     tint: "primary",
     title: "Building Systems That Scale",
-    body: [
-      "Across every role—from regulatory intelligence at EY to ERP implementation in Saudi Arabia—the same capability has remained consistent:",
-      "translating finance, business, and regulatory requirements into structured systems that improve governance, operational efficiency, and long-term scalability.",
-    ] as [string, string],
+    lead: "Across EY, ERP implementation, and finance operations, one capability has remained consistent: translating finance, operational, and regulatory requirements into scalable business systems.",
   },
 ];
 
-const tintClass: Record<string, { bg: string; text: string }> = {
-  primary: { bg: "bg-primary/15", text: "text-primary-glow" },
-  emerald: { bg: "bg-emerald/15", text: "text-emerald" },
-  purple: { bg: "bg-purple/15", text: "text-purple" },
-  amber: { bg: "bg-amber/15", text: "text-amber" },
+const tintClass: Record<string, { bg: string; text: string; bullet: string }> = {
+  primary: { bg: "bg-primary/15", text: "text-primary-glow", bullet: "bg-primary-glow" },
+  emerald: { bg: "bg-emerald/15", text: "text-emerald", bullet: "bg-emerald" },
+  purple: { bg: "bg-purple/15", text: "text-purple", bullet: "bg-purple" },
+  amber: { bg: "bg-amber/15", text: "text-amber", bullet: "bg-amber" },
 };
 
 export function ExecutiveSummary() {
+  const lead = pillars[0];
   return (
     <section id="summary" className="relative px-4 pb-20 pt-14 md:px-8 md:pb-24 md:pt-16">
       <div className="mx-auto max-w-6xl">
@@ -83,14 +93,16 @@ export function ExecutiveSummary() {
                   <Layers className="h-5 w-5" strokeWidth={2} />
                 </div>
                 <h3 className="font-display text-[24px] font-semibold leading-tight text-foreground md:text-[30px]">
-                  {pillars[0].title}
+                  {lead.title}
                 </h3>
               </div>
               <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-muted-foreground md:text-[16px]">
-                <p>{pillars[0].body[0]}</p>
-                <p className="rounded-lg border-l-2 border-primary/60 bg-primary/5 py-3 pl-5 text-[17px] font-semibold leading-relaxed text-foreground md:text-[18px]">
-                  {pillars[0].body[1]}
-                </p>
+                <p>{lead.lead}</p>
+                {lead.highlight && (
+                  <p className="rounded-lg border-l-2 border-primary/60 bg-primary/5 py-3 pl-5 text-[17px] font-semibold leading-relaxed text-foreground md:text-[18px]">
+                    {lead.highlight}
+                  </p>
+                )}
               </div>
             </div>
           </Reveal>
@@ -111,8 +123,18 @@ export function ExecutiveSummary() {
                     {p.title}
                   </h3>
                   <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-muted-foreground">
-                    <p>{p.body[0]}</p>
-                    <p>{p.body[1]}</p>
+                    <p>{p.lead}</p>
+                    {p.bullets && (
+                      <ul className="grid grid-cols-1 gap-1.5 pt-1 sm:grid-cols-2">
+                        {p.bullets.map((b) => (
+                          <li key={b} className="flex items-center gap-2 text-[14px] text-foreground/90">
+                            <span className={`h-1.5 w-1.5 rounded-full ${t.bullet}`} />
+                            {b}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {p.closer && <p>{p.closer}</p>}
                   </div>
                 </div>
               </Reveal>
