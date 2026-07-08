@@ -82,7 +82,7 @@ export function ExecutiveSummary() {
                 <div className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary-glow">
                   <Layers className="h-5 w-5" strokeWidth={2} />
                 </div>
-                <h3 className="font-display text-[26px] font-semibold leading-tight text-foreground md:text-[32px]">
+                <h3 className="font-display text-[24px] font-semibold leading-tight text-foreground md:text-[30px]">
                   {pillars[0].title}
                 </h3>
               </div>
