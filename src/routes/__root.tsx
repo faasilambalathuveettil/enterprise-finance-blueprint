@@ -73,21 +73,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Finance Systems & ERP Transformation professional in Riyadh. Multi-entity ERP built from Excel baseline, ZATCA Phase 2 live across 3 entities, 110+ COA, AI-assisted automation. Ex-EY GDS. CertIFRS · ACCA — P Level · SOCPA Eligible.",
       },
       { name: "author", content: "Faasil Ambalathuveettil" },
-      { property: "og:title", content: "Faasil Ambalathuveettil — ERP Finance Systems & Transformation Professional" },
+      { property: "og:title", content: "Faasil Ambalathuveettil — ERP Finance Systems & Transformation, Riyadh" },
       {
         property: "og:description",
         content:
-          "Most finance teams learn to use systems. I build them. Multi-entity ERP, ZATCA Phase 2 live, AI-assisted finance automation.",
+          "Finance Systems & ERP Transformation professional in Riyadh. Multi-entity ERP built from Excel baseline, ZATCA Phase 2 live across 3 entities, 110+ COA, AI-assisted automation. Ex-EY GDS. CertIFRS · ACCA — P Level · SOCPA Eligible.",
       },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Faasil Ambalathuveettil" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Faasil Ambalathuveettil — ERP Finance Systems" },
+      { name: "twitter:title", content: "Faasil Ambalathuveettil — ERP Finance Systems & Transformation, Riyadh" },
       {
         name: "twitter:description",
         content:
-          "Finance Systems & ERP Transformation professional. Multi-entity ERP, ZATCA Phase 2, AI automation. Riyadh, KSA.",
+          "Finance Systems & ERP Transformation professional in Riyadh. Multi-entity ERP built from Excel baseline, ZATCA Phase 2 live across 3 entities, 110+ COA, AI-assisted automation. Ex-EY GDS. CertIFRS · ACCA — P Level · SOCPA Eligible.",
       },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/41d80a58-eeb0-45c5-bb2c-b2621b7b1ab9/id-preview-997baab7--b87b7661-204a-414e-b4e5-d3e3122cb418.lovable.app-1783503245104.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/41d80a58-eeb0-45c5-bb2c-b2621b7b1ab9/id-preview-997baab7--b87b7661-204a-414e-b4e5-d3e3122cb418.lovable.app-1783503245104.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
