@@ -46,10 +46,7 @@ export function Contact() {
             Open to <span className="text-gradient">Finance Systems & Transformation Opportunities</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
-            I am open to opportunities across ERP Finance Systems, Finance Transformation, Business Systems Analysis, and Process Improvement.
-          </p>
-          <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
-            If your organisation is modernising finance operations or implementing enterprise systems, I'd welcome the opportunity to discuss how I can contribute.
+            I help organisations translate finance requirements into scalable systems, structured processes, and compliant operating models. If you're modernising finance operations or implementing ERP solutions, I'd welcome the opportunity to connect.
           </p>
         </Reveal>
 
