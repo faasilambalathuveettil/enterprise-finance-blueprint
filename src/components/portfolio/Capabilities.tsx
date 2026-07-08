@@ -87,7 +87,7 @@ export function Capabilities() {
           <SectionEyebrow>Core Competencies</SectionEyebrow>
           <h2 className="font-display text-3xl font-bold md:text-5xl">
             Bridging{" "}
-            <span className="text-gradient">Finance, Systems, and AI</span>
+            <span className="text-gradient">Finance, Systems & AI</span>
           </h2>
         </Reveal>
 
