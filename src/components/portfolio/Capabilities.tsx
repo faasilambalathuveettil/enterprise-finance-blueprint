@@ -74,8 +74,8 @@ const certs = [
   },
   {
     icon: Award,
-    name: "EY Spot Award",
-    body: "Recognition for RegTech / AI classification engineering",
+    name: "3× EY Recognition Awards",
+    body: "Two Spot Awards and one GDS User Recognition Award from the onshore team",
     tint: "text-purple",
   },
 ];

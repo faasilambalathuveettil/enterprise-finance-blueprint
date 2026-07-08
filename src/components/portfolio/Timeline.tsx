@@ -34,7 +34,7 @@ const timeline = [
     ],
     tags: ["EYQ", "RegTech", "Prompt Engineering", "4 Jurisdictions"],
     accent: "amber",
-    award: "EY Spot Award",
+    award: "2× EY Spot + GDS Recognition",
   },
   {
     when: "May 2022 — Nov 2022",
