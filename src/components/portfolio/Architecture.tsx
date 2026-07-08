@@ -60,14 +60,11 @@ export function Architecture() {
           </p>
         </Reveal>
 
-        {/* End-to-end architecture flow */}
         {/* End-to-end architecture flow — sequential reveal like Approach */}
         <ArchitectureFlow />
 
-
-
-
-        <div className="relative mx-auto grid max-w-5xl grid-cols-2 gap-4 md:grid-cols-4">
+        <Reveal>
+          <div className="relative mx-auto grid max-w-5xl grid-cols-2 gap-4 md:grid-cols-4">
           {/* Connector lines radiating from center to each module (desktop only) */}
           <svg
             aria-hidden
