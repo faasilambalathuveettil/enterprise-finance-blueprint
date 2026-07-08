@@ -11,10 +11,10 @@ type Pillar = {
   icon: typeof Layers;
   tint: string;
   title: string;
-  lead: string;
+  lead: string | string[];
   highlight?: string;
   bullets?: string[];
-  closer?: string;
+  closer?: string | string[];
 };
 
 const pillars: Pillar[] = [
@@ -45,8 +45,10 @@ const pillars: Pillar[] = [
     tint: "amber",
     title: "Compliance by Design",
     lead: "Compliance should be embedded into finance operations—not added afterwards.",
-    closer:
-      "Translated Saudi ZATCA Phase 2 requirements into ERP specifications, customer master standards, and testing procedures. Delivered production-ready workflows supporting successful go-live across multiple entities.",
+    closer: [
+      "Translated Saudi ZATCA Phase 2 requirements into ERP specifications, customer master standards, and testing procedures.",
+      "Delivered production-ready workflows that enabled successful go-live across multiple entities.",
+    ],
   },
   {
     icon: Zap,
@@ -60,7 +62,10 @@ const pillars: Pillar[] = [
     icon: Globe2,
     tint: "primary",
     title: "Building Systems That Scale",
-    lead: "Across EY, ERP implementation, and finance operations, one capability has remained constant: translating finance, operational, and regulatory requirements into scalable business systems.",
+    lead: [
+      "Across EY, ERP implementation, and finance operations, one capability has remained constant:",
+      "Translating finance, operational, and regulatory requirements into scalable business systems.",
+    ],
   },
 ];
 
@@ -123,7 +128,11 @@ export function ExecutiveSummary() {
                     {p.title}
                   </h3>
                   <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-muted-foreground">
-                    <p>{p.lead}</p>
+                    {Array.isArray(p.lead) ? (
+                      p.lead.map((s, j) => <p key={j}>{s}</p>)
+                    ) : (
+                      <p>{p.lead}</p>
+                    )}
                     {p.bullets && (
                       <ul className="grid grid-cols-1 gap-1.5 pt-1 sm:grid-cols-2">
                         {p.bullets.map((b) => (
@@ -134,7 +143,13 @@ export function ExecutiveSummary() {
                         ))}
                       </ul>
                     )}
-                    {p.closer && <p>{p.closer}</p>}
+                    {p.closer && (
+                      Array.isArray(p.closer) ? (
+                        p.closer.map((s, j) => <p key={j}>{s}</p>)
+                      ) : (
+                        <p>{p.closer}</p>
+                      )
+                    )}
                   </div>
                 </div>
               </Reveal>
