@@ -225,7 +225,7 @@ export function Deliverables() {
             Selected <span className="text-gradient">Deliverables</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-sm text-muted-foreground md:text-base">
-            Representative artefacts from live implementations. Client-specific information has been anonymised while preserving the underlying structure, business logic, and workflow design. Additional documentation can be shared under NDA where appropriate.
+            Representative deliverables recreated from live implementations. Client-specific information has been anonymised while preserving the underlying structure, business logic, and solution design. Additional documentation can be shared where appropriate under NDA.
           </p>
         </Reveal>
 
@@ -267,7 +267,7 @@ export function Deliverables() {
 
         <Reveal delay={0.2} className="mt-10 text-center">
           <p className="text-xs text-muted-foreground">
-            Illustrations represent authentic solution structures and workflow designs. Client names, values, and confidential information have been anonymised while preserving the technical implementation approach.
+            Illustrations are reconstructed representations of production deliverables. Client names, financial data, and confidential information have been removed while preserving the underlying architecture, workflow logic, and implementation approach.
           </p>
         </Reveal>
       </div>
