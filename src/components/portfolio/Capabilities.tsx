@@ -52,32 +52,6 @@ const groups = [
   },
 ];
 
-const certs = [
-  {
-    icon: BadgeCheck,
-    name: "CertIFRS",
-    body: "IFRS Certified — ACCA",
-    tint: "text-primary-glow",
-  },
-  {
-    icon: GraduationCap,
-    name: "ACCA — P Level",
-    body: "Association of Chartered Certified Accountants — Professional Level pursuing",
-    tint: "text-emerald",
-  },
-  {
-    icon: Award,
-    name: "SOCPA Eligible",
-    body: "Saudi Organization for Chartered and Professional Accountants",
-    tint: "text-amber",
-  },
-  {
-    icon: Award,
-    name: "3× EY Recognition Awards",
-    body: "Two Spot Awards and one GDS User Recognition Award from the onshore team",
-    tint: "text-purple",
-  },
-];
 
 export function Capabilities() {
   return (
