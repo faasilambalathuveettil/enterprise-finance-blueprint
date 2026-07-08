@@ -1,5 +1,10 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { Reveal, SectionEyebrow } from "./shared";
+
+const FLOW_EASE_OUT: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const FLOW_STAGGER = 0.13;
+const FLOW_DURATION = 0.32;
 import {
   Landmark,
   ShoppingCart,
