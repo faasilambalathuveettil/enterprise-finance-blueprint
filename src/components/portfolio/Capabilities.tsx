@@ -48,7 +48,6 @@ const groups = [
       "Treasury",
       "Fixed Assets",
       "Intercompany",
-      "Reporting",
     ],
   },
 ];
