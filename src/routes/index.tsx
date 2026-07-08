@@ -29,6 +29,7 @@ function PortfolioPage() {
       <Timeline />
       <Capabilities />
       <Deliverables />
+      <Certifications />
       <Contact />
       <Footer />
     </main>
