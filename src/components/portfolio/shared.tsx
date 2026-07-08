@@ -125,10 +125,10 @@ export function Reveal({
   const MotionTag = motion(Tag as React.ElementType);
   return (
     <MotionTag
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay }}
+      transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1], delay }}
       className={className}
     >
       {children}
