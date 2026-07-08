@@ -163,20 +163,19 @@ export function Architecture() {
             return (
               <motion.div
                 key={m.label}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.5, delay: i * 0.06 }}
-                className="group relative z-10 rounded-2xl border border-border bg-card p-5 backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow"
+                transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 }}
+                className="card-hover relative z-10 rounded-2xl border border-border bg-card p-5 backdrop-blur-md"
               >
-                <Icon className={`h-6 w-6 ${m.tint} transition-transform duration-500 group-hover:scale-110`} />
+                <Icon className={`h-6 w-6 ${m.tint}`} />
                 <div className="mt-3 font-display text-sm font-bold text-foreground">
                   {m.label}
                 </div>
                 <div className="mt-1 text-[10px] uppercase tracking-widest text-muted-foreground">
                   Module
                 </div>
-                <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ background: "radial-gradient(circle at 50% 0%, oklch(0.78 0.16 285 / 0.10), transparent 70%)" }} />
               </motion.div>
             );
           })}
