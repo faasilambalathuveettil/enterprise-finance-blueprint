@@ -634,6 +634,11 @@ function CaseCard({ c }: { c: Case }) {
                     Business Outcome
                   </h4>
                   <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
+                    {c.id === "erp" && (
+                      <p className="font-semibold text-foreground">
+                        Established a scalable finance operating model across seven legal entities.
+                      </p>
+                    )}
                     {toParas(c.outcome).map((p, i) => (
                       <p key={i}>{p}</p>
                     ))}
