@@ -64,7 +64,7 @@ const tintClass: Record<string, { bg: string; text: string }> = {
 
 export function ExecutiveSummary() {
   return (
-    <section id="summary" className="relative px-4 py-20 md:px-8 md:py-24">
+    <section id="summary" className="relative px-4 pb-20 pt-14 md:px-8 md:pb-24 md:pt-16">
       <div className="mx-auto max-w-6xl">
         <Reveal className="mb-10 text-center md:mb-12">
           <SectionEyebrow>Executive Summary</SectionEyebrow>
@@ -76,7 +76,7 @@ export function ExecutiveSummary() {
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           <Reveal delay={0.05} className="md:col-span-2">
-            <div className="group relative mx-auto h-full w-full max-w-[94%] overflow-hidden rounded-2xl border border-border-strong bg-card p-7 backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-primary/40 hover:shadow-elegant md:p-10">
+            <div className="group relative mx-auto h-full w-full max-w-4xl overflow-hidden rounded-2xl border border-border-strong bg-card p-7 backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-primary/40 hover:shadow-elegant md:p-10">
               <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-primary/10 blur-3xl" />
               <div className="flex items-center gap-4">
                 <div className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary-glow">
