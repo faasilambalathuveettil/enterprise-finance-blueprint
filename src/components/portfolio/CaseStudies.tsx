@@ -46,7 +46,7 @@ const cases: Case[] = [
     id: "erp",
     eyebrow: "Flagship 01 — End-to-End Build",
     title: "Multi-Entity ERP Finance System",
-    org: "Al Imtiaz Corner Logistics · Nov 2025 → Present",
+    org: "Al Imtiaz Corner Logistics · 5 Legal Entities",
     image: erpImg.url,
     headline: [
       "The organisation operated seven legal entities using spreadsheet-based accounting, fragmented approval workflows, and inconsistent financial structures that limited visibility, governance, and scalability.",
