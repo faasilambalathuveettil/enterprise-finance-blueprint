@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Reveal, SectionEyebrow } from "./shared";
 
-function useCountUp(target: number, active: boolean, duration = 1600) {
+function useCountUp(target: number, active: boolean, duration = 1100) {
   const [val, setVal] = useState(0);
   useEffect(() => {
     if (!active) return;
@@ -37,7 +37,7 @@ function Metric({
 }) {
   const v = useCountUp(value, active);
   return (
-    <div className="rounded-2xl border border-border bg-card p-6 text-center backdrop-blur-md md:p-8">
+    <div className="card-hover rounded-2xl border border-border bg-card p-6 text-center backdrop-blur-md md:p-8">
       <div className={`font-display text-4xl font-bold md:text-5xl ${tint}`}>
         {prefix}
         {v.toLocaleString()}
@@ -88,9 +88,9 @@ export function Impact() {
           {metrics.map((m, i) => (
             <motion.div
               key={m.label}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.08 }}
+              transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 }}
             >
               <Metric {...m} active={inView} />
             </motion.div>

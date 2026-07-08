@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring, useReducedMotion } from "framer-motion";
 import { Menu, X, Download, ArrowRight } from "lucide-react";
 import resumeAsset from "@/assets/resume.asset.json";
 
@@ -123,10 +123,11 @@ export function Reveal({
   as?: React.ElementType;
 }) {
   const MotionTag = motion(Tag as React.ElementType);
+  const reduce = useReducedMotion();
   return (
     <MotionTag
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={reduce ? false : { opacity: 0, y: 18 }}
+      whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1], delay }}
       className={className}

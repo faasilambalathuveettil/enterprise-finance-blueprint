@@ -236,7 +236,7 @@ export function Deliverables() {
             return (
               <div
                 key={d.name}
-                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card p-5 backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-border-strong hover:shadow-elegant"
+                className="card-hover group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card p-5 backdrop-blur-md"
               >
                 <div className="mb-4 flex items-center justify-between">
                   <div className={`inline-flex h-9 w-9 items-center justify-center rounded-lg ${t.bg} ${t.text}`}>

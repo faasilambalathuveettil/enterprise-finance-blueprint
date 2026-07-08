@@ -98,12 +98,12 @@ export function Timeline() {
           />
           <div className="flex flex-col gap-[30px]">
             {timeline.map((t, i) => (
-              <Reveal key={t.role} delay={i * 0.06}>
+              <Reveal key={t.role} delay={i * 0.13}>
                 <div className="relative pl-10 md:pl-14">
                   <span
                     className={`absolute left-0 top-2 h-6 w-6 rounded-full border-4 border-background md:h-8 md:w-8 ${dotClass[t.accent]}`}
                   />
-                  <div className="rounded-2xl border border-border bg-card p-[18px] backdrop-blur-md md:p-[26px]">
+                  <div className="card-hover rounded-2xl border border-border bg-card p-[18px] backdrop-blur-md md:p-[26px]">
                     <div className="mb-2 flex flex-wrap items-center gap-3">
                       <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
                         {t.when}
