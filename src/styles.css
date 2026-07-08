@@ -139,9 +139,17 @@
     background-position: 0% 50%;
     filter: brightness(1);
   }
+  35% {
+    background-position: 60% 50%;
+    filter: brightness(1.05);
+  }
   50% {
     background-position: 100% 50%;
-    filter: brightness(1.12);
+    filter: brightness(1.03);
+  }
+  65% {
+    background-position: 60% 50%;
+    filter: brightness(0.98);
   }
   100% {
     background-position: 0% 50%;
