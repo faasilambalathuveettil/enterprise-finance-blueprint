@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Mail, Linkedin, Download } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg.asset.json";
+import resumeAsset from "@/assets/resume.asset.json";
 
 const badges = [
   { label: "ZATCA Phase 2 LIVE", tone: "emerald" },
@@ -118,7 +119,7 @@ export function Hero() {
             <ArrowRight className="h-4 w-4" />
           </a>
           <a
-            href="/Faasil_Resume.pdf"
+            href={resumeAsset.url}
             download
             className="inline-flex items-center gap-2 rounded-lg border border-border-strong bg-surface/50 px-6 py-3 text-sm font-semibold text-foreground backdrop-blur-md transition-all hover:bg-surface"
           >
