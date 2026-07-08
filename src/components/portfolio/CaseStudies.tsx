@@ -177,7 +177,7 @@ const cases: Case[] = [
     accent: "emerald",
     transition: [
       "The implementation was not treated as a standalone compliance exercise.",
-      "Instead, regulatory requirements were embedded directly into finance operations through structured master data, ERP configuration, controlled testing, and production governance.",
+      "Instead, regulatory requirements were embedded into finance operations through structured master data, ERP configuration, controlled testing, and production governance.",
     ],
     outcome: [
       "The implementation established a repeatable compliance framework supporting three legal entities through standardised customer master data, structured testing, controlled invoice validation, and production-ready ERP processes.",
