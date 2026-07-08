@@ -11,10 +11,10 @@ type Pillar = {
   icon: typeof Layers;
   tint: string;
   title: string;
-  lead: string;
+  lead: string | string[];
   highlight?: string;
   bullets?: string[];
-  closer?: string;
+  closer?: string | string[];
 };
 
 const pillars: Pillar[] = [
