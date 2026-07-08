@@ -80,7 +80,7 @@ const cases: Case[] = [
       "Rather than replacing spreadsheets with ERP, the project created the operational foundation for automation, compliance, and scalable finance operations.",
     ],
     takeaway: [
-      "Successful ERP implementation depends less on software configuration and more on designing the finance operating model that connects people, processes, controls, and data.",
+      "Successful ERP implementation depends less on software configuration than on designing the finance operating model that connects people, processes, controls, and data.",
       "This project reflects my approach to translating finance requirements into scalable business systems that support both operational efficiency and long-term governance.",
     ],
     sections: [
