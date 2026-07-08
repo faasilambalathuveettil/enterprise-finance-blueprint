@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring, useReducedMotion } from "framer-motion";
 import { Menu, X, Download, ArrowRight } from "lucide-react";
 import resumeAsset from "@/assets/resume.asset.json";
 
