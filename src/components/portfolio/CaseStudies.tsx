@@ -569,7 +569,7 @@ function CaseCard({ c }: { c: Case }) {
                       { primary: "border-l-primary", emerald: "border-l-emerald", amber: "border-l-amber", purple: "border-l-purple" }[c.accent]
                     }`
                   : mode === "supporting"
-                    ? "rounded-xl border border-border bg-surface/40 p-5"
+                    ? "rounded-xl border border-border bg-surface/40 p-5 h-full"
                     : "rounded-2xl border border-border bg-surface/40 p-6"
                 }>
                   <h4 className={mode === "primary"
