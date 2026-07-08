@@ -45,6 +45,8 @@ const modules = [
 ];
 
 export function Architecture() {
+  const flowRef = useRef<HTMLDivElement>(null);
+  const flowInView = useInView(flowRef, { once: true, margin: "-80px" });
   return (
     <section
       id="architecture"
