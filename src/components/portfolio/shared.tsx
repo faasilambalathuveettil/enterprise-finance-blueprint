@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useScroll, useSpring, useReducedMotion } from "framer-motion";
 import { Menu, X, Download, ArrowRight } from "lucide-react";
-import resumeAsset from "@/assets/resume.asset.json";
+import resumeAsset from "@/assets/Faasil_Ambalathuveettil_Resume.pdf";
 
 const nav = [
   { href: "#summary", label: "Summary" },
@@ -59,7 +59,7 @@ export function Nav() {
               </a>
             ))}
             <a
-              href={resumeAsset.url}
+              href={resumeAsset}
               download
               className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-[12px] font-semibold text-primary-foreground shadow-glow transition-all hover:brightness-110"
             >
@@ -96,7 +96,7 @@ export function Nav() {
               </a>
             ))}
             <a
-              href={resumeAsset.url}
+              href={resumeAsset}
               download
               onClick={() => setOpen(false)}
               className="mt-4 inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
