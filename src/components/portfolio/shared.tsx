@@ -123,10 +123,11 @@ export function Reveal({
   as?: React.ElementType;
 }) {
   const MotionTag = motion(Tag as React.ElementType);
+  const reduce = useReducedMotion();
   return (
     <MotionTag
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={reduce ? false : { opacity: 0, y: 18 }}
+      whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1], delay }}
       className={className}
