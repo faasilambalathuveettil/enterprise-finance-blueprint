@@ -1,5 +1,10 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { Reveal, SectionEyebrow } from "./shared";
+
+const FLOW_EASE_OUT: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const FLOW_STAGGER = 0.13;
+const FLOW_DURATION = 0.32;
 import {
   Landmark,
   ShoppingCart,
@@ -40,6 +45,8 @@ const modules = [
 ];
 
 export function Architecture() {
+  const flowRef = useRef<HTMLDivElement>(null);
+  const flowInView = useInView(flowRef, { once: true, margin: "-80px" });
   return (
     <section
       id="architecture"
@@ -65,19 +72,35 @@ export function Architecture() {
             <div className="mb-4 text-center text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
               End-to-End Finance Architecture
             </div>
-            <div className="flex flex-wrap items-stretch justify-center gap-2 md:gap-1">
+            <div ref={flowRef} className="flex flex-wrap items-stretch justify-center gap-2 md:gap-1">
               {flow.map((s, i) => {
                 const Icon = s.icon;
+                const delay = 0.15 + i * FLOW_STAGGER;
                 return (
                   <div key={s.label} className="flex items-center gap-2 md:gap-1">
-                    <div className="flex min-w-[120px] flex-col items-center gap-2 rounded-xl border border-border bg-surface/60 px-3 py-3 md:min-w-[130px] md:px-4">
+                    <motion.div
+                      initial={{ opacity: 0, y: 14 }}
+                      animate={flowInView ? { opacity: 1, y: 0 } : {}}
+                      transition={{ duration: FLOW_DURATION, ease: FLOW_EASE_OUT, delay }}
+                      className="flex min-w-[120px] flex-col items-center gap-2 rounded-xl border border-border bg-surface/60 px-3 py-3 md:min-w-[130px] md:px-4"
+                    >
                       <Icon className={`h-5 w-5 ${s.tint}`} />
                       <div className="text-center font-display text-[12px] font-bold text-foreground md:text-[13px]">
                         {s.label}
                       </div>
-                    </div>
+                    </motion.div>
                     {i < flow.length - 1 && (
-                      <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={flowInView ? { opacity: 1 } : {}}
+                        transition={{
+                          duration: 0.28,
+                          ease: FLOW_EASE_OUT,
+                          delay: delay + FLOW_STAGGER * 0.6,
+                        }}
+                      >
+                        <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
+                      </motion.div>
                     )}
                   </div>
                 );
