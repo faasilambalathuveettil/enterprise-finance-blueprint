@@ -1,5 +1,5 @@
 import { Reveal, SectionEyebrow } from "./shared";
-import { Award, GraduationCap, BadgeCheck } from "lucide-react";
+
 
 const groups = [
   {
