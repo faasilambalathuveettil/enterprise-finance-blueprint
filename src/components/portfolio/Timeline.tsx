@@ -118,10 +118,10 @@ export function Timeline() {
                       {t.role}
                     </h3>
                     <p className="mt-1 text-sm font-medium text-primary-glow">{t.org}</p>
-                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                       {t.summary}
                     </p>
-                    <div className="mt-4">
+                    <div className="mt-3">
                       <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
                         Highlights
                       </p>
@@ -137,7 +137,7 @@ export function Timeline() {
                         ))}
                       </ul>
                     </div>
-                    <div className="mt-4 flex flex-wrap gap-2">
+                    <div className="mt-3 flex flex-wrap gap-2">
                       {t.tags.map((tag) => (
                         <span
                           key={tag}
