@@ -124,10 +124,35 @@
 
 @utility text-gradient {
   background: var(--gradient-text);
+  background-size: 200% 100%;
+  background-position: 0% 50%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+  animation: text-gradient-breathe 8s ease-in-out infinite;
+  will-change: background-position, filter;
+}
+
+@keyframes text-gradient-breathe {
+  0% {
+    background-position: 0% 50%;
+    filter: brightness(1);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: brightness(1.12);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: brightness(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-gradient {
+    animation: none;
+  }
 }
 
 @utility glass {
