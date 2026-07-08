@@ -569,7 +569,7 @@ function CaseCard({ c }: { c: Case }) {
                       { primary: "border-l-primary", emerald: "border-l-emerald", amber: "border-l-amber", purple: "border-l-purple" }[c.accent]
                     }`
                   : mode === "supporting"
-                    ? "rounded-xl border border-border bg-surface/40 p-5 h-full"
+                    ? "rounded-xl border border-border bg-surface/40 py-3 px-5 h-full"
                     : "rounded-2xl border border-border bg-surface/40 p-6"
                 }>
                   <h4 className={mode === "primary"
@@ -644,8 +644,8 @@ function CaseCard({ c }: { c: Case }) {
 
             {c.takeaway && (
               <div className="px-6 pb-6 md:px-10 md:pb-10">
-                <div className="rounded-2xl border border-border border-l-4 border-l-primary bg-primary/5 p-6">
-                  <h4 className="font-display text-sm font-bold uppercase tracking-wider text-primary-glow">
+                <div className="rounded-2xl border border-border border-l-[3px] border-l-primary bg-primary/[0.03] p-6">
+                  <h4 className="font-display text-[13px] font-semibold uppercase tracking-wider text-primary-glow">
                     Key Takeaway
                   </h4>
                   <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
