@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Reveal, SectionEyebrow } from "./shared";
 
-function useCountUp(target: number, active: boolean, duration = 1600) {
+function useCountUp(target: number, active: boolean, duration = 1100) {
   const [val, setVal] = useState(0);
   useEffect(() => {
     if (!active) return;
