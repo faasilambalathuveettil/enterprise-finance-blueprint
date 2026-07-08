@@ -267,7 +267,7 @@ export function Deliverables() {
 
         <Reveal delay={0.2} className="mt-10 text-center">
           <p className="text-xs text-muted-foreground">
-            Illustrations represent authentic solution structures and workflow designs. Client names, values, and confidential information have been anonymised while preserving the technical implementation approach.
+            Illustrations are reconstructed representations of production deliverables. Client names, financial data, and confidential information have been removed while preserving the underlying architecture, workflow logic, and implementation approach.
           </p>
         </Reveal>
       </div>
