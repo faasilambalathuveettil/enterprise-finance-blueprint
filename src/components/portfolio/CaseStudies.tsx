@@ -525,12 +525,12 @@ function CaseCard({ c }: { c: Case }) {
 
           <button
             onClick={() => setOpen((v) => !v)}
-            className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border-strong bg-surface/70 py-3 text-sm font-semibold text-foreground transition-all hover:bg-surface"
+            className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border-strong bg-surface/70 py-3 text-sm font-semibold text-foreground transition-all duration-200 hover:bg-surface hover:border-border-strong/80"
             aria-expanded={open}
           >
             {open ? "Hide Solution Design" : "View Solution Design"}
             <ChevronDown
-              className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`}
+              className={`h-4 w-4 transition-transform duration-300 ease-out ${open ? "rotate-180" : ""}`}
             />
           </button>
         </div>
@@ -544,7 +544,7 @@ function CaseCard({ c }: { c: Case }) {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
             className="overflow-hidden border-t border-border"
           >
             <div className="p-6 md:p-10">
