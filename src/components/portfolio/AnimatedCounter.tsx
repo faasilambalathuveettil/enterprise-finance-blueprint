@@ -34,7 +34,7 @@ export function AnimatedCounter({
     if (!inView || !parsed) return;
     const { value: target, hasComma } = parsed;
     const controls = animate(0, target, {
-      duration: 1.6,
+      duration: 1.1,
       ease: EASE_OUT_EXPO,
       onUpdate: (v) => {
         const n =
