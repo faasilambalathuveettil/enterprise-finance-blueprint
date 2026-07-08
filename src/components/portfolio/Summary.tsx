@@ -62,7 +62,10 @@ const pillars: Pillar[] = [
     icon: Globe2,
     tint: "primary",
     title: "Building Systems That Scale",
-    lead: "Across EY, ERP implementation, and finance operations, one capability has remained constant: translating finance, operational, and regulatory requirements into scalable business systems.",
+    lead: [
+      "Across EY, ERP implementation, and finance operations, one capability has remained constant:",
+      "Translating finance, operational, and regulatory requirements into scalable business systems.",
+    ],
   },
 ];
 
