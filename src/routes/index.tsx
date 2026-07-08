@@ -9,6 +9,7 @@ import { Timeline } from "@/components/portfolio/Timeline";
 import { Capabilities } from "@/components/portfolio/Capabilities";
 import { Approach } from "@/components/portfolio/Approach";
 import { Deliverables } from "@/components/portfolio/Deliverables";
+import { Certifications } from "@/components/portfolio/Certifications";
 import { Contact, Footer } from "@/components/portfolio/Contact";
 
 export const Route = createFileRoute("/")({
@@ -28,6 +29,7 @@ function PortfolioPage() {
       <Timeline />
       <Capabilities />
       <Deliverables />
+      <Certifications />
       <Contact />
       <Footer />
     </main>
