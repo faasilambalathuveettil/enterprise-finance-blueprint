@@ -124,19 +124,19 @@ export function Architecture() {
           </svg>
 
           {/* Central core */}
-          <div className="pointer-events-none absolute inset-0 z-20 hidden items-center justify-center md:flex">
+          <div className="pointer-events-none absolute inset-0 hidden items-center justify-center md:flex">
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative flex h-60 w-60 items-center justify-center rounded-full border border-primary/40 bg-primary/18 backdrop-blur-xl shadow-glow"
+              className="relative flex h-52 w-52 items-center justify-center rounded-full border border-primary/40 bg-primary/15 backdrop-blur-xl shadow-glow"
             >
               {/* Soft pulsing halo */}
               <motion.div
-                animate={{ scale: [1, 1.08, 1], opacity: [0.55, 0.8, 0.55] }}
+                animate={{ scale: [1, 1.08, 1], opacity: [0.5, 0.75, 0.5] }}
                 transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute inset-[-18px] rounded-full bg-primary/22 blur-2xl"
+                className="absolute inset-[-14px] rounded-full bg-primary/20 blur-2xl"
               />
               {/* Rotating dashed ring */}
               <motion.div
@@ -145,9 +145,9 @@ export function Architecture() {
                 className="absolute inset-0 rounded-full border border-dashed border-primary/35"
               />
               {/* Inner ring */}
-              <div className="absolute inset-5 rounded-full border border-primary/25" />
-              <div className="relative text-center" style={{ textShadow: "0 0 24px oklch(0.16 0.028 265 / 0.6)" }}>
-                <Sparkles className="mx-auto h-7 w-7 text-primary-glow drop-shadow-[0_0_16px_oklch(0.78_0.16_285/0.8)]" />
+              <div className="absolute inset-4 rounded-full border border-primary/25" />
+              <div className="relative text-center">
+                <Sparkles className="mx-auto h-7 w-7 text-primary-glow drop-shadow-[0_0_12px_oklch(0.78_0.16_285/0.7)]" />
                 <div className="mt-2 font-display text-[13px] font-bold text-foreground">
                   Unified Finance
                 </div>
