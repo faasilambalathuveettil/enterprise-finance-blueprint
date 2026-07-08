@@ -32,19 +32,21 @@ export function AnimatedCounter({
 
   useEffect(() => {
     if (!inView || !parsed) return;
-    const controls = animate(0, parsed.value, {
+    const { value: target, hasComma } = parsed;
+    const controls = animate(0, target, {
       duration: 1.6,
       ease: EASE_OUT_EXPO,
       onUpdate: (v) => {
         const n =
-          parsed.value >= 100 || Number.isInteger(parsed.value)
+          target >= 100 || Number.isInteger(target)
             ? Math.round(v)
             : Math.round(v * 10) / 10;
-        setDisplay(parsed.hasComma ? n.toLocaleString() : n.toString());
+        setDisplay(hasComma ? n.toLocaleString() : n.toString());
       },
     });
     return () => controls.stop();
-  }, [inView, parsed]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inView, value]);
 
   if (!parsed) {
     return (
