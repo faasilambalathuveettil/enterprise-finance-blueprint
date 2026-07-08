@@ -128,7 +128,11 @@ export function ExecutiveSummary() {
                     {p.title}
                   </h3>
                   <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-muted-foreground">
-                    <p>{p.lead}</p>
+                    {Array.isArray(p.lead) ? (
+                      p.lead.map((s, j) => <p key={j}>{s}</p>)
+                    ) : (
+                      <p>{p.lead}</p>
+                    )}
                     {p.bullets && (
                       <ul className="grid grid-cols-1 gap-1.5 pt-1 sm:grid-cols-2">
                         {p.bullets.map((b) => (
@@ -139,7 +143,13 @@ export function ExecutiveSummary() {
                         ))}
                       </ul>
                     )}
-                    {p.closer && <p>{p.closer}</p>}
+                    {p.closer && (
+                      Array.isArray(p.closer) ? (
+                        p.closer.map((s, j) => <p key={j}>{s}</p>)
+                      ) : (
+                        <p>{p.closer}</p>
+                      )
+                    )}
                   </div>
                 </div>
               </Reveal>
