@@ -60,7 +60,7 @@ const metrics = [
 const supporting = [
   { k: "110+", v: "COA Accounts" },
   { k: "11", v: "ESS Workflow Stages" },
-  { k: "681", v: "Employees Tracked" },
+  { k: "4,590", v: "Employees Tracked" },
   { k: "4", v: "Jurisdictions at EY" },
   { k: "20+", v: "Vendors Managed" },
   { k: "58", v: "HRMS Fields Specified" },
