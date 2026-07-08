@@ -143,8 +143,7 @@ const cases: Case[] = [
         title: "07 · Vendor Coordination & Requirements Engineering",
         priority: "supporting",
         body: [
-          "Acted as the finance point of contact throughout implementation.",
-          "Authored functional specifications, coordinated user acceptance testing, validated configuration changes, and ensured ERP behaviour aligned with finance and business requirements.",
+          "Led finance-side functional coordination with the ERP vendor, authoring specifications, coordinating UAT, validating configurations, and ensuring the implemented solution aligned with finance and business requirements.",
         ],
       },
     ],
