@@ -1,5 +1,5 @@
 import { Reveal, SectionEyebrow } from "./shared";
-import { Award, GraduationCap, BadgeCheck } from "lucide-react";
+
 
 const groups = [
   {
@@ -52,32 +52,6 @@ const groups = [
   },
 ];
 
-const certs = [
-  {
-    icon: BadgeCheck,
-    name: "CertIFRS",
-    body: "IFRS Certified — ACCA",
-    tint: "text-primary-glow",
-  },
-  {
-    icon: GraduationCap,
-    name: "ACCA — P Level",
-    body: "Association of Chartered Certified Accountants — Professional Level pursuing",
-    tint: "text-emerald",
-  },
-  {
-    icon: Award,
-    name: "SOCPA Eligible",
-    body: "Saudi Organization for Chartered and Professional Accountants",
-    tint: "text-amber",
-  },
-  {
-    icon: Award,
-    name: "3× EY Recognition Awards",
-    body: "Two Spot Awards and one GDS User Recognition Award from the onshore team",
-    tint: "text-purple",
-  },
-];
 
 export function Capabilities() {
   return (
@@ -118,32 +92,6 @@ export function Capabilities() {
           ))}
         </div>
 
-        {/* Certifications */}
-        <Reveal className="mt-20 mb-10 text-center" delay={0.05}>
-          <SectionEyebrow>Certifications & Recognition</SectionEyebrow>
-          <h3 className="font-display text-2xl font-bold md:text-3xl">
-            Credentials that <span className="text-gradient">back the work.</span>
-          </h3>
-        </Reveal>
-
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {certs.map((c, i) => {
-            const Icon = c.icon;
-            return (
-              <Reveal key={c.name} delay={i * 0.06}>
-                <div className="group h-full rounded-2xl border border-border bg-card p-6 backdrop-blur-md transition-all hover:-translate-y-1 hover:border-border-strong hover:shadow-elegant">
-                  <Icon className={`h-6 w-6 ${c.tint}`} />
-                  <div className="mt-4 font-display text-lg font-bold text-foreground">
-                    {c.name}
-                  </div>
-                  <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-                    {c.body}
-                  </p>
-                </div>
-              </Reveal>
-            );
-          })}
-        </div>
       </div>
     </section>
   );
