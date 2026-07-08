@@ -89,6 +89,40 @@ export function Architecture() {
 
 
         <div className="relative mx-auto grid max-w-5xl grid-cols-2 gap-4 md:grid-cols-4">
+          {/* Connector lines radiating from center to each module (desktop only) */}
+          <svg
+            aria-hidden
+            className="pointer-events-none absolute inset-0 hidden h-full w-full md:block"
+            preserveAspectRatio="none"
+          >
+            <defs>
+              <radialGradient id="arch-line" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="oklch(0.78 0.16 285)" stopOpacity="0.55" />
+                <stop offset="100%" stopColor="oklch(0.78 0.16 285)" stopOpacity="0" />
+              </radialGradient>
+            </defs>
+            {[
+              { x: "12.5%", y: "27%" },
+              { x: "37.5%", y: "27%" },
+              { x: "62.5%", y: "27%" },
+              { x: "87.5%", y: "27%" },
+              { x: "12.5%", y: "73%" },
+              { x: "37.5%", y: "73%" },
+              { x: "62.5%", y: "73%" },
+              { x: "87.5%", y: "73%" },
+            ].map((p, i) => (
+              <line
+                key={i}
+                x1="50%"
+                y1="50%"
+                x2={p.x}
+                y2={p.y}
+                stroke="url(#arch-line)"
+                strokeWidth="1"
+              />
+            ))}
+          </svg>
+
           {/* Central core */}
           <div className="pointer-events-none absolute inset-0 hidden items-center justify-center md:flex">
             <motion.div
@@ -96,20 +130,29 @@ export function Architecture() {
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative flex h-40 w-40 items-center justify-center rounded-full border border-primary/30 bg-primary/10 backdrop-blur-xl"
+              className="relative flex h-52 w-52 items-center justify-center rounded-full border border-primary/40 bg-primary/15 backdrop-blur-xl shadow-glow"
             >
+              {/* Soft pulsing halo */}
+              <motion.div
+                animate={{ scale: [1, 1.08, 1], opacity: [0.5, 0.75, 0.5] }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute inset-[-14px] rounded-full bg-primary/20 blur-2xl"
+              />
+              {/* Rotating dashed ring */}
               <motion.div
                 animate={{ rotate: 360 }}
-                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 rounded-full border border-dashed border-primary/25"
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 rounded-full border border-dashed border-primary/35"
               />
-              <div className="text-center">
-                <Sparkles className="mx-auto h-6 w-6 text-primary-glow" />
-                <div className="mt-2 font-display text-sm font-bold text-foreground">
-                  Unified
+              {/* Inner ring */}
+              <div className="absolute inset-4 rounded-full border border-primary/25" />
+              <div className="relative text-center">
+                <Sparkles className="mx-auto h-7 w-7 text-primary-glow drop-shadow-[0_0_12px_oklch(0.78_0.16_285/0.7)]" />
+                <div className="mt-2 font-display text-[13px] font-bold text-foreground">
+                  Unified Finance
                 </div>
-                <div className="font-display text-sm font-bold text-primary-glow">
-                  Ledger
+                <div className="font-display text-[13px] font-bold text-primary-glow">
+                  Operating Model
                 </div>
               </div>
             </motion.div>
@@ -124,19 +167,21 @@ export function Architecture() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.5, delay: i * 0.06 }}
-                className="group relative rounded-2xl border border-border bg-card p-5 backdrop-blur-md transition-all hover:-translate-y-1 hover:border-border-strong hover:shadow-elegant"
+                className="group relative z-10 rounded-2xl border border-border bg-card p-5 backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow"
               >
-                <Icon className={`h-6 w-6 ${m.tint}`} />
+                <Icon className={`h-6 w-6 ${m.tint} transition-transform duration-500 group-hover:scale-110`} />
                 <div className="mt-3 font-display text-sm font-bold text-foreground">
                   {m.label}
                 </div>
                 <div className="mt-1 text-[10px] uppercase tracking-widest text-muted-foreground">
                   Module
                 </div>
+                <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ background: "radial-gradient(circle at 50% 0%, oklch(0.78 0.16 285 / 0.10), transparent 70%)" }} />
               </motion.div>
             );
           })}
         </div>
+
 
         <div className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-4 md:grid-cols-3">
           {[
