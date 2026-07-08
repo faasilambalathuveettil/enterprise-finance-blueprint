@@ -67,8 +67,8 @@ export function Capabilities() {
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {groups.map((g, i) => (
-            <Reveal key={g.title} delay={i * 0.06}>
-              <div className="h-full rounded-2xl border border-border bg-card p-7 backdrop-blur-md">
+            <Reveal key={g.title} delay={i * 0.1}>
+              <div className="card-hover h-full rounded-2xl border border-border bg-card p-7 backdrop-blur-md">
                 <h3
                   className={`font-display text-sm font-bold uppercase tracking-wider ${g.tint}`}
                 >
