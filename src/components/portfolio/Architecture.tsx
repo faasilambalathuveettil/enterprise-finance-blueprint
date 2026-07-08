@@ -102,31 +102,12 @@ export function Architecture() {
             ))}
           </svg>
 
-          {/* Central core */}
+          {/* Central core — static, calm, stable */}
           <div className="pointer-events-none absolute inset-0 hidden items-center justify-center md:flex">
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative flex h-52 w-52 items-center justify-center rounded-full border border-primary/40 bg-primary/15 backdrop-blur-xl shadow-glow"
-            >
-              {/* Soft pulsing halo */}
-              <motion.div
-                animate={{ scale: [1, 1.08, 1], opacity: [0.5, 0.75, 0.5] }}
-                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute inset-[-14px] rounded-full bg-primary/20 blur-2xl"
-              />
-              {/* Rotating dashed ring */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 rounded-full border border-dashed border-primary/35"
-              />
-              {/* Inner ring */}
-              <div className="absolute inset-4 rounded-full border border-primary/25" />
+            <div className="relative flex h-52 w-52 items-center justify-center rounded-full border border-primary/25 bg-primary/[0.08] shadow-card">
+              <div className="absolute inset-4 rounded-full border border-primary/15" />
               <div className="relative text-center">
-                <Sparkles className="mx-auto h-7 w-7 text-primary-glow drop-shadow-[0_0_12px_oklch(0.78_0.16_285/0.7)]" />
+                <Layers className="mx-auto h-7 w-7 text-primary-glow" strokeWidth={1.75} />
                 <div className="mt-2 font-display text-[13px] font-bold text-foreground">
                   Unified Finance
                 </div>
@@ -134,8 +115,9 @@ export function Architecture() {
                   Operating Model
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
+
 
           {modules.map((m, i) => {
             const Icon = m.icon;
