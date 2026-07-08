@@ -108,7 +108,7 @@ const cases: Case[] = [
       },
       {
         title: "03 · Fixed Asset Register",
-        priority: "secondary",
+        priority: "primary",
         body: [
           "Designed the Fixed Asset Register covering nine asset groups with structured asset master data, useful life, depreciation rates, and accumulated depreciation.",
           "Automated monthly straight-line depreciation aligned with KSA Zakat/Income Tax Article 17, eliminating manual calculations and reducing posting risk.",
@@ -116,7 +116,7 @@ const cases: Case[] = [
       },
       {
         title: "04 · DPR Module",
-        priority: "secondary",
+        priority: "supporting",
         body: [
           "Designed a dedicated Direct Payment Receipt workflow for post-execution treasury payments outside the standard approval cycle.",
           "Added 25 payment categories, mandatory supporting documentation, unique numbering, and full ERP audit traceability.",
@@ -124,7 +124,7 @@ const cases: Case[] = [
       },
       {
         title: "05 · HRMS Requirements",
-        priority: "secondary",
+        priority: "supporting",
         body: [
           "Authored Employee Master Specification v2.0 comprising 58 fields across ten business categories.",
           "Defined calculated fields, expiry logic, dashboard requirements, bulk upload templates, and UI specifications to support future HRMS deployment.",
