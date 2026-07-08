@@ -5,7 +5,7 @@ import heroBg from "@/assets/hero-bg.jpg.asset.json";
 const badges = [
   { label: "ZATCA Phase 2 LIVE", tone: "emerald" },
   { label: "Ex-EY GDS", tone: "primary" },
-  { label: "EY Spot Award", tone: "amber" },
+  { label: "3× EY Recognition Awards", tone: "amber" },
   { label: "ACCA — Professional Level", tone: "muted" },
   { label: "CertIFRS", tone: "muted" },
   { label: "SOCPA Eligible", tone: "muted" },

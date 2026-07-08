@@ -235,7 +235,7 @@ const cases: Case[] = [
     id: "ey",
     eyebrow: "Flagship 03 — Regulatory Intelligence & AI Workflows",
     title: "EY Regulatory Intelligence & AI Workflows",
-    org: "Ernst & Young GDS · 2.5 Years · Spot Award",
+    org: "Ernst & Young GDS · 2.5 Years · 3 Awards",
     image: eyImg.url,
     headline: [
       "Financial institutions operate in fast-changing regulatory environments where new guidance must be analysed, interpreted, and communicated quickly.",
@@ -245,7 +245,7 @@ const cases: Case[] = [
       { k: "4", v: "Jurisdictions" },
       { k: "30–40%", v: "Efficiency Gain" },
       { k: "3", v: "AI Failure Modes" },
-      { k: "1", v: "EY Spot Award" },
+      { k: "3", v: "EY Recognition Awards" },
     ],
     tags: [
       "EY Regulatory Radar",
@@ -306,7 +306,7 @@ const cases: Case[] = [
       },
       {
         title: "06 · Recognition",
-        body: "Received the EY Spot Award in recognition of contributions to AI-assisted regulatory intelligence and measurable workflow improvements.",
+        body: "Received two EY Spot Awards and one GDS User Recognition Award from the onshore team, in recognition of contributions to AI-assisted regulatory intelligence and measurable workflow improvements.",
       },
     ],
   },
