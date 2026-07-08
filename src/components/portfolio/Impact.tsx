@@ -37,7 +37,7 @@ function Metric({
 }) {
   const v = useCountUp(value, active);
   return (
-    <div className="rounded-2xl border border-border bg-card p-6 text-center backdrop-blur-md md:p-8">
+    <div className="card-hover rounded-2xl border border-border bg-card p-6 text-center backdrop-blur-md md:p-8">
       <div className={`font-display text-4xl font-bold md:text-5xl ${tint}`}>
         {prefix}
         {v.toLocaleString()}
