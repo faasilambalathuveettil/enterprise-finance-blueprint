@@ -38,7 +38,7 @@ const pillars: Pillar[] = [
       "HRMS requirements",
       "Master data",
     ],
-    closer: "Delivered while maintaining uninterrupted finance operations.",
+    closer: "Delivered without disrupting day-to-day finance operations.",
   },
   {
     icon: ShieldCheck,
