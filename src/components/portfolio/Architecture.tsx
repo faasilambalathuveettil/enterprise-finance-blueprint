@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { Reveal, SectionEyebrow } from "./shared";
 import {
   Landmark,
@@ -9,7 +10,7 @@ import {
   Banknote,
   ShieldCheck,
   BarChart3,
-  Sparkles,
+  Layers,
   Database,
   Workflow,
   Boxes,
