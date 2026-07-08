@@ -29,7 +29,7 @@ const kpis = [
 
 export function Hero() {
   return (
-    <section id="top" className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-4 pb-16 pt-28 md:px-8">
+    <section id="top" className="ambient-sheen relative flex min-h-[100svh] items-center justify-center overflow-hidden px-4 pb-16 pt-28 md:px-8">
       {/* Layered background */}
       <div className="absolute inset-0 -z-10">
         <img
@@ -41,21 +41,10 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/70 to-background" />
         <div className="absolute inset-0 hero-bg" />
         <div className="absolute inset-0 grid-bg" />
+        {/* Subtle aurora — depth without conscious motion */}
+        <div aria-hidden className="hero-aurora" />
       </div>
 
-      {/* Ambient orbs */}
-      <motion.div
-        aria-hidden
-        className="pointer-events-none absolute -top-40 left-1/4 h-[600px] w-[600px] rounded-full bg-primary/10 blur-3xl"
-        animate={{ opacity: [0.5, 1, 0.5], scale: [1, 1.1, 1] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        aria-hidden
-        className="pointer-events-none absolute -bottom-40 right-10 h-[500px] w-[500px] rounded-full bg-purple/10 blur-3xl"
-        animate={{ opacity: [0.4, 0.8, 0.4], scale: [1, 1.15, 1] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-      />
 
       <div className="relative z-10 mx-auto max-w-5xl text-center">
         <motion.div
