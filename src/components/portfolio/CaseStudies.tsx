@@ -346,7 +346,7 @@ const cases: Case[] = [
     ],
     takeaway: [
       "The most valuable automation is rarely the most complex.",
-      "It is the automation that removes repetitive work while strengthening governance, preserving auditability, and enabling finance teams to make better decisions.",
+      "Effective automation removes repetitive work while strengthening governance, preserving auditability, and enabling better financial decision-making.",
     ],
     sections: [
       {
