@@ -10,12 +10,12 @@ import {
 } from "lucide-react";
 
 const steps = [
-  { icon: Search, label: "Understand", tint: "text-primary-glow" },
-  { icon: MapIcon, label: "Map", tint: "text-emerald" },
-  { icon: PenLine, label: "Design", tint: "text-purple" },
-  { icon: CheckCircle2, label: "Validate", tint: "text-amber" },
-  { icon: Rocket, label: "Implement", tint: "text-primary-glow" },
-  { icon: TrendingUp, label: "Improve", tint: "text-emerald" },
+  { icon: Search, label: "Understand", descriptor: "Business requirements", tint: "text-primary-glow" },
+  { icon: MapIcon, label: "Map", descriptor: "Processes & data", tint: "text-emerald" },
+  { icon: PenLine, label: "Design", descriptor: "Operating model", tint: "text-purple" },
+  { icon: CheckCircle2, label: "Validate", descriptor: "Controls & UAT", tint: "text-amber" },
+  { icon: Rocket, label: "Implement", descriptor: "ERP deployment", tint: "text-primary-glow" },
+  { icon: TrendingUp, label: "Improve", descriptor: "Continuous optimization", tint: "text-emerald" },
 ];
 
 export function Approach() {
