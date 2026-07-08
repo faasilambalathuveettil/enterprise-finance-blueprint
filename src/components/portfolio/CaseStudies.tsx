@@ -605,8 +605,8 @@ function CaseCard({ c }: { c: Case }) {
                     <div className="space-y-5 px-6 pb-6 pt-4 md:px-10">
                       {primarySections.map((s) => renderCard(s, "primary"))}
                     </div>
-                    <div className="px-6 md:px-10">
-                      <div className={`text-[11px] font-bold uppercase tracking-widest ${accentText[c.accent]}`}>
+                    <div className="mt-8 px-6 md:px-10">
+                      <div className={`text-[10px] font-semibold uppercase tracking-[0.18em] opacity-80 ${accentText[c.accent]}`}>
                         Supporting Solution Components
                       </div>
                     </div>
