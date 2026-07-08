@@ -119,15 +119,11 @@ export function Architecture() {
           </div>
 
 
-          {modules.map((m, i) => {
+          {modules.map((m) => {
             const Icon = m.icon;
             return (
-              <motion.div
+              <div
                 key={m.label}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 }}
                 className="card-hover relative z-10 rounded-2xl border border-border bg-card p-5 backdrop-blur-md"
               >
                 <Icon className={`h-6 w-6 ${m.tint}`} />
@@ -137,7 +133,7 @@ export function Architecture() {
                 <div className="mt-1 text-[10px] uppercase tracking-widest text-muted-foreground">
                   Module
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
