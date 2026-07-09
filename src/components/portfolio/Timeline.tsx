@@ -7,7 +7,7 @@ const timeline = [
     role: "Accountant — ERP Implementation & Finance Operations",
     org: "Al Imtiaz Corner Logistics · Riyadh, KSA",
     summary:
-      "Designed and implemented the finance operating model supporting the transition from Excel-based accounting to a multi-entity Orison ERP environment across seven legal entities.",
+      "Designed the finance operating model and led finance-side functional implementation supporting the transition from Excel-based accounting to a multi-entity Orison ERP environment across seven legal entities.",
     achievements: [
       "110+ Chart of Accounts",
       "11-stage ESS workflow",
