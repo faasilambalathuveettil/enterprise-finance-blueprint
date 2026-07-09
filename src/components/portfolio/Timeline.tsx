@@ -17,7 +17,7 @@ const timeline = [
       "ZATCA Phase 2",
       "Google Opal Automation",
     ],
-    tags: ["Orison ERP", "ZATCA Phase 2 LIVE", "COA Design", "HRMS Spec", "Google Opal AI"],
+    tags: ["Orison ERP", "ZATCA Phase 2 LIVE", "Google Opal AI"],
     accent: "primary",
   },
   {
