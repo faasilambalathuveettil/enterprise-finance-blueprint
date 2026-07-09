@@ -57,15 +57,6 @@ const pillars: Pillar[] = [
     closer:
       "Built practical AI workflows using Google Opal and EY AI tools to automate document processing while maintaining audit-quality outputs.",
   },
-  {
-    icon: Globe2,
-    tint: "primary",
-    title: "Building Systems That Scale",
-    lead: [
-      "Across EY, ERP implementation, and finance operations, one capability has remained constant:",
-      "Translating finance, operational, and regulatory requirements into scalable business systems.",
-    ],
-  },
 ];
 
 const tintClass: Record<string, { bg: string; text: string; bullet: string }> = {
