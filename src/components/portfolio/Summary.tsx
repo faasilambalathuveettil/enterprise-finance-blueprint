@@ -3,7 +3,6 @@ import {
   Building2,
   ShieldCheck,
   Zap,
-  Globe2,
   Layers,
 } from "lucide-react";
 

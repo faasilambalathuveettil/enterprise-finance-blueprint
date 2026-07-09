@@ -50,7 +50,7 @@ const cases: Case[] = [
     image: erpImg,
     headline: [
       "The organisation operated seven legal entities using spreadsheet-based accounting, fragmented approval workflows, and inconsistent financial structures that limited visibility, governance, and scalability.",
-      "The objective extended beyond implementing ERP software. It required designing a finance operating model capable of supporting growth while maintaining uninterrupted finance operations.",
+      "The objective was to design and implement a scalable ERP finance operating model while maintaining uninterrupted day-to-day operations.",
     ],
     metrics: [
       { k: "7", v: "Legal Entities" },
@@ -72,16 +72,14 @@ const cases: Case[] = [
     ],
     accent: "primary",
     transition: [
-      "Before ERP configuration could begin, the underlying finance operating model had to be defined.",
-      "This included master data, governance rules, approval workflows, reporting structures, and internal controls that would shape how finance operated long after the software was implemented.",
+      "Before ERP configuration could begin, master data, governance rules, approval workflows, reporting structures, and internal controls had to be defined as one integrated operating model.",
     ],
     outcome: [
       "The implementation established a structured finance operating model supporting seven legal entities through standardised master data, controlled workflows, improved reporting consistency, and regulatory readiness.",
       "Rather than replacing spreadsheets with ERP, the project created the operational foundation for automation, compliance, and scalable finance operations.",
     ],
     takeaway: [
-      "Successful ERP implementation depends less on software configuration than on designing the finance operating model that connects people, processes, controls, and data.",
-      "This project reflects my approach to translating finance requirements into scalable business systems that support both operational efficiency and long-term governance.",
+      "Successful ERP implementation depends less on software configuration than on designing the operating model that connects people, processes, controls, and data.",
     ],
     sections: [
       {
@@ -176,8 +174,7 @@ const cases: Case[] = [
     ],
     accent: "emerald",
     transition: [
-      "The implementation was not treated as a standalone compliance exercise.",
-      "Instead, regulatory requirements were embedded into finance operations through structured master data, ERP configuration, controlled testing, and production governance.",
+      "The challenge was not simply achieving go-live, but creating a controlled operating model capable of sustaining compliance through structured data, testing, exception handling, and production governance.",
     ],
     outcome: [
       "The implementation established a repeatable compliance framework supporting three legal entities through standardised customer master data, structured testing, controlled invoice validation, and production-ready ERP processes.",
