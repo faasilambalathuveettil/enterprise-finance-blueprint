@@ -105,8 +105,9 @@ export function ExecutiveSummary() {
           {pillars.slice(1).map((p, i) => {
             const Icon = p.icon;
             const t = tintClass[p.tint];
+            const isPracticalAI = p.title === "Practical AI";
             return (
-              <Reveal key={p.title} delay={(i + 1) * 0.08}>
+              <Reveal key={p.title} delay={(i + 1) * 0.08} className={isPracticalAI ? "md:col-span-2" : undefined}>
                 <div className="group relative h-full overflow-hidden rounded-2xl border border-border bg-card p-8 backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-border-strong hover:shadow-elegant">
                   <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-primary/5 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
                   <div
@@ -117,7 +118,7 @@ export function ExecutiveSummary() {
                   <h3 className="font-display text-xl font-semibold text-foreground">
                     {p.title}
                   </h3>
-                  <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-muted-foreground">
+                  <div className={`mt-3 space-y-3 text-[15px] leading-relaxed text-muted-foreground ${isPracticalAI ? "md:max-w-3xl" : ""}`}>
                     {Array.isArray(p.lead) ? (
                       p.lead.map((s, j) => <p key={j}>{s}</p>)
                     ) : (
