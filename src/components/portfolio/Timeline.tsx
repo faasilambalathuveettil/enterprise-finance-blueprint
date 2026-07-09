@@ -32,7 +32,7 @@ const timeline = [
       "Structured Outputs",
       "30–40% Efficiency",
     ],
-    tags: ["EYQ", "RegTech", "Prompt Engineering", "4 Jurisdictions"],
+    tags: ["RegTech", "4 Jurisdictions"],
     accent: "amber",
     award: "2× EY Spot + GDS Recognition",
   },
@@ -47,7 +47,7 @@ const timeline = [
       "TRAI DLT",
       "Provisioning",
     ],
-    tags: ["Vendor Management", "TRAI DLT", "Provisioning"],
+    tags: [],
     accent: "purple",
   },
   {
@@ -61,7 +61,7 @@ const timeline = [
       "VBA Macros",
       "Multi-Aggregator Reconciliation",
     ],
-    tags: ["QuickBooks", "VBA", "Reconciliation", "GST / TDS / TCS"],
+    tags: ["50% Faster Payments", "25% Less Manual Entry", "15+ Staff Payroll", "GST / TDS / TCS"],
     accent: "emerald",
   },
 ];
