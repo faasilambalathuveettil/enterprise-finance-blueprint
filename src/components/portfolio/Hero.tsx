@@ -85,8 +85,8 @@ export function Hero() {
             into scalable, compliant ERP operating models.
           </p>
           <p>
-            I translate finance, operational, and regulatory requirements into scalable
-            business systems that strengthen governance, improve decision-making, and
+            I translate finance, operational, and regulatory requirements into
+            structured systems that strengthen governance, improve decision-making, and
             support long-term growth.
           </p>
           <p className="text-sm text-muted-foreground/60">

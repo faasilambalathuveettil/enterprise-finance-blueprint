@@ -3,7 +3,6 @@ import {
   Building2,
   ShieldCheck,
   Zap,
-  Globe2,
   Layers,
 } from "lucide-react";
 
@@ -57,15 +56,6 @@ const pillars: Pillar[] = [
     lead: "I use AI to strengthen finance operations—not replace financial judgement.",
     closer:
       "Built practical AI workflows using Google Opal and EY AI tools to automate document processing while maintaining audit-quality outputs.",
-  },
-  {
-    icon: Globe2,
-    tint: "primary",
-    title: "Building Systems That Scale",
-    lead: [
-      "Across EY, ERP implementation, and finance operations, one capability has remained constant:",
-      "Translating finance, operational, and regulatory requirements into scalable business systems.",
-    ],
   },
 ];
 

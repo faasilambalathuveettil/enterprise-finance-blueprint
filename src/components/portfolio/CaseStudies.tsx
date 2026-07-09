@@ -50,7 +50,7 @@ const cases: Case[] = [
     image: erpImg,
     headline: [
       "The organisation operated seven legal entities using spreadsheet-based accounting, fragmented approval workflows, and inconsistent financial structures that limited visibility, governance, and scalability.",
-      "The objective extended beyond implementing ERP software. It required designing a finance operating model capable of supporting growth while maintaining uninterrupted finance operations.",
+      "The objective was to design and implement a scalable ERP finance operating model while maintaining uninterrupted day-to-day operations.",
     ],
     metrics: [
       { k: "7", v: "Legal Entities" },
@@ -72,16 +72,14 @@ const cases: Case[] = [
     ],
     accent: "primary",
     transition: [
-      "Before ERP configuration could begin, the underlying finance operating model had to be defined.",
-      "This included master data, governance rules, approval workflows, reporting structures, and internal controls that would shape how finance operated long after the software was implemented.",
+      "Before ERP configuration could begin, master data, governance rules, approval workflows, reporting structures, and internal controls had to be defined as one integrated operating model.",
     ],
     outcome: [
       "The implementation established a structured finance operating model supporting seven legal entities through standardised master data, controlled workflows, improved reporting consistency, and regulatory readiness.",
       "Rather than replacing spreadsheets with ERP, the project created the operational foundation for automation, compliance, and scalable finance operations.",
     ],
     takeaway: [
-      "Successful ERP implementation depends less on software configuration than on designing the finance operating model that connects people, processes, controls, and data.",
-      "This project reflects my approach to translating finance requirements into scalable business systems that support both operational efficiency and long-term governance.",
+      "Successful ERP implementation depends less on software configuration than on designing the operating model that connects people, processes, controls, and data.",
     ],
     sections: [
       {
@@ -176,8 +174,7 @@ const cases: Case[] = [
     ],
     accent: "emerald",
     transition: [
-      "The implementation was not treated as a standalone compliance exercise.",
-      "Instead, regulatory requirements were embedded into finance operations through structured master data, ERP configuration, controlled testing, and production governance.",
+      "The challenge was not simply achieving go-live, but creating a controlled operating model capable of sustaining compliance through structured data, testing, exception handling, and production governance.",
     ],
     outcome: [
       "The implementation established a repeatable compliance framework supporting three legal entities through standardised customer master data, structured testing, controlled invoice validation, and production-ready ERP processes.",
@@ -185,7 +182,6 @@ const cases: Case[] = [
     ],
     takeaway: [
       "Sustainable regulatory compliance is achieved when governance is embedded into everyday finance operations rather than added as a separate control layer.",
-      "This project demonstrates my approach to translating regulatory requirements into practical finance systems that improve both operational efficiency and long-term compliance.",
     ],
     sections: [
       {
@@ -266,7 +262,6 @@ const cases: Case[] = [
     ],
     takeaway: [
       "This project demonstrated that combining finance expertise with structured AI workflows can transform complex regulatory information into scalable business intelligence.",
-      "The same systems-thinking approach now underpins my work in ERP architecture, finance transformation, process automation, and compliance implementation.",
     ],
     sections: [
       {
@@ -341,8 +336,7 @@ const cases: Case[] = [
       "Every solution was designed to eliminate repetitive work while ensuring finance teams retained visibility, auditability, and control over critical business processes.",
     ],
     outcome: [
-      "Practical automation reduced manual processing effort by approximately 50–70% while improving data consistency, traceability, and operational efficiency.",
-      "Rather than replacing finance professionals, these solutions enabled teams to focus more time on analysis, control, and decision-making.",
+      "Practical automation reduced manual processing effort by approximately 50–70% while improving data consistency, traceability, and operational efficiency—freeing finance teams to focus more on analysis, control, and decision-making.",
     ],
     takeaway: [
       "The most valuable automation is rarely the most complex.",
@@ -638,11 +632,6 @@ function CaseCard({ c }: { c: Case }) {
                     Business Outcome
                   </h4>
                   <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
-                    {c.id === "erp" && (
-                      <p className="font-semibold text-foreground">
-                        Established a scalable finance operating model across seven legal entities.
-                      </p>
-                    )}
                     {toParas(c.outcome).map((p, i) => (
                       <p key={i}>{p}</p>
                     ))}
