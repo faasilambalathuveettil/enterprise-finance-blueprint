@@ -527,10 +527,12 @@ function CaseCard({ c }: { c: Case }) {
             onClick={() => setOpen((v) => !v)}
             className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border-strong bg-surface/70 py-3 text-sm font-semibold text-foreground transition-all duration-200 hover:bg-surface hover:border-border-strong/80"
             aria-expanded={open}
+            aria-label={open ? "Collapse case study" : "View full case study"}
           >
-            {open ? "Hide Solution Design" : "View Solution Design"}
+            {open ? "Collapse Case Study" : "View Full Case Study"}
             <ChevronDown
-              className={`h-4 w-4 transition-transform duration-300 ease-out ${open ? "rotate-180" : ""}`}
+              aria-hidden="true"
+              className={`h-4 w-4 transition-transform duration-300 ease-out ${accentText[c.accent]} ${open ? "rotate-180" : ""}`}
             />
           </button>
         </div>

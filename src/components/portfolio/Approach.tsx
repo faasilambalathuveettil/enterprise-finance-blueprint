@@ -46,25 +46,29 @@ export function Approach() {
 
         <div ref={flowRef}>
           <div className="rounded-2xl border border-border bg-card/60 p-5 backdrop-blur-md md:p-8">
-            <div className="flex flex-wrap items-stretch justify-center gap-2 md:gap-1">
+            <div className="relative flex flex-wrap items-stretch justify-center gap-2 md:gap-1">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-x-6 top-1/2 hidden h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-border to-transparent md:block"
+              />
               {steps.map((s, i) => {
                 const Icon = s.icon;
                 const delay = 0.15 + i * STEP_STAGGER;
                 return (
-                  <div key={s.label} className="flex items-center gap-2 md:gap-1">
+                  <div key={s.label} className="relative flex items-center gap-2 md:gap-1">
                     <motion.div
                       initial={{ opacity: 0, y: 14 }}
                       animate={inView ? { opacity: 1, y: 0 } : {}}
                       transition={{ duration: STEP_DURATION, ease: EASE_OUT, delay }}
-                      className="flex min-w-[110px] flex-col items-center gap-2 rounded-xl border border-border bg-surface/60 px-3 py-4 md:min-w-[130px]"
+                      className="relative z-10 flex min-w-[110px] flex-col items-center gap-2 rounded-xl border border-border bg-surface/80 px-3 py-4 md:min-w-[130px]"
                     >
                       <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-background/60">
                         <Icon className={`h-4 w-4 ${s.tint}`} />
                       </div>
-                      <div className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
-                        Step {i + 1}
+                      <div className={`font-display text-[15px] font-bold leading-none ${s.tint}`}>
+                        {String(i + 1).padStart(2, "0")}
                       </div>
-                      <div className="text-center font-display text-[13px] font-bold text-foreground">
+                      <div className="text-center font-display text-[13px] font-semibold text-foreground">
                         {s.label}
                       </div>
                     </motion.div>
@@ -77,8 +81,9 @@ export function Approach() {
                           ease: EASE_OUT,
                           delay: delay + STEP_STAGGER * 0.6,
                         }}
+                        className="relative z-10"
                       >
-                        <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
+                        <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground/70" />
                       </motion.div>
                     )}
                   </div>
