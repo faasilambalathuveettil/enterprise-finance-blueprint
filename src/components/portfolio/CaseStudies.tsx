@@ -135,7 +135,7 @@ const cases: Case[] = [
         priority: "supporting",
         body: [
           "Developed a controlled Excel-based bulk upload framework supporting approximately 1,500 monthly transactions across seven legal entities.",
-          "Embedded validation rules, account mapping, dropdown controls, and company-project-phase eligibility to improve data quality before ERP import.",
+          "Embedded validation rules, account mapping, dropdown controls, and entity-project-phase eligibility—improving data quality while reducing transaction processing time by approximately 10–20%.",
         ],
       },
       {
