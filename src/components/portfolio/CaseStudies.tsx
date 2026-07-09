@@ -276,7 +276,7 @@ const cases: Case[] = [
         title: "02 · AI Workflow Design",
         body: [
           "Improved the regulatory intelligence workflow using EYQ, prompt engineering, and AI-assisted classification.",
-          "Designed structured prompts and standardised outputs that improved consistency while accelerating document analysis.",
+          "Engineered hierarchical decision-tree prompts across six unique prompt types, producing taxonomy-aligned structured outputs that improved consistency and accelerated regulatory analysis.",
         ],
       },
       {
