@@ -102,6 +102,7 @@ const cases: Case[] = [
           "Finance Manager → Management Approval → Release Readiness",
           "Treasury → Executed → Finance Closing → Closed",
           "Defined user role and access logic across the workflow",
+          "Authored 16+ functional enhancement specifications to refine workflow controls, approval visibility, and operational usability after implementation.",
         ],
       },
       {
@@ -134,7 +135,7 @@ const cases: Case[] = [
         priority: "supporting",
         body: [
           "Developed a controlled Excel-based bulk upload framework supporting approximately 1,500 monthly transactions across seven legal entities.",
-          "Embedded validation rules, account mapping, dropdown controls, and company-project-phase eligibility to improve data quality before ERP import.",
+          "Embedded validation rules, account mapping, dropdown controls, and entity-project-phase eligibility—improving data quality while reducing transaction processing time by approximately 10–20%.",
         ],
       },
       {
@@ -275,7 +276,7 @@ const cases: Case[] = [
         title: "02 · AI Workflow Design",
         body: [
           "Improved the regulatory intelligence workflow using EYQ, prompt engineering, and AI-assisted classification.",
-          "Designed structured prompts and standardised outputs that improved consistency while accelerating document analysis.",
+          "Engineered hierarchical decision-tree prompts across six unique prompt types, producing taxonomy-aligned structured outputs that improved consistency and accelerated regulatory analysis.",
         ],
       },
       {
