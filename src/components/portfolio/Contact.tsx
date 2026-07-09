@@ -46,7 +46,7 @@ export function Contact() {
             Open to <span className="text-gradient">Finance Systems & Transformation Opportunities</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
-            I help organisations translate finance requirements into scalable systems, structured processes, and compliant operating models.
+            I bring hands-on experience across ERP finance implementation, regulatory integration, and practical automation.
           </p>
           <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
             If you're modernising finance operations or implementing ERP solutions, I'd welcome the opportunity to connect.

@@ -83,11 +83,9 @@ export function Timeline() {
             Building Finance Systems Through Every Role
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
-            Every role has strengthened the same core capability: translating
-            finance, operational, and regulatory requirements into structured
-            systems that improve governance, efficiency, and scalability. While
-            industries have changed, the objective has remained constant—building
-            better finance systems.
+            Across finance operations, regulatory intelligence, vendor management,
+            and automation, each role has contributed to a broader progression
+            toward finance systems transformation.
           </p>
         </Reveal>
 

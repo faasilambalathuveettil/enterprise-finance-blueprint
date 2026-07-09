@@ -182,7 +182,6 @@ const cases: Case[] = [
     ],
     takeaway: [
       "Sustainable regulatory compliance is achieved when governance is embedded into everyday finance operations rather than added as a separate control layer.",
-      "This project demonstrates my approach to translating regulatory requirements into practical finance systems that improve both operational efficiency and long-term compliance.",
     ],
     sections: [
       {
@@ -263,7 +262,6 @@ const cases: Case[] = [
     ],
     takeaway: [
       "This project demonstrated that combining finance expertise with structured AI workflows can transform complex regulatory information into scalable business intelligence.",
-      "The same systems-thinking approach now underpins my work in ERP architecture, finance transformation, process automation, and compliance implementation.",
     ],
     sections: [
       {
@@ -338,8 +336,7 @@ const cases: Case[] = [
       "Every solution was designed to eliminate repetitive work while ensuring finance teams retained visibility, auditability, and control over critical business processes.",
     ],
     outcome: [
-      "Practical automation reduced manual processing effort by approximately 50–70% while improving data consistency, traceability, and operational efficiency.",
-      "Rather than replacing finance professionals, these solutions enabled teams to focus more time on analysis, control, and decision-making.",
+      "Practical automation reduced manual processing effort by approximately 50–70% while improving data consistency, traceability, and operational efficiency—freeing finance teams to focus more on analysis, control, and decision-making.",
     ],
     takeaway: [
       "The most valuable automation is rarely the most complex.",
@@ -635,11 +632,6 @@ function CaseCard({ c }: { c: Case }) {
                     Business Outcome
                   </h4>
                   <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
-                    {c.id === "erp" && (
-                      <p className="font-semibold text-foreground">
-                        Established a scalable finance operating model across seven legal entities.
-                      </p>
-                    )}
                     {toParas(c.outcome).map((p, i) => (
                       <p key={i}>{p}</p>
                     ))}
