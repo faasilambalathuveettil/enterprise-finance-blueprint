@@ -102,6 +102,7 @@ const cases: Case[] = [
           "Finance Manager → Management Approval → Release Readiness",
           "Treasury → Executed → Finance Closing → Closed",
           "Defined user role and access logic across the workflow",
+          "Authored 16+ functional enhancement specifications to refine workflow controls, approval visibility, and operational usability after implementation.",
         ],
       },
       {
