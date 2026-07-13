@@ -110,7 +110,7 @@ const cases: Case[] = [
         priority: "primary",
         body: [
           "Designed the Fixed Asset Register covering nine asset groups with structured asset master data, useful life, depreciation rates, and accumulated depreciation.",
-          "Defined the monthly straight-line depreciation logic aligned with KSA Zakat/Income Tax Article 17, enabling automated calculations and reducing posting risk.",
+          "Specified the monthly straight-line depreciation logic aligned with KSA Zakat/Income Tax Article 17; the automation was configured in the ERP by the implementation vendor based on this functional specification.",
         ],
       },
       {
