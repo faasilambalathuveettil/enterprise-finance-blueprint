@@ -45,6 +45,12 @@ const items: Cert[] = [
     tint: "purple",
   },
   {
+    name: "Managing Machine Learning Projects with Google Cloud",
+    body: "Google Cloud (Mar 2024)",
+    icon: Cloud,
+    tint: "purple",
+  },
+  {
     name: "M.Com",
     body: "Master of Commerce — Indira Gandhi National Open University (IGNOU)",
     icon: BookOpen,
