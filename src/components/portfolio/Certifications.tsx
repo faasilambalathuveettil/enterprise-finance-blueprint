@@ -1,5 +1,5 @@
 import { Reveal, SectionEyebrow } from "./shared";
-import { BadgeCheck, GraduationCap, Award, Medal, Sparkles, BookOpen } from "lucide-react";
+import { BadgeCheck, GraduationCap, Award, Medal, Sparkles, BookOpen, Cloud } from "lucide-react";
 
 type Cert = {
   name: string;
