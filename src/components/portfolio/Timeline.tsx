@@ -106,11 +106,11 @@ export function Timeline() {
                   />
                   <div className="card-hover rounded-2xl border border-border bg-card p-[18px] backdrop-blur-md md:p-[26px]">
                     <div className="mb-2 flex flex-wrap items-center gap-3">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
+                      <span className="text-[12px] font-bold uppercase tracking-wider text-muted-foreground">
                         {t.when}
                       </span>
                       {t.award && (
-                        <span className="inline-flex items-center gap-1 rounded-full border border-amber/25 bg-amber/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-amber">
+                        <span className="inline-flex items-center gap-1 rounded-full border border-amber/25 bg-amber/10 px-2.5 py-0.5 text-[12px] font-bold uppercase tracking-wider text-amber">
                           <Award className="h-3 w-3" /> {t.award}
                         </span>
                       )}
@@ -123,7 +123,7 @@ export function Timeline() {
                       {t.summary}
                     </p>
                     <div className="mt-3">
-                      <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                      <p className="text-[12px] font-bold uppercase tracking-wider text-muted-foreground">
                         Highlights
                       </p>
                       <ul className="mt-2 grid grid-cols-1 gap-1 sm:grid-cols-2">
@@ -142,7 +142,7 @@ export function Timeline() {
                       {t.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-md border border-border bg-surface/60 px-2.5 py-1 text-[11px] text-muted-foreground"
+                          className="rounded-md border border-border bg-surface/60 px-2.5 py-1 text-[12px] text-muted-foreground"
                         >
                           {tag}
                         </span>
