@@ -254,6 +254,7 @@ const cases: Case[] = [
     ],
     accent: "amber",
     transition: [
+      "EY Regulatory Radar is a proprietary EY platform. My contribution was operating the platform, structuring prompts, and improving downstream workflows on top of it — not building the platform itself.",
       "Traditional regulatory review is time-intensive and difficult to scale.",
       "Rather than replacing human judgement, the objective was to augment regulatory analysis with AI-assisted workflows that improved speed, consistency, and knowledge quality while maintaining expert oversight.",
     ],
@@ -268,7 +269,7 @@ const cases: Case[] = [
       {
         title: "01 · Regulatory Intelligence",
         body: [
-          "Monitored regulatory developments across the European Union, United Kingdom, Hong Kong, and Singapore.",
+          "Monitored regulatory developments across seven jurisdictions — European Union, United Kingdom, Hong Kong, Singapore, Ireland, Jersey, and Australia.",
           "Analysed regulatory publications, identified business relevance, and transformed complex regulatory updates into structured intelligence for internal stakeholders.",
         ],
       },
