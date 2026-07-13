@@ -484,14 +484,16 @@ function ChipWithTooltip({ label, desc }: { label: string; desc: string }) {
         (window.matchMedia?.("(hover: none)").matches || "ontouchstart" in window),
     );
   }, []);
+  const Icon = tagIcons[label];
   return (
     <Tooltip open={isTouch ? open : undefined} onOpenChange={setOpen}>
       <TooltipTrigger asChild>
         <button
           type="button"
           onClick={() => isTouch && setOpen((v) => !v)}
-          className="cursor-help rounded-md border border-border bg-surface/60 px-2 py-0.5 text-[12px] text-muted-foreground transition-colors hover:border-border-strong hover:text-foreground"
+          className="inline-flex cursor-help items-center gap-1 rounded-md border border-border bg-surface/60 px-2 py-0.5 text-[12px] text-muted-foreground transition-colors hover:border-border-strong hover:text-foreground"
         >
+          {Icon && <Icon className="h-3 w-3 shrink-0" />}
           {label}
         </button>
       </TooltipTrigger>
