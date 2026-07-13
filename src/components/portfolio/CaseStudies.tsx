@@ -590,12 +590,14 @@ function CaseCard({ c }: { c: Case }) {
             <div className="mt-4 flex flex-wrap gap-1.5">
               {c.tags.map((t) => {
                 const desc = chipDescriptions[t];
+                const Icon = tagIcons[t];
                 if (!desc) {
                   return (
                     <span
                       key={t}
-                      className="rounded-md border border-border bg-surface/60 px-2 py-0.5 text-[12px] text-muted-foreground"
+                      className="inline-flex items-center gap-1 rounded-md border border-border bg-surface/60 px-2 py-0.5 text-[12px] text-muted-foreground"
                     >
+                      {Icon && <Icon className="h-3 w-3 shrink-0" />}
                       {t}
                     </span>
                   );
