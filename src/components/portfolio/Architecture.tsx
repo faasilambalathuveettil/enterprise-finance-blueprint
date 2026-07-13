@@ -15,22 +15,19 @@ import {
   ShieldCheck,
   BarChart3,
   Sparkles,
-  Database,
-  Workflow,
+  Upload,
   Boxes,
-  Lock,
+  BookOpen,
   FileBarChart,
-  Scale,
   ChevronRight,
 } from "lucide-react";
 
-const flow = [
-  { icon: Database, label: "Master Data", tint: "text-primary-glow" },
-  { icon: Workflow, label: "Business Processes", tint: "text-emerald" },
-  { icon: Boxes, label: "ERP Modules", tint: "text-purple" },
-  { icon: Lock, label: "Controls", tint: "text-amber" },
-  { icon: FileBarChart, label: "Reporting", tint: "text-primary-glow" },
-  { icon: Scale, label: "Compliance", tint: "text-emerald" },
+const pipeline = [
+  { icon: Building, label: "Entities", sub: "7 legal entities", tint: "text-primary-glow" },
+  { icon: Upload, label: "Bulk Upload", sub: "Voucher & data ingest", tint: "text-amber" },
+  { icon: Boxes, label: "ERP — Orison", sub: "Core system", tint: "text-purple" },
+  { icon: BookOpen, label: "General Ledger", sub: "Unified GL", tint: "text-primary-glow" },
+  { icon: FileBarChart, label: "Financial Statements", sub: "IFRS-aligned output", tint: "text-emerald" },
 ];
 
 const modules = [
@@ -47,6 +44,12 @@ const modules = [
 export function Architecture() {
   const flowRef = useRef<HTMLDivElement>(null);
   const flowInView = useInView(flowRef, { once: true, margin: "-80px" });
+
+  // Index of the ERP node — the ZATCA branch offshoots from here.
+  const erpIndex = 2;
+  const erpDelay = 0.15 + erpIndex * FLOW_STAGGER;
+  const zatcaDelay = erpDelay + FLOW_STAGGER;
+
   return (
     <section
       id="architecture"
@@ -57,54 +60,97 @@ export function Architecture() {
         <Reveal className="mb-14 text-center">
           <SectionEyebrow>ERP Architecture</SectionEyebrow>
           <h2 className="font-display text-3xl font-bold md:text-5xl">
-            One <span className="text-gradient">integrated core.</span>{" "}
-            Eight connected modules.
+            From <span className="text-gradient">seven entities</span> to consolidated financial statements.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
-            Every module connects to a unified finance operating model where master
-            data, workflows, controls, and compliance are embedded from the start.
+            A single pipeline moves multi-entity transactions through bulk upload,
+            the Orison ERP core, and the general ledger into IFRS-aligned financial
+            statements — with ZATCA Phase 2 e-invoicing running live as a compliance
+            layer off the ERP core.
           </p>
         </Reveal>
 
-        {/* End-to-end architecture flow */}
+        {/* End-to-end pipeline */}
         <Reveal delay={0.05}>
           <div className="mx-auto mb-16 max-w-5xl rounded-2xl border border-border bg-card/60 p-5 backdrop-blur-md md:p-7">
-            <div className="mb-4 text-center text-[12px] font-bold uppercase tracking-[0.2em] text-foreground/80">
-              End-to-End Finance Architecture
+            <div className="mb-6 text-center text-[12px] font-bold uppercase tracking-[0.2em] text-foreground/80">
+              Entity-to-Financial-Statements Pipeline
             </div>
-            <div ref={flowRef} className="flex flex-wrap items-stretch justify-center gap-2 md:gap-1">
-              {flow.map((s, i) => {
-                const Icon = s.icon;
-                const delay = 0.15 + i * FLOW_STAGGER;
-                return (
-                  <div key={s.label} className="flex items-center gap-2 md:gap-1">
-                    <motion.div
-                      initial={{ opacity: 0, y: 14 }}
-                      animate={flowInView ? { opacity: 1, y: 0 } : {}}
-                      transition={{ duration: FLOW_DURATION, ease: FLOW_EASE_OUT, delay }}
-                      className="flex min-w-[120px] flex-col items-center gap-2 rounded-xl border border-border bg-surface/60 px-3 py-3 md:min-w-[130px] md:px-4"
-                    >
-                      <Icon className={`h-5 w-5 ${s.tint}`} />
-                      <div className="text-center font-display text-[12px] font-bold text-foreground md:text-[13px]">
-                        {s.label}
-                      </div>
-                    </motion.div>
-                    {i < flow.length - 1 && (
+
+            <div ref={flowRef} className="relative">
+              {/* Main horizontal pipeline */}
+              <div className="flex flex-wrap items-stretch justify-center gap-2 md:flex-nowrap md:gap-1">
+                {pipeline.map((s, i) => {
+                  const Icon = s.icon;
+                  const delay = 0.15 + i * FLOW_STAGGER;
+                  const isErp = i === erpIndex;
+                  return (
+                    <div key={s.label} className="flex items-center gap-2 md:gap-1">
                       <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={flowInView ? { opacity: 1 } : {}}
-                        transition={{
-                          duration: 0.28,
-                          ease: FLOW_EASE_OUT,
-                          delay: delay + FLOW_STAGGER * 0.6,
-                        }}
+                        initial={{ opacity: 0, y: 14 }}
+                        animate={flowInView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: FLOW_DURATION, ease: FLOW_EASE_OUT, delay }}
+                        className={`relative flex min-w-[130px] flex-col items-center gap-2 rounded-xl border bg-surface/60 px-3 py-3 md:min-w-[140px] md:px-4 ${
+                          isErp ? "border-primary/50 shadow-glow" : "border-border"
+                        }`}
                       >
-                        <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
+                        <Icon className={`h-5 w-5 ${s.tint}`} />
+                        <div className="text-center font-display text-[12px] font-bold text-foreground md:text-[13px]">
+                          {s.label}
+                        </div>
+                        <div className="text-center text-[11px] text-muted-foreground">
+                          {s.sub}
+                        </div>
                       </motion.div>
-                    )}
+                      {i < pipeline.length - 1 && (
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={flowInView ? { opacity: 1 } : {}}
+                          transition={{
+                            duration: 0.28,
+                            ease: FLOW_EASE_OUT,
+                            delay: delay + FLOW_STAGGER * 0.6,
+                          }}
+                        >
+                          <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
+                        </motion.div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* ZATCA compliance branch — offshoots down from ERP node */}
+              <div className="mt-4 flex flex-col items-center">
+                <motion.div
+                  initial={{ opacity: 0, scaleY: 0 }}
+                  animate={flowInView ? { opacity: 1, scaleY: 1 } : {}}
+                  transition={{ duration: 0.32, ease: FLOW_EASE_OUT, delay: zatcaDelay }}
+                  style={{ transformOrigin: "top" }}
+                  className="h-6 w-px bg-gradient-to-b from-emerald/70 to-emerald/20"
+                  aria-hidden
+                />
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={flowInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: FLOW_DURATION, ease: FLOW_EASE_OUT, delay: zatcaDelay + 0.1 }}
+                  className="flex min-w-[220px] items-center gap-3 rounded-xl border border-emerald/40 bg-emerald/5 px-4 py-3 backdrop-blur-md"
+                >
+                  <ShieldCheck className="h-5 w-5 text-emerald" />
+                  <div className="flex flex-col">
+                    <div className="font-display text-[12px] font-bold text-foreground md:text-[13px]">
+                      ZATCA E-Invoicing Compliance
+                    </div>
+                    <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
+                      <span className="relative flex h-1.5 w-1.5">
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald/70 opacity-75" />
+                        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald" />
+                      </span>
+                      Phase 2 · Live in production
+                    </div>
                   </div>
-                );
-              })}
+                </motion.div>
+              </div>
             </div>
           </div>
         </Reveal>
