@@ -412,6 +412,33 @@ const accentGlow: Record<string, string> = {
   purple: "bg-purple/10",
 };
 
+function ChipWithTooltip({ label, desc }: { label: string; desc: string }) {
+  const [open, setOpen] = useState(false);
+  const [isTouch, setIsTouch] = useState(false);
+  useEffect(() => {
+    setIsTouch(
+      typeof window !== "undefined" &&
+        (window.matchMedia?.("(hover: none)").matches || "ontouchstart" in window),
+    );
+  }, []);
+  return (
+    <Tooltip open={isTouch ? open : undefined} onOpenChange={setOpen}>
+      <TooltipTrigger asChild>
+        <button
+          type="button"
+          onClick={() => isTouch && setOpen((v) => !v)}
+          className="cursor-help rounded-md border border-border bg-surface/60 px-2 py-0.5 text-[12px] text-muted-foreground transition-colors hover:border-border-strong hover:text-foreground"
+        >
+          {label}
+        </button>
+      </TooltipTrigger>
+      <TooltipContent side="top" className="max-w-[320px] text-sm leading-relaxed">
+        {desc}
+      </TooltipContent>
+    </Tooltip>
+  );
+}
+
 function CaseCard({ c }: { c: Case }) {
   const [open, setOpen] = useState(false);
   return (
