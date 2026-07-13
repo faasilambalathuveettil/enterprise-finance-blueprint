@@ -11,6 +11,15 @@ import {
   Search,
   Database,
   CheckCircle2,
+  FileSpreadsheet,
+  Mail,
+  Keyboard,
+  ClipboardCheck,
+  UploadCloud,
+  ShieldCheck,
+  Workflow,
+  ArrowRight,
+  ArrowDown,
 } from "lucide-react";
 
 const accentText: Record<string, string> = {
