@@ -65,7 +65,7 @@ export function Certifications() {
     <section id="certifications" className="relative px-4 py-24 md:px-8 md:py-32">
       <div className="mx-auto max-w-6xl">
         <Reveal className="mb-14 text-center">
-          <SectionEyebrow>Certifications & Recognition</SectionEyebrow>
+          <SectionEyebrow>Certifications, Education & Recognition</SectionEyebrow>
           <h2 className="font-display text-3xl font-bold md:text-5xl">
             Credentials that <span className="text-gradient">back the work.</span>
           </h2>
