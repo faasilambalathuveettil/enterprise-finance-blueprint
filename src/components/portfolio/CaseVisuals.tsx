@@ -11,15 +11,6 @@ import {
   Search,
   Database,
   CheckCircle2,
-  FileSpreadsheet,
-  Mail,
-  Keyboard,
-  ClipboardCheck,
-  UploadCloud,
-  ShieldCheck,
-  Workflow,
-  ArrowRight,
-  ArrowDown,
 } from "lucide-react";
 
 const accentText: Record<string, string> = {
@@ -78,181 +69,66 @@ const ess = [
   "Closed",
 ];
 
-const bulkBefore = [
-  { label: "Manual Excel entry", icon: FileSpreadsheet },
-  { label: "Email approval chain", icon: Mail },
-  { label: "Manual ERP re-entry", icon: Keyboard },
-  { label: "Reconciliation by hand", icon: ClipboardCheck },
-];
-const bulkAfter = [
-  { label: "Bulk template upload", icon: UploadCloud },
-  { label: "Automated validation", icon: ShieldCheck },
-  { label: "System-routed approval", icon: Workflow },
-  { label: "Auto-posted to ERP", icon: CheckCircle2 },
-];
-
-function BulkUploadBeforeAfter({ accent }: { accent: string }) {
-  return (
-    <VisualFrame label="Bulk Voucher Upload · Before → After" accent={accent}>
-      <div className="grid grid-cols-1 items-stretch gap-4 md:grid-cols-[1fr_auto_1fr]">
-        {/* BEFORE */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1], delay: 0 }}
-          className="rounded-xl border border-border bg-card/60 p-4 backdrop-blur-md"
-        >
-          <div className="mb-3 flex items-center justify-between">
-            <span className="font-display text-[11px] font-bold uppercase tracking-widest text-muted-foreground">
-              Before
-            </span>
-            <span className="rounded-full border border-border bg-surface/60 px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
-              Manual · Excel
-            </span>
-          </div>
-          <ul className="space-y-2">
-            {bulkBefore.map((s, i) => {
-              const Icon = s.icon;
-              return (
-                <li
-                  key={s.label}
-                  className="flex items-center gap-2 rounded-md border border-border/70 bg-surface/40 px-2.5 py-1.5"
-                >
-                  <span className="font-mono text-[10px] font-bold text-muted-foreground/80">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <Icon className="h-3.5 w-3.5 text-muted-foreground" />
-                  <span className="text-[12px] text-foreground/85">{s.label}</span>
-                </li>
-              );
-            })}
-          </ul>
-        </motion.div>
-
-        {/* Arrow */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.32, delay: 0.18 }}
-          className="flex items-center justify-center"
-          aria-hidden
-        >
-          <ArrowRight className="hidden h-5 w-5 text-emerald md:block" />
-          <ArrowDown className="h-5 w-5 text-emerald md:hidden" />
-        </motion.div>
-
-        {/* AFTER */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1], delay: 0.13 }}
-          className="rounded-xl border border-emerald/40 bg-emerald/[0.04] p-4 backdrop-blur-md"
-        >
-          <div className="mb-3 flex items-center justify-between">
-            <span className="font-display text-[11px] font-bold uppercase tracking-widest text-emerald">
-              After
-            </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald/40 bg-emerald/10 px-2 py-0.5 text-[10px] font-medium text-emerald">
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald/70 opacity-75" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald" />
-              </span>
-              Automated · ERP
-            </span>
-          </div>
-          <ul className="space-y-2">
-            {bulkAfter.map((s, i) => {
-              const Icon = s.icon;
-              return (
-                <li
-                  key={s.label}
-                  className="flex items-center gap-2 rounded-md border border-emerald/30 bg-emerald/[0.06] px-2.5 py-1.5"
-                >
-                  <span className="font-mono text-[10px] font-bold text-emerald">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <Icon className="h-3.5 w-3.5 text-emerald" />
-                  <span className="text-[12px] text-foreground/90">{s.label}</span>
-                </li>
-              );
-            })}
-          </ul>
-        </motion.div>
-      </div>
-      <div className="mt-3 text-[11px] text-muted-foreground">
-        ~1,500 monthly transactions · 7 legal entities · validation, mapping & entity-project-phase controls · ~10–20% faster processing
-      </div>
-    </VisualFrame>
-  );
-}
-
 function ErpVisual({ accent }: { accent: string }) {
   return (
-    <div className="grid grid-cols-1 gap-4">
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <VisualFrame label="Chart of Accounts · 5 Categories" accent={accent}>
-          <div className="grid grid-cols-5 gap-2">
-            {coa.map((c, i) => {
-              const Icon = c.icon;
-              return (
-                <motion.div
-                  key={c.label}
-                  initial={{ opacity: 0, y: 8 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
-                  className={`flex flex-col items-center gap-2 rounded-xl border ${accentBorder[accent]} bg-card p-3 text-center`}
-                >
-                  <Icon className={`h-4 w-4 ${accentText[accent]}`} />
-                  <div className="text-[10px] font-semibold uppercase tracking-wider text-foreground">
-                    {c.label}
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-          <div className="mt-3 text-[11px] text-muted-foreground">
-            110+ accounts · 4-level hierarchy · multi-entity, project & cost-centre
-            dimensions
-          </div>
-        </VisualFrame>
-
-        <VisualFrame label="ESS Payment Workflow · 11 Stages" accent={accent}>
-          <div className="flex flex-wrap gap-1.5">
-            {ess.map((s, i) => (
+    <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+      <VisualFrame label="Chart of Accounts · 5 Categories" accent={accent}>
+        <div className="grid grid-cols-5 gap-2">
+          {coa.map((c, i) => {
+            const Icon = c.icon;
+            return (
               <motion.div
-                key={s}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                key={c.label}
+                initial={{ opacity: 0, y: 8 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: i * 0.04 }}
-                className="flex items-center gap-1.5"
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                className={`flex flex-col items-center gap-2 rounded-xl border ${accentBorder[accent]} bg-card p-3 text-center`}
               >
-                <div
-                  className={`rounded-md border ${accentBorder[accent]} bg-card px-2 py-1 text-[10px] font-medium text-foreground`}
-                >
-                  <span
-                    className={`mr-1 font-bold ${accentText[accent]}`}
-                  >{`${String(i + 1).padStart(2, "0")}`}</span>
-                  {s}
+                <Icon className={`h-4 w-4 ${accentText[accent]}`} />
+                <div className="text-[10px] font-semibold uppercase tracking-wider text-foreground">
+                  {c.label}
                 </div>
-                {i < ess.length - 1 && (
-                  <span className="text-muted-foreground/60">›</span>
-                )}
               </motion.div>
-            ))}
-          </div>
-          <div className="mt-3 text-[11px] text-muted-foreground">
-            Draft → Closed · risk-based routing · treasury separation · full audit
-            trail
-          </div>
-        </VisualFrame>
-      </div>
+            );
+          })}
+        </div>
+        <div className="mt-3 text-[11px] text-muted-foreground">
+          110+ accounts · 4-level hierarchy · multi-entity, project & cost-centre
+          dimensions
+        </div>
+      </VisualFrame>
 
-      <BulkUploadBeforeAfter accent={accent} />
+      <VisualFrame label="ESS Payment Workflow · 11 Stages" accent={accent}>
+        <div className="flex flex-wrap gap-1.5">
+          {ess.map((s, i) => (
+            <motion.div
+              key={s}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: i * 0.04 }}
+              className="flex items-center gap-1.5"
+            >
+              <div
+                className={`rounded-md border ${accentBorder[accent]} bg-card px-2 py-1 text-[10px] font-medium text-foreground`}
+              >
+                <span
+                  className={`mr-1 font-bold ${accentText[accent]}`}
+                >{`${String(i + 1).padStart(2, "0")}`}</span>
+                {s}
+              </div>
+              {i < ess.length - 1 && (
+                <span className="text-muted-foreground/60">›</span>
+              )}
+            </motion.div>
+          ))}
+        </div>
+        <div className="mt-3 text-[11px] text-muted-foreground">
+          Draft → Closed · risk-based routing · treasury separation · full audit
+          trail
+        </div>
+      </VisualFrame>
     </div>
   );
 }
