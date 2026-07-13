@@ -25,14 +25,14 @@ const timeline = [
     role: "Associate Consultant — Business Transformation",
     org: "Ernst & Young GDS · Bengaluru, India",
     summary:
-      "Operated EY Regulatory Radar — end-to-end regulatory intelligence across EU, UK, HK, and Singapore.",
+      "Operated EY Regulatory Radar — end-to-end regulatory intelligence across EU, UK, HK, Singapore, Ireland, Jersey, and Australia.",
     achievements: [
       "Regulatory Radar",
       "EYQ Prompt Engineering",
       "Structured Outputs",
       "30–40% Efficiency",
     ],
-    tags: ["RegTech", "4 Jurisdictions"],
+    tags: ["RegTech", "7 Jurisdictions"],
     accent: "amber",
     award: "2× EY Spot + GDS Recognition",
   },
@@ -43,9 +43,10 @@ const timeline = [
     summary:
       "Sole SPOC for 20+ vendors and 15+ critical tech subscriptions at an NBFC fintech lender.",
     achievements: [
-      "Vendor Management",
-      "TRAI DLT",
-      "Provisioning",
+      "20+ vendors managed as sole SPOC",
+      "15+ critical tech subscriptions owned end-to-end",
+      "TRAI DLT compliance rollout coordinated",
+      "Provisioning cycle time reduced through structured intake",
     ],
     tags: [],
     accent: "purple",
@@ -57,11 +58,12 @@ const timeline = [
     summary:
       "Built a semi-automated accounting workflow in a cloud kitchen environment.",
     achievements: [
-      "QuickBooks-Razorpay Integration",
-      "VBA Macros",
-      "Multi-Aggregator Reconciliation",
+      "50% faster payment cycle via QuickBooks–Razorpay integration",
+      "25% reduction in manual data entry through VBA macros",
+      "15+ staff payroll processed monthly",
+      "Multi-aggregator reconciliation with GST / TDS / TCS compliance",
     ],
-    tags: ["50% Faster Payments", "25% Less Manual Entry", "15+ Staff Payroll", "GST / TDS / TCS"],
+    tags: ["QuickBooks–Razorpay", "VBA Macros", "Multi-Aggregator Reconciliation"],
     accent: "emerald",
   },
 ];
