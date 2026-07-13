@@ -3,7 +3,8 @@ import { BadgeCheck, GraduationCap, Award, Medal, Sparkles, BookOpen } from "luc
 
 type Cert = {
   name: string;
-  body: string;
+  body?: string;
+  badges?: string[];
   icon: typeof BadgeCheck;
   tint: "primary" | "emerald" | "amber" | "purple";
 };
@@ -34,8 +35,12 @@ const items: Cert[] = [
     tint: "purple",
   },
   {
-    name: "EY Applied AI — Bronze",
-    body: "EY badge recognising applied AI competency — supports the Practical AI pillar",
+    name: "EY Badges",
+    badges: [
+      "EY Finance — Bronze",
+      "EY Supply Chain — Bronze",
+      "EY Applied AI — Bronze",
+    ],
     icon: Sparkles,
     tint: "purple",
   },
@@ -86,9 +91,22 @@ export function Certifications() {
                 <h3 className="font-display text-base font-semibold text-foreground">
                   {c.name}
                 </h3>
-                <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground">
-                  {c.body}
-                </p>
+                {c.badges ? (
+                  <ul className="mt-2 flex flex-col gap-1.5">
+                    {c.badges.map((badge) => (
+                      <li
+                        key={badge}
+                        className="text-[13px] leading-relaxed text-muted-foreground"
+                      >
+                        {badge}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground">
+                    {c.body}
+                  </p>
+                )}
               </div>
             );
           })}
