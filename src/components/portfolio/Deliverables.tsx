@@ -242,7 +242,7 @@ export function Deliverables() {
                   <div className={`inline-flex h-9 w-9 items-center justify-center rounded-lg ${t.bg} ${t.text}`}>
                     <Icon className="h-4 w-4" strokeWidth={2} />
                   </div>
-                  <span className="inline-flex items-center gap-1 rounded-full border border-border bg-surface/60 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-muted-foreground">
+                  <span className="inline-flex items-center gap-1 rounded-full border border-border bg-surface/60 px-2 py-0.5 text-[12px] font-semibold uppercase tracking-wider text-muted-foreground">
                     <Lock className="h-2.5 w-2.5" /> Redacted
                   </span>
                 </div>
@@ -254,10 +254,10 @@ export function Deliverables() {
                 <h3 className="font-display text-sm font-semibold text-foreground">
                   {d.name}
                 </h3>
-                <div className={`mt-0.5 text-[10px] font-bold uppercase tracking-wider ${t.text}`}>
+                <div className={`mt-0.5 text-[12px] font-bold uppercase tracking-wider ${t.text}`}>
                   {d.type}
                 </div>
-                <p className="mt-2 text-[12px] leading-relaxed text-muted-foreground">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {d.body}
                 </p>
               </div>
