@@ -416,6 +416,65 @@ const accentGlow: Record<string, string> = {
   purple: "bg-purple/10",
 };
 
+const tagIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  "Orison ERP": Boxes,
+  "ZATCA Phase 2": ShieldCheck,
+  "EY Regulatory Radar": Sparkles,
+  "EYQ / OpenAI": Bot,
+  "AI-Assisted Classification": Bot,
+  "AI Workflow Design": Bot,
+  "Google Opal": Layers,
+};
+
+function MilestoneTimeline({
+  items,
+}: {
+  items: { label: string; date: string; live?: boolean }[];
+}) {
+  return (
+    <div className="mt-4 flex flex-wrap items-center gap-2">
+      {items.map((item, i) => (
+        <div key={item.label} className="flex items-center gap-2">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.32,
+              ease: [0.22, 1, 0.36, 1],
+              delay: i * 0.08,
+            }}
+            className={`flex min-w-[120px] flex-col items-center rounded-lg border px-3 py-2 text-center ${
+              item.live
+                ? "border-emerald/40 bg-emerald/5"
+                : "border-border bg-surface/40"
+            }`}
+          >
+            <div className="flex items-center justify-center gap-1.5">
+              {item.live && (
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald/70 opacity-75" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald" />
+                </span>
+              )}
+              <span
+                className={`text-[12px] font-semibold ${
+                  item.live ? "text-emerald" : "text-foreground/80"
+                }`}
+              >
+                {item.label}
+              </span>
+            </div>
+            <span className="text-[11px] text-muted-foreground">{item.date}</span>
+          </motion.div>
+          {i < items.length - 1 && (
+            <div className="hidden h-px w-4 bg-border md:block" />
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function ChipWithTooltip({ label, desc }: { label: string; desc: string }) {
   const [open, setOpen] = useState(false);
   const [isTouch, setIsTouch] = useState(false);
