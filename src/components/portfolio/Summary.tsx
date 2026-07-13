@@ -44,10 +44,7 @@ const pillars: Pillar[] = [
     tint: "amber",
     title: "Compliance by Design",
     lead: "Compliance should be embedded into finance operations—not added afterwards.",
-    closer: [
-      "Translated Saudi ZATCA Phase 2 requirements into ERP specifications, customer master standards, and testing procedures.",
-      "Delivered production-ready workflows that enabled successful go-live across multiple entities.",
-    ],
+    closer: "Proven on ZATCA Phase 2 — live in production across multiple entities.",
   },
   {
     icon: Zap,
@@ -55,7 +52,7 @@ const pillars: Pillar[] = [
     title: "Practical AI",
     lead: "I use AI to strengthen finance operations—not replace financial judgement.",
     closer:
-      "Built practical AI workflows using Google Opal and EY AI tools to automate document processing while maintaining audit-quality outputs.",
+      "Applied via Google Opal and EY AI tools — see the Automation case study for specifics.",
   },
 ];
 
