@@ -214,15 +214,13 @@ const cases: Case[] = [
       },
       {
         title: "04 · Production Go-Live",
-        body: [
-          "Coordinated CSID onboarding, ERP configuration, simulation testing, and production cutover across all three entities.",
-          "Successfully completed the transition from sandbox validation to live e-invoicing without disrupting business operations.",
-        ],
-        bullets: [
-          "CSID onboarding & ERP config: April 24 – May 4, 2026",
-          "Simulation testing (invoices + credit notes): May 5 – June 6, 2026",
-          "All 3 entities LIVE: June 11, 2026",
-          "Real credit note issued from Al Imtiaz Corner on live connection",
+        body: "Delivered in 7 weeks:",
+        bullets: ["Real credit note issued from Al Imtiaz Corner on live connection"],
+        timeline: [
+          { label: "CSID Onboarding", date: "Apr 24, 2026" },
+          { label: "EGS Unit Setup", date: "May 4, 2026" },
+          { label: "Sandbox / Simulation Testing (all 3 entities)", date: "May 5 – Jun 6, 2026" },
+          { label: "Go-Live", date: "Jun 11, 2026", live: true },
         ],
       },
       {
