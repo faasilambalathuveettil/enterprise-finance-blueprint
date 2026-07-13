@@ -572,7 +572,7 @@ function CaseCard({ c }: { c: Case }) {
 
 
             <div className="px-6 md:px-10">
-              <div className={`text-[11px] font-bold uppercase tracking-widest ${accentText[c.accent]}`}>
+              <div className={`text-[12px] font-bold uppercase tracking-widest ${accentText[c.accent]}`}>
                 Solution Delivery
               </div>
             </div>
@@ -589,7 +589,7 @@ function CaseCard({ c }: { c: Case }) {
                       { primary: "border-l-primary", emerald: "border-l-emerald", amber: "border-l-amber", purple: "border-l-purple" }[c.accent]
                     }`
                   : mode === "supporting"
-                    ? "rounded-xl border border-border bg-surface/40 py-3 px-5 h-full"
+                    ? "rounded-xl border border-border bg-surface/40 py-4 px-5 h-full"
                     : "rounded-2xl border border-border bg-surface/40 p-6"
                 }>
                   <h4 className={mode === "primary"
@@ -599,18 +599,18 @@ function CaseCard({ c }: { c: Case }) {
                       : `font-display text-sm font-bold uppercase tracking-wider ${accentText[c.accent]}`
                   }>{s.title}</h4>
                   <div className={mode === "supporting"
-                    ? "mt-2 space-y-2 text-[13px] leading-relaxed text-muted-foreground/90"
-                    : "mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground"
+                    ? "mt-3 max-w-[65ch] space-y-2 text-sm leading-relaxed text-muted-foreground"
+                    : "mt-4 max-w-[65ch] space-y-3 text-sm leading-relaxed text-muted-foreground"
                   }>
                     {toParas(s.body).map((para, i) => (
                       <p key={i}>{para}</p>
                     ))}
                   </div>
                   {s.bullets && (
-                    <ul className={mode === "supporting" ? "mt-2 space-y-1" : "mt-3 space-y-1.5"}>
+                    <ul className={mode === "supporting" ? "mt-3 space-y-1.5" : "mt-4 space-y-1.5"}>
                       {s.bullets.map((b) => (
-                        <li key={b} className={`flex items-start gap-2 text-muted-foreground ${mode === "supporting" ? "text-[12px]" : "text-[13px]"}`}>
-                          <CheckCircle2 className={`shrink-0 ${accentText[c.accent]} ${mode === "supporting" ? "mt-0.5 h-3 w-3" : "mt-0.5 h-3.5 w-3.5"}`} />
+                        <li key={b} className="flex items-start gap-2 text-sm leading-relaxed text-muted-foreground">
+                          <CheckCircle2 className={`mt-0.5 h-3.5 w-3.5 shrink-0 ${accentText[c.accent]}`} />
                           <span>{b}</span>
                         </li>
                       ))}
@@ -626,7 +626,7 @@ function CaseCard({ c }: { c: Case }) {
                       {primarySections.map((s) => renderCard(s, "primary"))}
                     </div>
                     <div className="mt-8 px-6 md:px-10">
-                      <div className={`text-[10px] font-semibold uppercase tracking-[0.18em] opacity-80 ${accentText[c.accent]}`}>
+                      <div className={`text-[12px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]}`}>
                         Supporting Solution Components
                       </div>
                     </div>
