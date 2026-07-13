@@ -1,5 +1,5 @@
 import { Reveal, SectionEyebrow } from "./shared";
-import { BadgeCheck, GraduationCap, Award, Medal, Sparkles, BookOpen } from "lucide-react";
+import { BadgeCheck, GraduationCap, Award, Medal, Sparkles, BookOpen, Cloud } from "lucide-react";
 
 type Cert = {
   name: string;
@@ -42,6 +42,12 @@ const items: Cert[] = [
       "EY Applied AI — Bronze",
     ],
     icon: Sparkles,
+    tint: "purple",
+  },
+  {
+    name: "Managing Machine Learning Projects with Google Cloud",
+    body: "Google Cloud (Mar 2024)",
+    icon: Cloud,
     tint: "purple",
   },
   {
