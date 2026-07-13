@@ -69,7 +69,7 @@ export function Architecture() {
         {/* End-to-end architecture flow */}
         <Reveal delay={0.05}>
           <div className="mx-auto mb-16 max-w-5xl rounded-2xl border border-border bg-card/60 p-5 backdrop-blur-md md:p-7">
-            <div className="mb-4 text-center text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+            <div className="mb-4 text-center text-[12px] font-bold uppercase tracking-[0.2em] text-foreground/80">
               End-to-End Finance Architecture
             </div>
             <div ref={flowRef} className="flex flex-wrap items-stretch justify-center gap-2 md:gap-1">
@@ -196,7 +196,7 @@ export function Architecture() {
                 <div className="mt-3 font-display text-sm font-bold text-foreground">
                   {m.label}
                 </div>
-                <div className="mt-1 text-[10px] uppercase tracking-widest text-muted-foreground">
+                <div className="mt-1 text-[12px] uppercase tracking-widest text-muted-foreground">
                   Module
                 </div>
               </motion.div>
@@ -233,7 +233,7 @@ export function Architecture() {
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {x.b}
               </p>
-              <p className="mt-3 text-xs leading-relaxed text-muted-foreground/70">
+              <p className="mt-3 text-[13px] leading-relaxed text-muted-foreground">
                 {x.chips}
               </p>
             </div>
