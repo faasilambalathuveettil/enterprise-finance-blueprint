@@ -16,7 +16,7 @@ const toneClass: Record<string, string> = {
   primary: "text-primary-glow bg-primary/10 border-primary/25",
   emerald: "text-emerald bg-emerald/10 border-emerald/25",
   amber: "text-amber bg-amber/10 border-amber/25",
-  muted: "text-muted-foreground bg-white/5 border-border-strong",
+  muted: "text-foreground/80 bg-white/5 border-border-strong",
 };
 
 const kpis = [
@@ -56,7 +56,7 @@ export function Hero() {
           {badges.map((b) => (
             <span
               key={b.label}
-              className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-wider ${toneClass[b.tone]}`}
+              className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[12px] font-semibold uppercase tracking-wider ${toneClass[b.tone]}`}
             >
               {b.label}
             </span>
@@ -89,7 +89,7 @@ export function Hero() {
             structured systems that strengthen governance, improve decision-making, and
             support long-term growth.
           </p>
-          <p className="text-sm text-muted-foreground/60">
+          <p className="text-sm text-muted-foreground/85">
             Based in Riyadh · Open to ERP Finance Systems & Transformation roles
           </p>
         </motion.div>
@@ -143,7 +143,7 @@ export function Hero() {
             <div key={k.l} className="flex items-center gap-3">
               <div>
                 <div className="font-display text-2xl font-bold text-primary-glow">{k.v}</div>
-                <div className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+                <div className="text-[12px] font-semibold uppercase tracking-widest text-muted-foreground">
                   {k.l}
                 </div>
               </div>

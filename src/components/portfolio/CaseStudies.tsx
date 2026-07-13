@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Reveal, SectionEyebrow } from "./shared";
 import { ChevronDown, CheckCircle2 } from "lucide-react";
@@ -110,7 +110,7 @@ const cases: Case[] = [
         priority: "primary",
         body: [
           "Designed the Fixed Asset Register covering nine asset groups with structured asset master data, useful life, depreciation rates, and accumulated depreciation.",
-          "Defined the monthly straight-line depreciation logic aligned with KSA Zakat/Income Tax Article 17, enabling automated calculations and reducing posting risk.",
+          "Specified the monthly straight-line depreciation logic aligned with KSA Zakat/Income Tax Article 17; the automation was configured in the ERP by the implementation vendor based on this functional specification.",
         ],
       },
       {
@@ -239,7 +239,7 @@ const cases: Case[] = [
       "The challenge was to convert large volumes of regulatory publications into structured, actionable intelligence that business teams could understand and apply with confidence.",
     ],
     metrics: [
-      { k: "4", v: "Jurisdictions" },
+      { k: "7", v: "Jurisdictions" },
       { k: "30–40%", v: "Efficiency Gain" },
       { k: "3", v: "AI Failure Modes" },
       { k: "3", v: "EY Recognition Awards" },
@@ -254,6 +254,7 @@ const cases: Case[] = [
     ],
     accent: "amber",
     transition: [
+      "EY Regulatory Radar is a proprietary EY platform. My contribution was operating the platform, structuring prompts, and improving downstream workflows on top of it — not building the platform itself.",
       "Traditional regulatory review is time-intensive and difficult to scale.",
       "Rather than replacing human judgement, the objective was to augment regulatory analysis with AI-assisted workflows that improved speed, consistency, and knowledge quality while maintaining expert oversight.",
     ],
@@ -268,7 +269,7 @@ const cases: Case[] = [
       {
         title: "01 · Regulatory Intelligence",
         body: [
-          "Monitored regulatory developments across the European Union, United Kingdom, Hong Kong, and Singapore.",
+          "Monitored regulatory developments across seven jurisdictions — European Union, United Kingdom, Hong Kong, Singapore, Ireland, Jersey, and Australia.",
           "Analysed regulatory publications, identified business relevance, and transformed complex regulatory updates into structured intelligence for internal stakeholders.",
         ],
       },
@@ -411,6 +412,33 @@ const accentGlow: Record<string, string> = {
   purple: "bg-purple/10",
 };
 
+function ChipWithTooltip({ label, desc }: { label: string; desc: string }) {
+  const [open, setOpen] = useState(false);
+  const [isTouch, setIsTouch] = useState(false);
+  useEffect(() => {
+    setIsTouch(
+      typeof window !== "undefined" &&
+        (window.matchMedia?.("(hover: none)").matches || "ontouchstart" in window),
+    );
+  }, []);
+  return (
+    <Tooltip open={isTouch ? open : undefined} onOpenChange={setOpen}>
+      <TooltipTrigger asChild>
+        <button
+          type="button"
+          onClick={() => isTouch && setOpen((v) => !v)}
+          className="cursor-help rounded-md border border-border bg-surface/60 px-2 py-0.5 text-[12px] text-muted-foreground transition-colors hover:border-border-strong hover:text-foreground"
+        >
+          {label}
+        </button>
+      </TooltipTrigger>
+      <TooltipContent side="top" className="max-w-[320px] text-sm leading-relaxed">
+        {desc}
+      </TooltipContent>
+    </Tooltip>
+  );
+}
+
 function CaseCard({ c }: { c: Case }) {
   const [open, setOpen] = useState(false);
   return (
@@ -437,7 +465,7 @@ function CaseCard({ c }: { c: Case }) {
           <div className={`absolute inset-0 bg-gradient-to-br ${accentBg[c.accent]} mix-blend-overlay`} />
 
           <div className="absolute inset-0 bg-gradient-to-tr from-background/80 via-transparent to-transparent md:bg-gradient-to-r" />
-          <span className={`absolute left-5 top-5 rounded-full border border-white/15 bg-black/40 px-3 py-1 text-[10px] font-bold uppercase tracking-widest backdrop-blur ${accentText[c.accent]}`}>
+          <span className={`absolute left-5 top-5 rounded-full border border-white/15 bg-black/40 px-3 py-1 text-[12px] font-bold uppercase tracking-widest backdrop-blur ${accentText[c.accent]}`}>
             {c.eyebrow}
           </span>
         </div>
@@ -449,10 +477,10 @@ function CaseCard({ c }: { c: Case }) {
           </h3>
           <p className="mt-1.5 text-sm font-medium text-muted-foreground">{c.org}</p>
 
-          <div className={`mt-6 text-[10px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]} opacity-80`}>
+          <div className={`mt-6 text-[12px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]}`}>
             Business Context
           </div>
-          <div className="mt-2 space-y-3 text-[15px] leading-relaxed text-muted-foreground">
+          <div className="mt-3 max-w-[65ch] space-y-3 text-[15px] leading-relaxed text-muted-foreground">
             {toParas(c.headline).map((p, i) => (
               <p key={i}>{p}</p>
             ))}
@@ -460,10 +488,10 @@ function CaseCard({ c }: { c: Case }) {
 
           {c.transition && (
             <div className="mt-6 rounded-xl border border-border bg-muted/30 p-5">
-              <h4 className={`font-display text-[10px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]} opacity-80`}>
+              <h4 className={`font-display text-[12px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]}`}>
                 Why It Mattered
               </h4>
-              <div className="mt-2 space-y-2 text-sm leading-relaxed text-muted-foreground">
+              <div className="mt-3 max-w-[65ch] space-y-2 text-sm leading-relaxed text-muted-foreground">
                 {toParas(c.transition).map((p, i) => (
                   <p key={i}>{p}</p>
                 ))}
@@ -471,7 +499,7 @@ function CaseCard({ c }: { c: Case }) {
             </div>
           )}
 
-          <div className={`mt-6 text-[10px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]} opacity-80`}>
+          <div className={`mt-6 text-[12px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]}`}>
             Transformation Overview
           </div>
           <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -481,7 +509,7 @@ function CaseCard({ c }: { c: Case }) {
                   value={m.k}
                   className={`font-display text-lg font-bold ${accentText[c.accent]}`}
                 />
-                <div className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                <div className="mt-1 text-[12px] font-semibold uppercase tracking-wider text-muted-foreground">
                   {m.v}
                 </div>
               </div>
@@ -489,31 +517,25 @@ function CaseCard({ c }: { c: Case }) {
           </div>
 
           {c.tagsHeading && (
-            <div className={`mt-6 text-[10px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]} opacity-80`}>
+            <div className={`mt-6 text-[12px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]}`}>
               {c.tagsHeading}
             </div>
           )}
           <TooltipProvider delayDuration={150}>
-            <div className="mt-3 flex flex-wrap gap-1.5">
+            <div className="mt-4 flex flex-wrap gap-1.5">
               {c.tags.map((t) => {
                 const desc = chipDescriptions[t];
-                const chip = (
-                  <span
-                    key={t}
-                    className={`rounded-md border border-border bg-surface/60 px-2 py-0.5 text-[11px] text-muted-foreground transition-colors ${desc ? "cursor-help hover:border-border-strong hover:text-foreground" : ""}`}
-                  >
-                    {t}
-                  </span>
-                );
-                if (!desc) return chip;
-                return (
-                  <Tooltip key={t}>
-                    <TooltipTrigger asChild>{chip}</TooltipTrigger>
-                    <TooltipContent side="top" className="max-w-[240px] text-xs leading-snug">
-                      {desc}
-                    </TooltipContent>
-                  </Tooltip>
-                );
+                if (!desc) {
+                  return (
+                    <span
+                      key={t}
+                      className="rounded-md border border-border bg-surface/60 px-2 py-0.5 text-[12px] text-muted-foreground"
+                    >
+                      {t}
+                    </span>
+                  );
+                }
+                return <ChipWithTooltip key={t} label={t} desc={desc} />;
               })}
             </div>
           </TooltipProvider>
@@ -550,7 +572,7 @@ function CaseCard({ c }: { c: Case }) {
 
 
             <div className="px-6 md:px-10">
-              <div className={`text-[11px] font-bold uppercase tracking-widest ${accentText[c.accent]}`}>
+              <div className={`text-[12px] font-bold uppercase tracking-widest ${accentText[c.accent]}`}>
                 Solution Delivery
               </div>
             </div>
@@ -567,7 +589,7 @@ function CaseCard({ c }: { c: Case }) {
                       { primary: "border-l-primary", emerald: "border-l-emerald", amber: "border-l-amber", purple: "border-l-purple" }[c.accent]
                     }`
                   : mode === "supporting"
-                    ? "rounded-xl border border-border bg-surface/40 py-3 px-5 h-full"
+                    ? "rounded-xl border border-border bg-surface/40 py-4 px-5 h-full"
                     : "rounded-2xl border border-border bg-surface/40 p-6"
                 }>
                   <h4 className={mode === "primary"
@@ -577,18 +599,18 @@ function CaseCard({ c }: { c: Case }) {
                       : `font-display text-sm font-bold uppercase tracking-wider ${accentText[c.accent]}`
                   }>{s.title}</h4>
                   <div className={mode === "supporting"
-                    ? "mt-2 space-y-2 text-[13px] leading-relaxed text-muted-foreground/90"
-                    : "mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground"
+                    ? "mt-3 max-w-[65ch] space-y-2 text-sm leading-relaxed text-muted-foreground"
+                    : "mt-4 max-w-[65ch] space-y-3 text-sm leading-relaxed text-muted-foreground"
                   }>
                     {toParas(s.body).map((para, i) => (
                       <p key={i}>{para}</p>
                     ))}
                   </div>
                   {s.bullets && (
-                    <ul className={mode === "supporting" ? "mt-2 space-y-1" : "mt-3 space-y-1.5"}>
+                    <ul className={mode === "supporting" ? "mt-3 space-y-1.5" : "mt-4 space-y-1.5"}>
                       {s.bullets.map((b) => (
-                        <li key={b} className={`flex items-start gap-2 text-muted-foreground ${mode === "supporting" ? "text-[12px]" : "text-[13px]"}`}>
-                          <CheckCircle2 className={`shrink-0 ${accentText[c.accent]} ${mode === "supporting" ? "mt-0.5 h-3 w-3" : "mt-0.5 h-3.5 w-3.5"}`} />
+                        <li key={b} className="flex items-start gap-2 text-sm leading-relaxed text-muted-foreground">
+                          <CheckCircle2 className={`mt-0.5 h-3.5 w-3.5 shrink-0 ${accentText[c.accent]}`} />
                           <span>{b}</span>
                         </li>
                       ))}
@@ -604,7 +626,7 @@ function CaseCard({ c }: { c: Case }) {
                       {primarySections.map((s) => renderCard(s, "primary"))}
                     </div>
                     <div className="mt-8 px-6 md:px-10">
-                      <div className={`text-[10px] font-semibold uppercase tracking-[0.18em] opacity-80 ${accentText[c.accent]}`}>
+                      <div className={`text-[12px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]}`}>
                         Supporting Solution Components
                       </div>
                     </div>
@@ -632,7 +654,7 @@ function CaseCard({ c }: { c: Case }) {
                   <h4 className="font-display text-sm font-bold uppercase tracking-wider text-emerald">
                     Business Outcome
                   </h4>
-                  <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
+                  <div className="mt-4 max-w-[65ch] space-y-3 text-sm leading-relaxed text-muted-foreground">
                     {toParas(c.outcome).map((p, i) => (
                       <p key={i}>{p}</p>
                     ))}
@@ -644,10 +666,10 @@ function CaseCard({ c }: { c: Case }) {
             {c.takeaway && (
               <div className="px-6 pb-6 md:px-10 md:pb-10">
                 <div className="rounded-2xl border border-border border-l-[3px] border-l-primary bg-primary/[0.03] p-6">
-                  <h4 className="font-display text-[13px] font-semibold uppercase tracking-wider text-primary-glow">
+                  <h4 className="font-display text-[12px] font-semibold uppercase tracking-wider text-primary-glow">
                     Key Takeaway
                   </h4>
-                  <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
+                  <div className="mt-4 max-w-[65ch] space-y-3 text-sm leading-relaxed text-muted-foreground">
                     {toParas(c.takeaway).map((p, i) => (
                       <p key={i}>{p}</p>
                     ))}

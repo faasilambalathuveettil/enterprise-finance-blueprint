@@ -1,5 +1,5 @@
 import { Reveal, SectionEyebrow } from "./shared";
-import { BadgeCheck, GraduationCap, Award, Medal } from "lucide-react";
+import { BadgeCheck, GraduationCap, Award, Medal, Sparkles, BookOpen } from "lucide-react";
 
 type Cert = {
   name: string;
@@ -33,6 +33,24 @@ const items: Cert[] = [
     icon: Medal,
     tint: "purple",
   },
+  {
+    name: "EY Applied AI — Bronze",
+    body: "EY badge recognising applied AI competency — supports the Practical AI pillar",
+    icon: Sparkles,
+    tint: "purple",
+  },
+  {
+    name: "M.Com",
+    body: "Master of Commerce — Indira Gandhi National Open University (IGNOU)",
+    icon: BookOpen,
+    tint: "primary",
+  },
+  {
+    name: "B.Com",
+    body: "Bachelor of Commerce — University of Calicut",
+    icon: BookOpen,
+    tint: "emerald",
+  },
 ];
 
 const tintClass: Record<Cert["tint"], { bg: string; text: string }> = {
@@ -47,7 +65,7 @@ export function Certifications() {
     <section id="certifications" className="relative px-4 py-24 md:px-8 md:py-32">
       <div className="mx-auto max-w-6xl">
         <Reveal className="mb-14 text-center">
-          <SectionEyebrow>Certifications & Recognition</SectionEyebrow>
+          <SectionEyebrow>Certifications, Education & Recognition</SectionEyebrow>
           <h2 className="font-display text-3xl font-bold md:text-5xl">
             Credentials that <span className="text-gradient">back the work.</span>
           </h2>

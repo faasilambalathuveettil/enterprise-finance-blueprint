@@ -43,7 +43,7 @@ function Metric({
         {v.toLocaleString()}
         {suffix}
       </div>
-      <div className="mt-3 text-[11px] font-bold uppercase tracking-[0.18em] text-muted-foreground">
+      <div className="mt-3 text-[12px] font-bold uppercase tracking-[0.18em] text-muted-foreground">
         {label}
       </div>
     </div>
@@ -61,7 +61,7 @@ const supporting = [
   { k: "110+", v: "COA Accounts" },
   { k: "11", v: "ESS Workflow Stages" },
   { k: "4,590", v: "Workforce Financials Tracked" },
-  { k: "4", v: "Jurisdictions at EY" },
+  { k: "7", v: "Jurisdictions at EY" },
   { k: "20+", v: "Vendors Managed" },
   { k: "58", v: "HRMS Fields Specified" },
 ];
@@ -104,7 +104,7 @@ export function Impact() {
                 <div className="font-display text-lg font-bold text-foreground md:text-xl">
                   {s.k}
                 </div>
-                <div className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                <div className="mt-1 text-[12px] font-semibold uppercase tracking-wider text-muted-foreground">
                   {s.v}
                 </div>
               </div>

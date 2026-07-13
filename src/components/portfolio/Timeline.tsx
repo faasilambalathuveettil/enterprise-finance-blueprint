@@ -25,14 +25,14 @@ const timeline = [
     role: "Associate Consultant — Business Transformation",
     org: "Ernst & Young GDS · Bengaluru, India",
     summary:
-      "Operated EY Regulatory Radar — end-to-end regulatory intelligence across EU, UK, HK, and Singapore.",
+      "Operated EY Regulatory Radar — end-to-end regulatory intelligence across EU, UK, HK, Singapore, Ireland, Jersey, and Australia.",
     achievements: [
       "Regulatory Radar",
       "EYQ Prompt Engineering",
       "Structured Outputs",
       "30–40% Efficiency",
     ],
-    tags: ["RegTech", "4 Jurisdictions"],
+    tags: ["RegTech", "7 Jurisdictions"],
     accent: "amber",
     award: "2× EY Spot + GDS Recognition",
   },
@@ -43,9 +43,10 @@ const timeline = [
     summary:
       "Sole SPOC for 20+ vendors and 15+ critical tech subscriptions at an NBFC fintech lender.",
     achievements: [
-      "Vendor Management",
-      "TRAI DLT",
-      "Provisioning",
+      "20+ vendors managed as sole SPOC",
+      "15+ critical tech subscriptions owned end-to-end",
+      "TRAI DLT compliance rollout coordinated",
+      "Provisioning cycle time reduced through structured intake",
     ],
     tags: [],
     accent: "purple",
@@ -57,11 +58,12 @@ const timeline = [
     summary:
       "Built a semi-automated accounting workflow in a cloud kitchen environment.",
     achievements: [
-      "QuickBooks-Razorpay Integration",
-      "VBA Macros",
-      "Multi-Aggregator Reconciliation",
+      "50% faster payment cycle via QuickBooks–Razorpay integration",
+      "25% reduction in manual data entry through VBA macros",
+      "15+ staff payroll processed monthly",
+      "Multi-aggregator reconciliation with GST / TDS / TCS compliance",
     ],
-    tags: ["50% Faster Payments", "25% Less Manual Entry", "15+ Staff Payroll", "GST / TDS / TCS"],
+    tags: ["QuickBooks–Razorpay", "VBA Macros", "Multi-Aggregator Reconciliation"],
     accent: "emerald",
   },
 ];
@@ -104,11 +106,11 @@ export function Timeline() {
                   />
                   <div className="card-hover rounded-2xl border border-border bg-card p-[18px] backdrop-blur-md md:p-[26px]">
                     <div className="mb-2 flex flex-wrap items-center gap-3">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
+                      <span className="text-[12px] font-bold uppercase tracking-wider text-muted-foreground">
                         {t.when}
                       </span>
                       {t.award && (
-                        <span className="inline-flex items-center gap-1 rounded-full border border-amber/25 bg-amber/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-amber">
+                        <span className="inline-flex items-center gap-1 rounded-full border border-amber/25 bg-amber/10 px-2.5 py-0.5 text-[12px] font-bold uppercase tracking-wider text-amber">
                           <Award className="h-3 w-3" /> {t.award}
                         </span>
                       )}
@@ -121,7 +123,7 @@ export function Timeline() {
                       {t.summary}
                     </p>
                     <div className="mt-3">
-                      <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                      <p className="text-[12px] font-bold uppercase tracking-wider text-muted-foreground">
                         Highlights
                       </p>
                       <ul className="mt-2 grid grid-cols-1 gap-1 sm:grid-cols-2">
@@ -140,7 +142,7 @@ export function Timeline() {
                       {t.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-md border border-border bg-surface/60 px-2.5 py-1 text-[11px] text-muted-foreground"
+                          className="rounded-md border border-border bg-surface/60 px-2.5 py-1 text-[12px] text-muted-foreground"
                         >
                           {tag}
                         </span>
