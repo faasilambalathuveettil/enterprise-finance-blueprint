@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Reveal, SectionEyebrow } from "./shared";
-import { ChevronDown, CheckCircle2 } from "lucide-react";
+import { ChevronDown, CheckCircle2, Boxes, ShieldCheck, Sparkles, Bot, Layers } from "lucide-react";
 import { CaseVisual } from "./CaseVisuals";
 import { AnimatedCounter } from "./AnimatedCounter";
 import { chipDescriptions } from "./chipDescriptions";
@@ -18,7 +18,13 @@ import commercialImg from "@/assets/project-commercial.jpg";
 
 type Paragraphs = string | string[];
 type Priority = "primary" | "secondary" | "supporting";
-type Section = { title: string; body: Paragraphs; bullets?: string[]; priority?: Priority };
+type Section = {
+  title: string;
+  body: Paragraphs;
+  bullets?: string[];
+  priority?: Priority;
+  timeline?: { label: string; date: string; live?: boolean }[];
+};
 type Case = {
   id: string;
   eyebrow: string;
@@ -208,15 +214,13 @@ const cases: Case[] = [
       },
       {
         title: "04 · Production Go-Live",
-        body: [
-          "Coordinated CSID onboarding, ERP configuration, simulation testing, and production cutover across all three entities.",
-          "Successfully completed the transition from sandbox validation to live e-invoicing without disrupting business operations.",
-        ],
-        bullets: [
-          "CSID onboarding & ERP config: April 24 – May 4, 2026",
-          "Simulation testing (invoices + credit notes): May 5 – June 6, 2026",
-          "All 3 entities LIVE: June 11, 2026",
-          "Real credit note issued from Al Imtiaz Corner on live connection",
+        body: "Delivered in 7 weeks:",
+        bullets: ["Real credit note issued from Al Imtiaz Corner on live connection"],
+        timeline: [
+          { label: "CSID Onboarding", date: "Apr 24, 2026" },
+          { label: "EGS Unit Setup", date: "May 4, 2026" },
+          { label: "Sandbox / Simulation Testing (all 3 entities)", date: "May 5 – Jun 6, 2026" },
+          { label: "Go-Live", date: "Jun 11, 2026", live: true },
         ],
       },
       {
@@ -412,6 +416,65 @@ const accentGlow: Record<string, string> = {
   purple: "bg-purple/10",
 };
 
+const tagIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  "Orison ERP": Boxes,
+  "ZATCA Phase 2": ShieldCheck,
+  "EY Regulatory Radar": Sparkles,
+  "EYQ / OpenAI": Bot,
+  "AI-Assisted Classification": Bot,
+  "AI Workflow Design": Bot,
+  "Google Opal": Layers,
+};
+
+function MilestoneTimeline({
+  items,
+}: {
+  items: { label: string; date: string; live?: boolean }[];
+}) {
+  return (
+    <div className="mt-4 flex flex-wrap items-center gap-2">
+      {items.map((item, i) => (
+        <div key={item.label} className="flex items-center gap-2">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.32,
+              ease: [0.22, 1, 0.36, 1],
+              delay: i * 0.08,
+            }}
+            className={`flex min-w-[120px] flex-col items-center rounded-lg border px-3 py-2 text-center ${
+              item.live
+                ? "border-emerald/40 bg-emerald/5"
+                : "border-border bg-surface/40"
+            }`}
+          >
+            <div className="flex items-center justify-center gap-1.5">
+              {item.live && (
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald/70 opacity-75" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald" />
+                </span>
+              )}
+              <span
+                className={`text-[12px] font-semibold ${
+                  item.live ? "text-emerald" : "text-foreground/80"
+                }`}
+              >
+                {item.label}
+              </span>
+            </div>
+            <span className="text-[11px] text-muted-foreground">{item.date}</span>
+          </motion.div>
+          {i < items.length - 1 && (
+            <div className="hidden h-px w-4 bg-border md:block" />
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function ChipWithTooltip({ label, desc }: { label: string; desc: string }) {
   const [open, setOpen] = useState(false);
   const [isTouch, setIsTouch] = useState(false);
@@ -421,14 +484,16 @@ function ChipWithTooltip({ label, desc }: { label: string; desc: string }) {
         (window.matchMedia?.("(hover: none)").matches || "ontouchstart" in window),
     );
   }, []);
+  const Icon = tagIcons[label];
   return (
     <Tooltip open={isTouch ? open : undefined} onOpenChange={setOpen}>
       <TooltipTrigger asChild>
         <button
           type="button"
           onClick={() => isTouch && setOpen((v) => !v)}
-          className="cursor-help rounded-md border border-border bg-surface/60 px-2 py-0.5 text-[12px] text-muted-foreground transition-colors hover:border-border-strong hover:text-foreground"
+          className="inline-flex cursor-help items-center gap-1 rounded-md border border-border bg-surface/60 px-2 py-0.5 text-[12px] text-muted-foreground transition-colors hover:border-border-strong hover:text-foreground"
         >
+          {Icon && <Icon className="h-3 w-3 shrink-0" />}
           {label}
         </button>
       </TooltipTrigger>
@@ -525,12 +590,14 @@ function CaseCard({ c }: { c: Case }) {
             <div className="mt-4 flex flex-wrap gap-1.5">
               {c.tags.map((t) => {
                 const desc = chipDescriptions[t];
+                const Icon = tagIcons[t];
                 if (!desc) {
                   return (
                     <span
                       key={t}
-                      className="rounded-md border border-border bg-surface/60 px-2 py-0.5 text-[12px] text-muted-foreground"
+                      className="inline-flex items-center gap-1 rounded-md border border-border bg-surface/60 px-2 py-0.5 text-[12px] text-muted-foreground"
                     >
+                      {Icon && <Icon className="h-3 w-3 shrink-0" />}
                       {t}
                     </span>
                   );
@@ -606,6 +673,7 @@ function CaseCard({ c }: { c: Case }) {
                       <p key={i}>{para}</p>
                     ))}
                   </div>
+                  {s.timeline && <MilestoneTimeline items={s.timeline} />}
                   {s.bullets && (
                     <ul className={mode === "supporting" ? "mt-3 space-y-1.5" : "mt-4 space-y-1.5"}>
                       {s.bullets.map((b) => (
