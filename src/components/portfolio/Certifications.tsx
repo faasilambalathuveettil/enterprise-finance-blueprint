@@ -1,5 +1,5 @@
 import { Reveal, SectionEyebrow } from "./shared";
-import { BadgeCheck, GraduationCap, Award, Medal } from "lucide-react";
+import { BadgeCheck, GraduationCap, Award, Medal, Sparkles, BookOpen } from "lucide-react";
 
 type Cert = {
   name: string;
@@ -32,6 +32,24 @@ const items: Cert[] = [
     body: "Two Spot Awards and one GDS User Recognition Award from the onshore team",
     icon: Medal,
     tint: "purple",
+  },
+  {
+    name: "EY Applied AI — Bronze",
+    body: "EY badge recognising applied AI competency — supports the Practical AI pillar",
+    icon: Sparkles,
+    tint: "purple",
+  },
+  {
+    name: "M.Com",
+    body: "Master of Commerce — Indira Gandhi National Open University (IGNOU)",
+    icon: BookOpen,
+    tint: "primary",
+  },
+  {
+    name: "B.Com",
+    body: "Bachelor of Commerce — University of Calicut",
+    icon: BookOpen,
+    tint: "emerald",
   },
 ];
 
