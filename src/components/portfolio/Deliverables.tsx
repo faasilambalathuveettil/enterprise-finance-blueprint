@@ -63,10 +63,10 @@ const items: Deliverable[] = [
   },
   {
     name: "Fixed Asset Register",
-    type: "FAR · 9 Asset Groups · Auto-Depreciation",
+    type: "FAR · 9 Asset Groups · Depreciation Schedule",
     icon: Landmark,
     tint: "amber",
-    body: "Structured asset register supporting automated depreciation, policy compliance, and standardised fixed asset management across multiple asset classes.",
+    body: "Structured asset register supporting structured depreciation policy, compliance, and standardised fixed asset management across multiple asset classes.",
     preview: "far",
   },
   {
