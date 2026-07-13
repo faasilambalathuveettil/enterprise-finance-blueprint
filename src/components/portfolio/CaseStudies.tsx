@@ -18,7 +18,13 @@ import commercialImg from "@/assets/project-commercial.jpg";
 
 type Paragraphs = string | string[];
 type Priority = "primary" | "secondary" | "supporting";
-type Section = { title: string; body: Paragraphs; bullets?: string[]; priority?: Priority };
+type Section = {
+  title: string;
+  body: Paragraphs;
+  bullets?: string[];
+  priority?: Priority;
+  timeline?: { label: string; date: string; live?: boolean }[];
+};
 type Case = {
   id: string;
   eyebrow: string;
