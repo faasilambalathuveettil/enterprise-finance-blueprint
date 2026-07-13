@@ -63,10 +63,10 @@ const items: Deliverable[] = [
   },
   {
     name: "Fixed Asset Register",
-    type: "FAR · 9 Asset Groups · Auto-Depreciation",
+    type: "FAR · 9 Asset Groups · Depreciation Schedule",
     icon: Landmark,
     tint: "amber",
-    body: "Structured asset register supporting automated depreciation, policy compliance, and standardised fixed asset management across multiple asset classes.",
+    body: "Structured asset register supporting structured depreciation policy, compliance, and standardised fixed asset management across multiple asset classes.",
     preview: "far",
   },
   {
@@ -267,7 +267,7 @@ export function Deliverables() {
 
         <Reveal delay={0.2} className="mt-10 text-center">
           <p className="text-xs text-muted-foreground">
-            Illustrations are reconstructed representations of production deliverables. Client names, financial data, and confidential information have been removed while preserving the underlying architecture, workflow logic, and implementation approach.
+            Illustrations are reconstructed representations; confidential client information has been removed.
           </p>
         </Reveal>
       </div>
