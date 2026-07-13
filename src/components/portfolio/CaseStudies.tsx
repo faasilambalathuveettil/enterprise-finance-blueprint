@@ -438,7 +438,7 @@ function CaseCard({ c }: { c: Case }) {
           <div className={`absolute inset-0 bg-gradient-to-br ${accentBg[c.accent]} mix-blend-overlay`} />
 
           <div className="absolute inset-0 bg-gradient-to-tr from-background/80 via-transparent to-transparent md:bg-gradient-to-r" />
-          <span className={`absolute left-5 top-5 rounded-full border border-white/15 bg-black/40 px-3 py-1 text-[10px] font-bold uppercase tracking-widest backdrop-blur ${accentText[c.accent]}`}>
+          <span className={`absolute left-5 top-5 rounded-full border border-white/15 bg-black/40 px-3 py-1 text-[12px] font-bold uppercase tracking-widest backdrop-blur ${accentText[c.accent]}`}>
             {c.eyebrow}
           </span>
         </div>
@@ -450,10 +450,10 @@ function CaseCard({ c }: { c: Case }) {
           </h3>
           <p className="mt-1.5 text-sm font-medium text-muted-foreground">{c.org}</p>
 
-          <div className={`mt-6 text-[10px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]} opacity-80`}>
+          <div className={`mt-6 text-[12px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]}`}>
             Business Context
           </div>
-          <div className="mt-2 space-y-3 text-[15px] leading-relaxed text-muted-foreground">
+          <div className="mt-3 max-w-[65ch] space-y-3 text-[15px] leading-relaxed text-muted-foreground">
             {toParas(c.headline).map((p, i) => (
               <p key={i}>{p}</p>
             ))}
@@ -461,10 +461,10 @@ function CaseCard({ c }: { c: Case }) {
 
           {c.transition && (
             <div className="mt-6 rounded-xl border border-border bg-muted/30 p-5">
-              <h4 className={`font-display text-[10px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]} opacity-80`}>
+              <h4 className={`font-display text-[12px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]}`}>
                 Why It Mattered
               </h4>
-              <div className="mt-2 space-y-2 text-sm leading-relaxed text-muted-foreground">
+              <div className="mt-3 max-w-[65ch] space-y-2 text-sm leading-relaxed text-muted-foreground">
                 {toParas(c.transition).map((p, i) => (
                   <p key={i}>{p}</p>
                 ))}
@@ -472,7 +472,7 @@ function CaseCard({ c }: { c: Case }) {
             </div>
           )}
 
-          <div className={`mt-6 text-[10px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]} opacity-80`}>
+          <div className={`mt-6 text-[12px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]}`}>
             Transformation Overview
           </div>
           <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -482,7 +482,7 @@ function CaseCard({ c }: { c: Case }) {
                   value={m.k}
                   className={`font-display text-lg font-bold ${accentText[c.accent]}`}
                 />
-                <div className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                <div className="mt-1 text-[12px] font-semibold uppercase tracking-wider text-muted-foreground">
                   {m.v}
                 </div>
               </div>
@@ -490,7 +490,7 @@ function CaseCard({ c }: { c: Case }) {
           </div>
 
           {c.tagsHeading && (
-            <div className={`mt-6 text-[10px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]} opacity-80`}>
+            <div className={`mt-6 text-[12px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]}`}>
               {c.tagsHeading}
             </div>
           )}
