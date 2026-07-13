@@ -16,7 +16,7 @@ const toneClass: Record<string, string> = {
   primary: "text-primary-glow bg-primary/10 border-primary/25",
   emerald: "text-emerald bg-emerald/10 border-emerald/25",
   amber: "text-amber bg-amber/10 border-amber/25",
-  muted: "text-muted-foreground bg-white/5 border-border-strong",
+  muted: "text-foreground/80 bg-white/5 border-border-strong",
 };
 
 const kpis = [
