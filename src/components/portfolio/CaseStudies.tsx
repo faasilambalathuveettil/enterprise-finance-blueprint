@@ -215,7 +215,7 @@ const cases: Case[] = [
       {
         title: "04 · Production Go-Live",
         body: "Delivered in 7 weeks:",
-        bullets: ["Real credit note issued from Al Imtiaz Corner on live connection"],
+        bullets: ["SAR 100 dummy invoice/credit note simulation across all 3 entities, then a real credit note live at go-live from Al Imtiaz Corner."],
         timeline: [
           { label: "CSID Onboarding", date: "Apr 24, 2026" },
           { label: "EGS Unit Setup", date: "May 4, 2026" },
