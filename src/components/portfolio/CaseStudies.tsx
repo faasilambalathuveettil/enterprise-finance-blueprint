@@ -495,26 +495,20 @@ function CaseCard({ c }: { c: Case }) {
             </div>
           )}
           <TooltipProvider delayDuration={150}>
-            <div className="mt-3 flex flex-wrap gap-1.5">
+            <div className="mt-4 flex flex-wrap gap-1.5">
               {c.tags.map((t) => {
                 const desc = chipDescriptions[t];
-                const chip = (
-                  <span
-                    key={t}
-                    className={`rounded-md border border-border bg-surface/60 px-2 py-0.5 text-[11px] text-muted-foreground transition-colors ${desc ? "cursor-help hover:border-border-strong hover:text-foreground" : ""}`}
-                  >
-                    {t}
-                  </span>
-                );
-                if (!desc) return chip;
-                return (
-                  <Tooltip key={t}>
-                    <TooltipTrigger asChild>{chip}</TooltipTrigger>
-                    <TooltipContent side="top" className="max-w-[240px] text-xs leading-snug">
-                      {desc}
-                    </TooltipContent>
-                  </Tooltip>
-                );
+                if (!desc) {
+                  return (
+                    <span
+                      key={t}
+                      className="rounded-md border border-border bg-surface/60 px-2 py-0.5 text-[12px] text-muted-foreground"
+                    >
+                      {t}
+                    </span>
+                  );
+                }
+                return <ChipWithTooltip key={t} label={t} desc={desc} />;
               })}
             </div>
           </TooltipProvider>
