@@ -673,6 +673,7 @@ function CaseCard({ c }: { c: Case }) {
                       <p key={i}>{para}</p>
                     ))}
                   </div>
+                  {s.timeline && <MilestoneTimeline items={s.timeline} />}
                   {s.bullets && (
                     <ul className={mode === "supporting" ? "mt-3 space-y-1.5" : "mt-4 space-y-1.5"}>
                       {s.bullets.map((b) => (
