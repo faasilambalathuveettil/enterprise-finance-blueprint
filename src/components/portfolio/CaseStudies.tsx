@@ -464,7 +464,7 @@ function MilestoneTimeline({
                 {item.label}
               </span>
             </div>
-            <span className="text-[12px] text-muted-foreground">{item.date}</span>
+            <span className="text-[11px] text-muted-foreground">{item.date}</span>
           </motion.div>
           {i < items.length - 1 && (
             <div className="hidden h-px w-4 bg-border md:block" />

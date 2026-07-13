@@ -139,7 +139,7 @@ export function Reveal({
 
 export function SectionEyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mb-4 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.24em] text-primary-glow">
+    <div className="mb-4 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.24em] text-primary-glow">
       <span className="h-px w-8 bg-primary-glow/60" />
       {children}
     </div>

@@ -66,7 +66,7 @@ export function Contact() {
                       <Icon className="h-5 w-5" />
                     </div>
                     <div className="flex-1">
-                      <div className="text-[12px] font-bold uppercase tracking-widest text-muted-foreground">
+                      <div className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground">
                         {c.label}
                       </div>
                       <div className="mt-0.5 font-medium text-foreground">
@@ -132,7 +132,7 @@ export function Footer() {
             sustainable business growth.
           </span>
         </p>
-        <p className="mt-6 text-[12px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+        <p className="mt-6 text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
           Riyadh, Saudi Arabia · CertIFRS · ACCA — P Level · SOCPA Eligible
         </p>
         <p className="mt-3 text-xs text-muted-foreground">
