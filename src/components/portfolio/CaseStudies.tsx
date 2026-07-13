@@ -239,7 +239,7 @@ const cases: Case[] = [
       "The challenge was to convert large volumes of regulatory publications into structured, actionable intelligence that business teams could understand and apply with confidence.",
     ],
     metrics: [
-      { k: "4", v: "Jurisdictions" },
+      { k: "7", v: "Jurisdictions" },
       { k: "30–40%", v: "Efficiency Gain" },
       { k: "3", v: "AI Failure Modes" },
       { k: "3", v: "EY Recognition Awards" },
