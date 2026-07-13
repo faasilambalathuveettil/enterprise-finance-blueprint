@@ -654,7 +654,7 @@ function CaseCard({ c }: { c: Case }) {
                   <h4 className="font-display text-sm font-bold uppercase tracking-wider text-emerald">
                     Business Outcome
                   </h4>
-                  <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
+                  <div className="mt-4 max-w-[65ch] space-y-3 text-sm leading-relaxed text-muted-foreground">
                     {toParas(c.outcome).map((p, i) => (
                       <p key={i}>{p}</p>
                     ))}
@@ -666,10 +666,10 @@ function CaseCard({ c }: { c: Case }) {
             {c.takeaway && (
               <div className="px-6 pb-6 md:px-10 md:pb-10">
                 <div className="rounded-2xl border border-border border-l-[3px] border-l-primary bg-primary/[0.03] p-6">
-                  <h4 className="font-display text-[13px] font-semibold uppercase tracking-wider text-primary-glow">
+                  <h4 className="font-display text-[12px] font-semibold uppercase tracking-wider text-primary-glow">
                     Key Takeaway
                   </h4>
-                  <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
+                  <div className="mt-4 max-w-[65ch] space-y-3 text-sm leading-relaxed text-muted-foreground">
                     {toParas(c.takeaway).map((p, i) => (
                       <p key={i}>{p}</p>
                     ))}
