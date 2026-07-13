@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Reveal, SectionEyebrow } from "./shared";
-import { ChevronDown, CheckCircle2 } from "lucide-react";
+import { ChevronDown, CheckCircle2, Boxes, ShieldCheck, Sparkles, Bot, Layers } from "lucide-react";
 import { CaseVisual } from "./CaseVisuals";
 import { AnimatedCounter } from "./AnimatedCounter";
 import { chipDescriptions } from "./chipDescriptions";
