@@ -265,11 +265,6 @@ export function Deliverables() {
           })}
         </div>
 
-        <Reveal delay={0.2} className="mt-10 text-center">
-          <p className="text-xs text-muted-foreground">
-            Illustrations are reconstructed representations of production deliverables. Client names, financial data, and confidential information have been removed while preserving the underlying architecture, workflow logic, and implementation approach.
-          </p>
-        </Reveal>
       </div>
     </section>
   );
