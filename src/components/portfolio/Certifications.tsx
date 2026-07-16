@@ -11,16 +11,16 @@ type Cert = {
 
 const items: Cert[] = [
   {
+    name: "ACCA — Professional Level",
+    body: "Association of Chartered Certified Accountants — Professional Level pursuing",
+    icon: GraduationCap,
+    tint: "emerald",
+  },
+  {
     name: "CertIFRS",
     body: "IFRS Certified — ACCA",
     icon: BadgeCheck,
     tint: "primary",
-  },
-  {
-    name: "ACCA — P Level",
-    body: "Association of Chartered Certified Accountants — Professional Level pursuing",
-    icon: GraduationCap,
-    tint: "emerald",
   },
   {
     name: "SOCPA Eligible",
@@ -29,25 +29,19 @@ const items: Cert[] = [
     tint: "amber",
   },
   {
-    name: "3× EY Recognition Awards",
-    body: "Two Spot Awards and one GDS User Recognition Award from the onshore team",
-    icon: Medal,
+    name: "Managing Machine Learning Projects (Google Cloud)",
+    body: "Google Cloud (Mar 2024)",
+    icon: Cloud,
     tint: "purple",
   },
   {
-    name: "EY Badges",
+    name: "EY Professional Badges",
     badges: [
       "EY Finance — Bronze",
       "EY Supply Chain — Bronze",
       "EY Applied AI — Bronze",
     ],
     icon: Sparkles,
-    tint: "purple",
-  },
-  {
-    name: "Managing Machine Learning Projects with Google Cloud",
-    body: "Google Cloud (Mar 2024)",
-    icon: Cloud,
     tint: "purple",
   },
   {
@@ -61,6 +55,12 @@ const items: Cert[] = [
     body: "Bachelor of Commerce — University of Calicut",
     icon: BookOpen,
     tint: "emerald",
+  },
+  {
+    name: "3× EY Recognition Awards",
+    body: "Two Spot Awards and one GDS User Recognition Award from the onshore team",
+    icon: Medal,
+    tint: "purple",
   },
 ];
 
