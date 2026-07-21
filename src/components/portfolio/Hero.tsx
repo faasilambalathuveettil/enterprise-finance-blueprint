@@ -51,7 +51,7 @@ export function Hero() {
           {badges.map((b) => (
             <span
               key={b.label}
-              className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[12px] font-semibold uppercase tracking-wider ${toneClass[b.tone]}`}
+              className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[12px] font-semibold ${toneClass[b.tone]}`}
             >
               {b.label}
             </span>
