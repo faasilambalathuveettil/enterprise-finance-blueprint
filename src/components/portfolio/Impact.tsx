@@ -43,7 +43,7 @@ function Metric({
         {v.toLocaleString()}
         {suffix}
       </div>
-      <div className="mt-3 text-[13px] font-medium text-muted-foreground">
+      <div className="mt-3 text-[12px] font-bold uppercase tracking-[0.18em] text-muted-foreground">
         {label}
       </div>
     </div>
@@ -104,7 +104,7 @@ export function Impact() {
                 <div className="font-display text-lg font-bold text-foreground md:text-xl">
                   {s.k}
                 </div>
-                <div className="mt-1 text-[12px] font-medium text-muted-foreground">
+                <div className="mt-1 text-[12px] font-semibold uppercase tracking-wider text-muted-foreground">
                   {s.v}
                 </div>
               </div>

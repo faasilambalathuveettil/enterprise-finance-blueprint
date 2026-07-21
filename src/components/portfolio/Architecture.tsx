@@ -98,7 +98,7 @@ export function Architecture() {
                         <div className="text-center font-display text-[12px] font-bold text-foreground md:text-[13px]">
                           {s.label}
                         </div>
-                        <div className="text-center text-xs text-muted-foreground">
+                        <div className="text-center text-[11px] text-muted-foreground">
                           {s.sub}
                         </div>
                       </motion.div>
@@ -141,7 +141,7 @@ export function Architecture() {
                     <div className="font-display text-[12px] font-bold text-foreground md:text-[13px]">
                       ZATCA E-Invoicing Compliance
                     </div>
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
                       <span className="relative flex h-1.5 w-1.5">
                         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald/70 opacity-75" />
                         <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald" />

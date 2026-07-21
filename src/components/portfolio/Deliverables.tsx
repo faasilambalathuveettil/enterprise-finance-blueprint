@@ -217,7 +217,7 @@ function Preview({ kind, tint }: { kind: Deliverable["preview"]; tint: string })
 
 export function Deliverables() {
   return (
-    <section id="deliverables" className="relative border-y border-border bg-surface/30 px-4 py-20 md:px-8 md:py-24">
+    <section id="deliverables" className="relative px-4 py-24 md:px-8 md:py-32">
       <div className="mx-auto max-w-6xl">
         <Reveal className="mb-14 text-center">
           <SectionEyebrow>Documentation</SectionEyebrow>
@@ -254,7 +254,7 @@ export function Deliverables() {
                 <h3 className="font-display text-sm font-semibold text-foreground">
                   {d.name}
                 </h3>
-                <div className={`mt-0.5 text-[12px] font-medium ${t.text}`}>
+                <div className={`mt-0.5 text-[12px] font-bold uppercase tracking-wider ${t.text}`}>
                   {d.type}
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">

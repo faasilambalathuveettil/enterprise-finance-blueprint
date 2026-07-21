@@ -11,7 +11,10 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-// Case-card imagery removed — visual identity now carried by accent glow, chapter bar, and Architecture/Approach diagrams.
+import erpImg from "@/assets/project-erp.jpg";
+import aiImg from "@/assets/project-ai.jpg";
+import eyImg from "@/assets/project-ey.jpg";
+import commercialImg from "@/assets/project-commercial.jpg";
 
 type Paragraphs = string | string[];
 type Priority = "primary" | "secondary" | "supporting";
@@ -50,7 +53,7 @@ const cases: Case[] = [
     eyebrow: "Flagship 01 — End-to-End Build",
     title: "Multi-Entity ERP Finance System",
     org: "Al Imtiaz Corner Logistics · 7 Legal Entities",
-    image: "",
+    image: erpImg,
     headline: [
       "The organisation operated seven legal entities using spreadsheet-based accounting, fragmented approval workflows, and inconsistent financial structures that limited visibility, governance, and scalability.",
       "The objective was to design and implement a scalable ERP finance operating model while maintaining uninterrupted day-to-day operations.",
@@ -155,7 +158,7 @@ const cases: Case[] = [
     eyebrow: "Flagship 02 — KSA Regulatory Transformation",
     title: "ZATCA Phase 2 e-Invoicing Integration",
     org: "Business-side ERP Implementation · 3 Legal Entities",
-    image: "",
+    image: eyImg,
 
     headline: [
       "Saudi Arabia's transition to ZATCA Phase 2 required more than connecting an ERP to a government platform.",
@@ -234,7 +237,7 @@ const cases: Case[] = [
     eyebrow: "Flagship 03 — Regulatory Intelligence & AI Workflows",
     title: "EY Regulatory Intelligence & AI Workflows",
     org: "Ernst & Young GDS · 3 Awards",
-    image: "",
+    image: eyImg,
     headline: [
       "Financial institutions operate in fast-changing regulatory environments where new guidance must be analysed, interpreted, and communicated quickly.",
       "The challenge was to convert large volumes of regulatory publications into structured, actionable intelligence that business teams could understand and apply with confidence.",
@@ -313,7 +316,7 @@ const cases: Case[] = [
     eyebrow: "Flagship 04 — Practical AI at Work",
     title: "Finance Process Automation",
     org: "Google Opal · Apps Script · AI Workflow Automation",
-    image: "",
+    image: aiImg,
     headline: [
       "Many finance teams continue to rely on repetitive document handling, spreadsheet manipulation, and manual data extraction for routine processes.",
       "My objective has been to apply practical automation that reduces manual effort while preserving finance-grade accuracy, traceability, and operational control.",
@@ -503,36 +506,41 @@ function ChipWithTooltip({ label, desc }: { label: string; desc: string }) {
 
 function CaseCard({ c }: { c: Case }) {
   const [open, setOpen] = useState(false);
-  const isFlagship = c.id === "erp" || c.id === "zatca";
   return (
     <motion.article
       layout
       transition={{ layout: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }}
-      className={`ambient-sheen card-hover group relative overflow-hidden rounded-3xl backdrop-blur-md ${
-        isFlagship
-          ? "border border-border-strong bg-gradient-to-b from-card to-card/80 shadow-elegant"
-          : "border border-border bg-card"
-      }`}
+      className="ambient-sheen card-hover group relative overflow-hidden rounded-3xl border border-border bg-card backdrop-blur-md"
     >
       {/* Subtle chapter glow — creates visual memory per flagship */}
       <div className={`pointer-events-none absolute -left-32 -top-32 h-64 w-64 rounded-full blur-3xl ${accentGlow[c.accent]}`} />
       <div className={`pointer-events-none absolute -right-32 bottom-0 h-64 w-64 rounded-full blur-3xl ${accentGlow[c.accent]} opacity-60`} />
-      {/* Top-edge accent bar — only on primary flagship cards (ERP + ZATCA) */}
-      {isFlagship && (
-        <div className={`flagship-border h-[3px] w-full ${accentBar[c.accent]}`} />
-      )}
+      {/* Chapter accent bar — gives each flagship its own identity */}
+      <div className={`flagship-border h-[3px] w-full ${accentBar[c.accent]}`} />
 
-      <div className="flex flex-col">
-        {/* Content */}
-        <div className="flex flex-col p-6 md:p-10">
-          <span className={`mb-4 inline-flex w-fit items-center rounded-full border border-border bg-surface/60 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest ${accentText[c.accent]}`}>
+      <div className="grid grid-cols-1 md:grid-cols-[minmax(0,0.78fr)_minmax(0,1.45fr)]">
+        {/* Image */}
+        <div className="relative min-h-[220px] overflow-hidden md:min-h-full">
+          <img
+            src={c.image}
+            alt={c.title}
+            className="h-full w-full object-cover"
+            loading="lazy"
+          />
+          <div className={`absolute inset-0 bg-gradient-to-br ${accentBg[c.accent]} mix-blend-overlay`} />
+
+          <div className="absolute inset-0 bg-gradient-to-tr from-background/80 via-transparent to-transparent md:bg-gradient-to-r" />
+          <span className={`absolute left-5 top-5 rounded-full border border-white/15 bg-black/40 px-3 py-1 text-[12px] font-bold uppercase tracking-widest backdrop-blur ${accentText[c.accent]}`}>
             {c.eyebrow}
           </span>
+        </div>
+
+        {/* Content */}
+        <div className="flex flex-col p-6 md:p-10">
           <h3 className="font-display text-2xl font-bold leading-tight text-foreground md:text-[32px]">
             {c.title}
           </h3>
           <p className="mt-1.5 text-sm font-medium text-muted-foreground">{c.org}</p>
-
 
           <div className={`mt-6 text-[12px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]}`}>
             Business Context
@@ -566,7 +574,7 @@ function CaseCard({ c }: { c: Case }) {
                   value={m.k}
                   className={`font-display text-lg font-bold ${accentText[c.accent]}`}
                 />
-                <div className="mt-1 text-[12px] font-medium text-muted-foreground">
+                <div className="mt-1 text-[12px] font-semibold uppercase tracking-wider text-muted-foreground">
                   {m.v}
                 </div>
               </div>
@@ -746,6 +754,7 @@ function CaseCard({ c }: { c: Case }) {
 }
 
 // Override ZATCA image with commercial (better fit) — small assignment before render
+cases[1].image = commercialImg;
 
 export function CaseStudies() {
   return (

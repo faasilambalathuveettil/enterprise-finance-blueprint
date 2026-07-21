@@ -14,7 +14,7 @@ const items: Cert[] = [
     name: "ACCA — Professional Level",
     body: "Association of Chartered Certified Accountants — Professional Level pursuing",
     icon: GraduationCap,
-    tint: "primary",
+    tint: "emerald",
   },
   {
     name: "CertIFRS",
@@ -26,7 +26,7 @@ const items: Cert[] = [
     name: "SOCPA Eligible",
     body: "Saudi Organization for Chartered and Professional Accountants",
     icon: Award,
-    tint: "emerald",
+    tint: "amber",
   },
   {
     name: "Managing Machine Learning Projects (Google Cloud)",
@@ -42,7 +42,7 @@ const items: Cert[] = [
       "EY Applied AI — Bronze",
     ],
     icon: Sparkles,
-    tint: "amber",
+    tint: "purple",
   },
   {
     name: "M.Com",
@@ -54,13 +54,13 @@ const items: Cert[] = [
     name: "B.Com",
     body: "Bachelor of Commerce — University of Calicut",
     icon: BookOpen,
-    tint: "primary",
+    tint: "emerald",
   },
   {
     name: "3× EY Recognition Awards",
     body: "Two Spot Awards and one GDS User Recognition Award from the onshore team",
     icon: Medal,
-    tint: "amber",
+    tint: "purple",
   },
 ];
 
@@ -73,7 +73,7 @@ const tintClass: Record<Cert["tint"], { bg: string; text: string }> = {
 
 export function Certifications() {
   return (
-    <section id="certifications" className="relative px-4 py-20 md:px-8 md:py-24">
+    <section id="certifications" className="relative px-4 py-24 md:px-8 md:py-32">
       <div className="mx-auto max-w-6xl">
         <Reveal className="mb-14 text-center">
           <SectionEyebrow>Certifications, Education & Recognition</SectionEyebrow>
