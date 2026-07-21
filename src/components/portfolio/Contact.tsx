@@ -37,7 +37,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="relative border-t border-border px-4 py-24 md:px-8 md:py-32"
+      className="relative border-t border-border bg-surface/30 px-4 py-24 md:px-8 md:py-32"
     >
       <div className="mx-auto max-w-5xl">
         <Reveal className="mb-14 text-center">
@@ -66,7 +66,7 @@ export function Contact() {
                       <Icon className="h-5 w-5" />
                     </div>
                     <div className="flex-1">
-                      <div className="text-[12px] font-bold uppercase tracking-widest text-muted-foreground">
+                      <div className="text-[12px] font-medium text-muted-foreground">
                         {c.label}
                       </div>
                       <div className="mt-0.5 font-medium text-foreground">

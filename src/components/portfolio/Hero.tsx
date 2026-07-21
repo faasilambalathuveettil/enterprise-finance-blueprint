@@ -5,11 +5,8 @@ import resumeAsset from "@/assets/Faasil_Ambalathuveettil_Resume.pdf";
 
 const badges = [
   { label: "ZATCA Phase 2 LIVE", tone: "emerald" },
-  { label: "Ex-EY GDS", tone: "primary" },
-  { label: "3× EY Recognition Awards", tone: "amber" },
-  { label: "ACCA — Professional Level", tone: "muted" },
-  { label: "CertIFRS", tone: "muted" },
-  { label: "SOCPA Eligible", tone: "muted" },
+  { label: "Ex-EY GDS", tone: "amber" },
+  { label: "ACCA — Professional Level", tone: "primary" },
 ];
 
 const toneClass: Record<string, string> = {
@@ -21,10 +18,8 @@ const toneClass: Record<string, string> = {
 
 const kpis = [
   { v: "7", l: "Legal Entities" },
-  { v: "110+", l: "COA Accounts" },
-  { v: "1,500+", l: "Txn / Month" },
   { v: "3", l: "ZATCA Live" },
-  { v: "50–70%", l: "AI Reduction" },
+  { v: "50–70%", l: "Manual Reduction" },
 ];
 
 export function Hero() {
@@ -56,7 +51,7 @@ export function Hero() {
           {badges.map((b) => (
             <span
               key={b.label}
-              className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[12px] font-semibold uppercase tracking-wider ${toneClass[b.tone]}`}
+              className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[12px] font-semibold ${toneClass[b.tone]}`}
             >
               {b.label}
             </span>
@@ -143,7 +138,7 @@ export function Hero() {
             <div key={k.l} className="flex items-center gap-3">
               <div>
                 <div className="font-display text-2xl font-bold text-primary-glow">{k.v}</div>
-                <div className="text-[12px] font-semibold uppercase tracking-widest text-muted-foreground">
+                <div className="text-[12px] font-medium text-muted-foreground">
                   {k.l}
                 </div>
               </div>
