@@ -43,7 +43,7 @@ function Metric({
         {v.toLocaleString()}
         {suffix}
       </div>
-      <div className="mt-3 text-[12px] font-bold uppercase tracking-[0.18em] text-muted-foreground">
+      <div className="mt-3 text-[13px] font-medium text-muted-foreground">
         {label}
       </div>
     </div>
