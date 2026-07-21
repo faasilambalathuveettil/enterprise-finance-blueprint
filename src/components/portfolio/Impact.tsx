@@ -104,7 +104,7 @@ export function Impact() {
                 <div className="font-display text-lg font-bold text-foreground md:text-xl">
                   {s.k}
                 </div>
-                <div className="mt-1 text-[12px] font-semibold uppercase tracking-wider text-muted-foreground">
+                <div className="mt-1 text-[12px] font-medium text-muted-foreground">
                   {s.v}
                 </div>
               </div>
