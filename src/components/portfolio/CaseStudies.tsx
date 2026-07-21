@@ -11,10 +11,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import erpImg from "@/assets/project-erp.jpg";
-import aiImg from "@/assets/project-ai.jpg";
-import eyImg from "@/assets/project-ey.jpg";
-import commercialImg from "@/assets/project-commercial.jpg";
+// Case-card imagery removed — visual identity now carried by accent glow, chapter bar, and Architecture/Approach diagrams.
 
 type Paragraphs = string | string[];
 type Priority = "primary" | "secondary" | "supporting";
@@ -569,7 +566,7 @@ function CaseCard({ c }: { c: Case }) {
                   value={m.k}
                   className={`font-display text-lg font-bold ${accentText[c.accent]}`}
                 />
-                <div className="mt-1 text-[12px] font-semibold uppercase tracking-wider text-muted-foreground">
+                <div className="mt-1 text-[12px] font-medium text-muted-foreground">
                   {m.v}
                 </div>
               </div>
