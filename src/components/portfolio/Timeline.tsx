@@ -77,7 +77,7 @@ const dotClass: Record<string, string> = {
 
 export function Timeline() {
   return (
-    <section id="experience" className="relative px-4 py-24 md:px-8 md:py-32">
+    <section id="experience" className="relative border-y border-border bg-surface/30 px-4 py-24 md:px-8 md:py-32">
       <div className="mx-auto max-w-4xl">
         <Reveal className="mb-16 text-center">
           <SectionEyebrow>Career Arc</SectionEyebrow>
