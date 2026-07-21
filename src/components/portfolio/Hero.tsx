@@ -138,7 +138,7 @@ export function Hero() {
             <div key={k.l} className="flex items-center gap-3">
               <div>
                 <div className="font-display text-2xl font-bold text-primary-glow">{k.v}</div>
-                <div className="text-[12px] font-semibold uppercase tracking-widest text-muted-foreground">
+                <div className="text-[12px] font-medium text-muted-foreground">
                   {k.l}
                 </div>
               </div>
