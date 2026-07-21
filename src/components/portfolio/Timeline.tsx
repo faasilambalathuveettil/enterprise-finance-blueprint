@@ -106,11 +106,11 @@ export function Timeline() {
                   />
                   <div className="card-hover rounded-2xl border border-border bg-card p-[18px] backdrop-blur-md md:p-[26px]">
                     <div className="mb-2 flex flex-wrap items-center gap-3">
-                      <span className="text-[12px] font-bold uppercase tracking-wider text-muted-foreground">
+                      <span className="text-[13px] font-medium text-muted-foreground">
                         {t.when}
                       </span>
                       {t.award && (
-                        <span className="inline-flex items-center gap-1 rounded-full border border-amber/25 bg-amber/10 px-2.5 py-0.5 text-[12px] font-bold uppercase tracking-wider text-amber">
+                        <span className="inline-flex items-center gap-1 rounded-full border border-amber/25 bg-amber/10 px-2.5 py-0.5 text-[12px] font-semibold text-amber">
                           <Award className="h-3 w-3" /> {t.award}
                         </span>
                       )}
