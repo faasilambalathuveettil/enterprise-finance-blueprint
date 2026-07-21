@@ -50,7 +50,7 @@ const cases: Case[] = [
     eyebrow: "Flagship 01 — End-to-End Build",
     title: "Multi-Entity ERP Finance System",
     org: "Al Imtiaz Corner Logistics · 7 Legal Entities",
-    image: erpImg,
+    image: "",
     headline: [
       "The organisation operated seven legal entities using spreadsheet-based accounting, fragmented approval workflows, and inconsistent financial structures that limited visibility, governance, and scalability.",
       "The objective was to design and implement a scalable ERP finance operating model while maintaining uninterrupted day-to-day operations.",
@@ -155,7 +155,7 @@ const cases: Case[] = [
     eyebrow: "Flagship 02 — KSA Regulatory Transformation",
     title: "ZATCA Phase 2 e-Invoicing Integration",
     org: "Business-side ERP Implementation · 3 Legal Entities",
-    image: eyImg,
+    image: "",
 
     headline: [
       "Saudi Arabia's transition to ZATCA Phase 2 required more than connecting an ERP to a government platform.",
@@ -234,7 +234,7 @@ const cases: Case[] = [
     eyebrow: "Flagship 03 — Regulatory Intelligence & AI Workflows",
     title: "EY Regulatory Intelligence & AI Workflows",
     org: "Ernst & Young GDS · 3 Awards",
-    image: eyImg,
+    image: "",
     headline: [
       "Financial institutions operate in fast-changing regulatory environments where new guidance must be analysed, interpreted, and communicated quickly.",
       "The challenge was to convert large volumes of regulatory publications into structured, actionable intelligence that business teams could understand and apply with confidence.",
@@ -313,7 +313,7 @@ const cases: Case[] = [
     eyebrow: "Flagship 04 — Practical AI at Work",
     title: "Finance Process Automation",
     org: "Google Opal · Apps Script · AI Workflow Automation",
-    image: aiImg,
+    image: "",
     headline: [
       "Many finance teams continue to rely on repetitive document handling, spreadsheet manipulation, and manual data extraction for routine processes.",
       "My objective has been to apply practical automation that reduces manual effort while preserving finance-grade accuracy, traceability, and operational control.",
@@ -746,7 +746,6 @@ function CaseCard({ c }: { c: Case }) {
 }
 
 // Override ZATCA image with commercial (better fit) — small assignment before render
-cases[1].image = commercialImg;
 
 export function CaseStudies() {
   return (
