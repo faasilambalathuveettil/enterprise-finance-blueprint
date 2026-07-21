@@ -506,41 +506,36 @@ function ChipWithTooltip({ label, desc }: { label: string; desc: string }) {
 
 function CaseCard({ c }: { c: Case }) {
   const [open, setOpen] = useState(false);
+  const isFlagship = c.id === "erp" || c.id === "zatca";
   return (
     <motion.article
       layout
       transition={{ layout: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }}
-      className="ambient-sheen card-hover group relative overflow-hidden rounded-3xl border border-border bg-card backdrop-blur-md"
+      className={`ambient-sheen card-hover group relative overflow-hidden rounded-3xl backdrop-blur-md ${
+        isFlagship
+          ? "border border-border-strong bg-gradient-to-b from-card to-card/80 shadow-elegant"
+          : "border border-border bg-card"
+      }`}
     >
       {/* Subtle chapter glow — creates visual memory per flagship */}
       <div className={`pointer-events-none absolute -left-32 -top-32 h-64 w-64 rounded-full blur-3xl ${accentGlow[c.accent]}`} />
       <div className={`pointer-events-none absolute -right-32 bottom-0 h-64 w-64 rounded-full blur-3xl ${accentGlow[c.accent]} opacity-60`} />
-      {/* Chapter accent bar — gives each flagship its own identity */}
-      <div className={`flagship-border h-[3px] w-full ${accentBar[c.accent]}`} />
+      {/* Top-edge accent bar — only on primary flagship cards (ERP + ZATCA) */}
+      {isFlagship && (
+        <div className={`flagship-border h-[3px] w-full ${accentBar[c.accent]}`} />
+      )}
 
-      <div className="grid grid-cols-1 md:grid-cols-[minmax(0,0.78fr)_minmax(0,1.45fr)]">
-        {/* Image */}
-        <div className="relative min-h-[220px] overflow-hidden md:min-h-full">
-          <img
-            src={c.image}
-            alt={c.title}
-            className="h-full w-full object-cover"
-            loading="lazy"
-          />
-          <div className={`absolute inset-0 bg-gradient-to-br ${accentBg[c.accent]} mix-blend-overlay`} />
-
-          <div className="absolute inset-0 bg-gradient-to-tr from-background/80 via-transparent to-transparent md:bg-gradient-to-r" />
-          <span className={`absolute left-5 top-5 rounded-full border border-white/15 bg-black/40 px-3 py-1 text-[12px] font-bold uppercase tracking-widest backdrop-blur ${accentText[c.accent]}`}>
-            {c.eyebrow}
-          </span>
-        </div>
-
+      <div className="flex flex-col">
         {/* Content */}
         <div className="flex flex-col p-6 md:p-10">
+          <span className={`mb-4 inline-flex w-fit items-center rounded-full border border-border bg-surface/60 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest ${accentText[c.accent]}`}>
+            {c.eyebrow}
+          </span>
           <h3 className="font-display text-2xl font-bold leading-tight text-foreground md:text-[32px]">
             {c.title}
           </h3>
           <p className="mt-1.5 text-sm font-medium text-muted-foreground">{c.org}</p>
+
 
           <div className={`mt-6 text-[12px] font-semibold uppercase tracking-[0.18em] ${accentText[c.accent]}`}>
             Business Context
