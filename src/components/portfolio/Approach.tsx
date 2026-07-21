@@ -31,7 +31,7 @@ export function Approach() {
   return (
     <section
       id="approach"
-      className="relative border-y border-border bg-surface/30 px-4 py-24 md:px-8 md:py-32"
+      className="relative px-4 py-24 md:px-8 md:py-32"
     >
       <div className="absolute inset-0 grid-bg opacity-40" />
       <div className="relative mx-auto max-w-5xl">
