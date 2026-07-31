@@ -115,9 +115,19 @@ export function Nav() {
               <a
                 key={n.href}
                 href={n.href}
-                className="transition-colors hover:text-foreground"
+                onClick={(e) => goTo(e, n.href)}
+                aria-current={active === n.href ? "true" : undefined}
+                className={`relative transition-colors duration-200 hover:text-foreground ${
+                  active === n.href ? "text-foreground" : ""
+                }`}
               >
                 {n.label}
+                <span
+                  aria-hidden
+                  className={`pointer-events-none absolute -bottom-1.5 left-0 h-px w-full origin-left bg-primary-glow transition-all duration-200 ease-out ${
+                    active === n.href ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"
+                  }`}
+                />
               </a>
             ))}
             <a
