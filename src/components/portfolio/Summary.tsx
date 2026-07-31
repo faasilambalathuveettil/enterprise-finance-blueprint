@@ -21,7 +21,7 @@ const pillars: Pillar[] = [
     icon: Layers,
     tint: "primary",
     title: "Finance Systems Transformation",
-    lead: "I help organisations replace fragmented, spreadsheet-driven finance operations with structured ERP operating models that improve governance, decision-making, and long-term scalability.",
+    lead: "I help organisations replace fragmented, spreadsheet-driven operations with structured ERP operating models that improve governance, decision-making, and long-term scalability.",
     highlight: "The outcome isn't simply a new ERP system—it is a finance function designed to grow.",
   },
   {
