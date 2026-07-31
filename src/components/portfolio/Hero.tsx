@@ -81,8 +81,8 @@ export function Hero() {
           className="mx-auto mt-8 max-w-2xl space-y-4 text-base leading-relaxed text-muted-foreground md:text-lg"
         >
           <p>
-            I design finance systems that transform fragmented finance operations
-            into scalable, compliant ERP operating models.
+            I design finance systems that transform fragmented operations into
+            scalable, compliant ERP operating models.
           </p>
           <p>
             I translate finance, operational, and regulatory requirements into
