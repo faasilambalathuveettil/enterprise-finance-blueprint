@@ -30,12 +30,12 @@ const pillars: Pillar[] = [
     title: "ERP Transformation",
     lead: "Transitioned seven legal entities from spreadsheet-based accounting to a structured ERP operating model.",
     bullets: [
+      "Master data",
       "Chart of Accounts",
       "Payment workflows",
       "Reporting structure",
       "Fixed Asset Register",
       "HRMS requirements",
-      "Master data",
     ],
     closer: "Delivered without disrupting day-to-day finance operations.",
   },
