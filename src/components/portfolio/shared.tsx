@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence, useScroll, useSpring, useReducedMotion } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Menu, X, Download, ArrowRight } from "lucide-react";
 import resumeAsset from "@/assets/Faasil_Ambalathuveettil_Resume.pdf";
 
@@ -33,8 +33,6 @@ export function Nav() {
   const [active, setActive] = useState<string>("#summary");
   const reduceMotion = useReducedMotion();
 
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 24, mass: 0.2 });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -142,10 +140,6 @@ export function Nav() {
 
   return (
     <>
-      <motion.div
-        style={{ scaleX }}
-        className="fixed inset-x-0 top-0 z-[60] h-[2px] origin-left bg-gradient-to-r from-primary via-primary-glow to-primary"
-      />
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           scrolled
