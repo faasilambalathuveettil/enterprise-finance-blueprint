@@ -21,7 +21,7 @@ const pillars: Pillar[] = [
     icon: Layers,
     tint: "primary",
     title: "Finance Systems Transformation",
-    lead: "I help organisations replace fragmented, spreadsheet-driven finance operations with structured ERP operating models that improve governance, decision-making, and long-term scalability.",
+    lead: "I help organisations replace fragmented, spreadsheet-driven operations with structured ERP operating models that improve governance, decision-making, and long-term scalability.",
     highlight: "The outcome isn't simply a new ERP system—it is a finance function designed to grow.",
   },
   {
@@ -30,12 +30,12 @@ const pillars: Pillar[] = [
     title: "ERP Transformation",
     lead: "Transitioned seven legal entities from spreadsheet-based accounting to a structured ERP operating model.",
     bullets: [
+      "Master data",
       "Chart of Accounts",
       "Payment workflows",
       "Reporting structure",
       "Fixed Asset Register",
       "HRMS requirements",
-      "Master data",
     ],
     closer: "Delivered without disrupting day-to-day finance operations.",
   },
@@ -45,8 +45,8 @@ const pillars: Pillar[] = [
     title: "Compliance by Design",
     lead: "Compliance should be embedded into finance operations—not added afterwards.",
     closer: [
-      "Translated Saudi ZATCA Phase 2 requirements into ERP specifications, customer master standards, and testing procedures.",
-      "Delivered production-ready workflows that enabled successful go-live across multiple entities.",
+      "Translated Saudi ZATCA Phase 2 requirements into ERP specifications, customer master data standards, and testing procedures.",
+      "Delivered production-ready workflows supporting successful go-live across multiple entities.",
     ],
   },
   {
