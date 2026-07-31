@@ -161,8 +161,14 @@ export function Nav() {
               <a
                 key={n.href}
                 href={n.href}
-                onClick={() => setOpen(false)}
-                className="text-xl text-foreground hover:text-primary-glow"
+                onClick={(e) => {
+                  setOpen(false);
+                  goTo(e, n.href);
+                }}
+                aria-current={active === n.href ? "true" : undefined}
+                className={`text-xl transition-colors duration-200 hover:text-primary-glow ${
+                  active === n.href ? "text-primary-glow" : "text-foreground"
+                }`}
               >
                 {n.label}
               </a>
