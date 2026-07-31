@@ -140,10 +140,6 @@ export function Nav() {
 
   return (
     <>
-      <motion.div
-        style={{ scaleX }}
-        className="fixed inset-x-0 top-0 z-[60] h-[2px] origin-left bg-gradient-to-r from-primary via-primary-glow to-primary"
-      />
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           scrolled
