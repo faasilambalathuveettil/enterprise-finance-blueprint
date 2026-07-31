@@ -41,7 +41,7 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Scroll spy: the section crossing the viewport's middle band becomes active.
+  // Scroll spy: the nav group occupying the largest share of the viewport wins.
   useEffect(() => {
     const ids = Object.keys(sectionToNav);
     const els = ids
@@ -49,31 +49,76 @@ export function Nav() {
       .filter((el): el is HTMLElement => Boolean(el));
     if (!els.length) return;
 
-    const visible = new Map<string, number>();
+    const NAV_OFFSET = 88;
+    const intersecting = new Set<string>();
+    let frame = 0;
+
+    const compute = () => {
+      frame = 0;
+      if (!intersecting.size) return;
+      const top = NAV_OFFSET;
+      const bottom = window.innerHeight;
+      const usable = Math.max(1, bottom - top);
+
+      // Sum visible pixels per nav group so grouped sections behave as one.
+      const occupancy = new Map<string, number>();
+      for (const id of intersecting) {
+        const el = document.getElementById(id);
+        const href = sectionToNav[id];
+        if (!el || !href) continue;
+        const r = el.getBoundingClientRect();
+        const visiblePx = Math.max(0, Math.min(r.bottom, bottom) - Math.max(r.top, top));
+        if (visiblePx <= 0) continue;
+        occupancy.set(href, (occupancy.get(href) ?? 0) + visiblePx);
+      }
+      if (!occupancy.size) return;
+
+      let bestHref = "";
+      let bestPx = 0;
+      for (const [href, px] of occupancy) {
+        if (px > bestPx) {
+          bestPx = px;
+          bestHref = href;
+        }
+      }
+      if (!bestHref) return;
+
+      setActive((current) => {
+        if (bestHref === current) return current;
+        const currentPx = occupancy.get(current) ?? 0;
+        // Hysteresis: only switch once the challenger is clearly dominant.
+        const clearlyDominant = bestPx >= currentPx * 1.25 && bestPx >= usable * 0.35;
+        return clearlyDominant ? bestHref : current;
+      });
+    };
+
+    const schedule = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(compute);
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          const id = entry.target.id;
-          if (entry.isIntersecting) visible.set(id, entry.intersectionRatio);
-          else visible.delete(id);
+          if (entry.isIntersecting) intersecting.add(entry.target.id);
+          else intersecting.delete(entry.target.id);
         }
-        if (!visible.size) return;
-        let bestId = "";
-        let bestTop = Infinity;
-        for (const id of visible.keys()) {
-          const top = document.getElementById(id)?.getBoundingClientRect().top ?? Infinity;
-          if (top < bestTop) {
-            bestTop = top;
-            bestId = id;
-          }
-        }
-        const href = sectionToNav[bestId];
-        if (href) setActive(href);
+        schedule();
       },
-      { rootMargin: "-45% 0px -45% 0px", threshold: 0 },
+      {
+        rootMargin: `-${NAV_OFFSET}px 0px 0px 0px`,
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+      },
     );
     els.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+      if (frame) cancelAnimationFrame(frame);
+    };
   }, []);
 
   const goTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -83,10 +128,11 @@ export function Nav() {
     e.preventDefault();
     const offset = 88;
     const y = el.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top: y, behavior: "smooth" });
+    window.scrollTo({ top: y, behavior: reduceMotion ? "auto" : "smooth" });
     const mapped = sectionToNav[id];
     if (mapped) setActive(mapped);
   };
+
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
