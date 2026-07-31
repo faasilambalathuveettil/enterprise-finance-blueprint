@@ -13,9 +13,24 @@ const nav = [
   { href: "#contact", label: "Contact" },
 ];
 
+const sectionToNav: Record<string, string> = {
+  top: "#summary",
+  summary: "#summary",
+  impact: "#impact",
+  "case-studies": "#case-studies",
+  architecture: "#architecture",
+  experience: "#experience",
+  approach: "#capabilities",
+  capabilities: "#capabilities",
+  deliverables: "#capabilities",
+  certifications: "#capabilities",
+  contact: "#contact",
+};
+
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState<string>("#summary");
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 24, mass: 0.2 });
 
@@ -25,6 +40,53 @@ export function Nav() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Scroll spy: the section crossing the viewport's middle band becomes active.
+  useEffect(() => {
+    const ids = Object.keys(sectionToNav);
+    const els = ids
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => Boolean(el));
+    if (!els.length) return;
+
+    const visible = new Map<string, number>();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const id = entry.target.id;
+          if (entry.isIntersecting) visible.set(id, entry.intersectionRatio);
+          else visible.delete(id);
+        }
+        if (!visible.size) return;
+        let bestId = "";
+        let bestTop = Infinity;
+        for (const id of visible.keys()) {
+          const top = document.getElementById(id)?.getBoundingClientRect().top ?? Infinity;
+          if (top < bestTop) {
+            bestTop = top;
+            bestId = id;
+          }
+        }
+        const href = sectionToNav[bestId];
+        if (href) setActive(href);
+      },
+      { rootMargin: "-45% 0px -45% 0px", threshold: 0 },
+    );
+    els.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  const goTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    const id = href.replace("#", "");
+    const el = document.getElementById(id);
+    if (!el) return;
+    e.preventDefault();
+    const offset = 88;
+    const y = el.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+    const mapped = sectionToNav[id];
+    if (mapped) setActive(mapped);
+  };
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -53,9 +115,19 @@ export function Nav() {
               <a
                 key={n.href}
                 href={n.href}
-                className="transition-colors hover:text-foreground"
+                onClick={(e) => goTo(e, n.href)}
+                aria-current={active === n.href ? "true" : undefined}
+                className={`relative transition-colors duration-200 hover:text-foreground ${
+                  active === n.href ? "text-foreground" : ""
+                }`}
               >
                 {n.label}
+                <span
+                  aria-hidden
+                  className={`pointer-events-none absolute -bottom-1.5 left-0 h-px w-full origin-left bg-primary-glow transition-all duration-200 ease-out ${
+                    active === n.href ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"
+                  }`}
+                />
               </a>
             ))}
             <a
@@ -89,8 +161,14 @@ export function Nav() {
               <a
                 key={n.href}
                 href={n.href}
-                onClick={() => setOpen(false)}
-                className="text-xl text-foreground hover:text-primary-glow"
+                onClick={(e) => {
+                  setOpen(false);
+                  goTo(e, n.href);
+                }}
+                aria-current={active === n.href ? "true" : undefined}
+                className={`text-xl transition-colors duration-200 hover:text-primary-glow ${
+                  active === n.href ? "text-primary-glow" : "text-foreground"
+                }`}
               >
                 {n.label}
               </a>
