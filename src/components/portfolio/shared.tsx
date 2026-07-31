@@ -20,7 +20,7 @@ const sectionToNav: Record<string, string> = {
   "case-studies": "#case-studies",
   architecture: "#architecture",
   experience: "#experience",
-  approach: "#capabilities",
+  approach: "#experience",
   capabilities: "#capabilities",
   deliverables: "#capabilities",
   certifications: "#capabilities",
