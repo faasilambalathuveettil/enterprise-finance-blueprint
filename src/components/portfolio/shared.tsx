@@ -33,8 +33,6 @@ export function Nav() {
   const [active, setActive] = useState<string>("#summary");
   const reduceMotion = useReducedMotion();
 
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 24, mass: 0.2 });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
